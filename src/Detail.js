@@ -150,7 +150,7 @@ class Detail extends Component {
       project,
       nextLink,
       currentVideo,
-      currentType
+      currentType,
     } = this.state;
     return (
       <div id="detail">
