@@ -1,18 +1,1 @@
-on: push
-name: Publish Website
-jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.1.0
-      with:
-        fetch-depth: 2
-    - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      with:
-        ftp-server: home206557328.1and1-data.host
-        ftp-username: u45367467-arnollen
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./public
-        git-ftp-args: --remote-root ./react/git
+
