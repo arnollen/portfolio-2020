@@ -11,7 +11,8 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: home206557328.1and1-data.host/react/git
+        ftp-server: home206557328.1and1-data.host
         ftp-username: u45367467-arnollen
         ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: /public
+        local-dir: ./public
+        git-ftp-args: --remote-root ./react/git
