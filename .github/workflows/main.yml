@@ -14,3 +14,5 @@ jobs:
         ftp-server: home206557328.1and1-data.host
         ftp-username: u45367467-arnollen
         ftp-password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./build
+        git-ftp-args: ./react
