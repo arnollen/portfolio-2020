@@ -245,9 +245,45 @@
          "type": "VARIOUS",
          "description": "Wedding",
          "bgPath": "",
-         "bgColor": "#173f1c",
+         "bgColor": "#48314b",
          "video": "",
          "images": "Wedding/wedding_1.jpg",
+         "imageCopy": ",",
+         "imageHeaders": ",",
+         "link": "",
+         "viewed": false
+      },
+      {
+         "id": 14,
+         "name": "Supernatural",
+         "route": {
+            "path": "/supernatural",
+            "comp": "Supernatural"
+          },
+         "type": "VARIOUS",
+         "description": "Supernatutal",
+         "bgPath": "",
+         "bgColor": "#48314b",
+         "video": "",
+         "images": "Supernatural/1.jpg",
+         "imageCopy": ",",
+         "imageHeaders": ",",
+         "link": "",
+         "viewed": false
+      },
+      {
+         "id": 15,
+         "name": "Interactive Reel",
+         "route": {
+            "path": "/reel",
+            "comp": "Reel"
+          },
+         "type": "MEDIA",
+         "description": "My Old Demo Reel showcasing some of the fun projects I worked on.",
+         "bgPath": "",
+         "bgColor": "#000000",
+         "video": "//player.vimeo.com/video/75912194",
+         "images": "Supernatural/1.jpg",
          "imageCopy": ",",
          "imageHeaders": ",",
          "link": "",
