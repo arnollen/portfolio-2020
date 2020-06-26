@@ -1,0 +1,40 @@
+{
+    "navigation": [
+       {
+          "id": 1,
+          "copy": "Projects",
+          "link": "/projects",
+          "target": ""
+       },
+       {
+         "id": 2,
+         "copy": "About",
+         "link": "/projects",
+         "target": ""
+      },
+      {
+         "id": 3,
+         "copy": "Archive",
+         "link": "/archive",
+         "target": ""
+      },
+       {
+          "id": 4,
+          "copy": "Linkedin",
+          "link": "https://www.linkedin.com/in/anthonynollen",
+          "target": "_blank"
+       },
+       {
+          "id": 5,
+          "copy": "Resume PDF",
+          "link": "/pdf/AnthonyNollen_Resume.pdf",
+          "target": "_blank"
+       },
+       {
+          "id": 6,
+          "copy": "Contact",
+          "link": "mailto:anthonynollen@gmail.com?subject=Inquiry from anthonynollen.com",
+          "target": ""
+       }
+    ]
+ }

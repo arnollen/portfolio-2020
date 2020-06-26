@@ -1,0 +1,386 @@
+@import 'Vars.scss';
+
+.detail--container {
+    text-align: center;
+    padding: 0px;
+    position: relative;
+    background-size: 150%;
+    background-position: center center;
+    height: 400px;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    pointer-events: auto;
+    background-color: $base-color;
+
+    p {
+      color: #fff;
+      padding: 0 auto;
+
+      font-size: 16px;
+      line-height: 1.6em;
+      letter-spacing: .05em;
+      font-family: $verdana;
+      opacity: .9;
+      width: 80%;
+      text-align: center;
+      margin: 0px auto;
+      margin-top: 20px;
+      @media only screen and (max-width: 768px) {
+        
+      }
+      @media only screen and (max-width: 568px) {
+        font-size: 14px;
+        width: 100%;
+      }
+      @media only screen and (max-width: 320px) {
+        font-size: 14px;
+        width: 100%;
+      }
+    }
+
+    h1 {
+      font-size: 62px;
+      color: $h1-color;
+      padding-bottom: 10px;
+      margin: 0;
+      font-family: $franklin;
+      font-weight: 900;
+      letter-spacing: -1px;
+      @media only screen and (max-width: 768px) {
+        font-size: 54px;
+        margin-top: 0px;
+      }
+      @media only screen and (max-width: 568px) {
+        font-size: 36px;
+        margin-top: 0px;
+      }
+      @media only screen and (max-width: 320px) {
+        font-size: 24px;
+        margin-top: 0px;
+      }
+    }
+
+    .bigger{
+      top: -340px;
+    }
+}
+
+#detail--view-container{
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  p{
+    width: 100%;
+  }
+  h1 {
+    @media only screen and (max-width: 768px) {
+      margin-top: -40px;
+      margin-bottom: -15px;
+    }
+    @media only screen and (max-width: 568px) {
+      margin-top: -40px;
+      margin-bottom: -15px;
+    }
+    @media only screen and (max-width: 320px) {
+      margin-top: -40px;
+      margin-bottom: -15px;
+    }
+  }
+}
+
+
+#detail--separator-navigation{
+  margin: 0 auto;
+  padding: 0 auto;
+  width: 100%;
+  height: 65px;
+  z-index: 99;
+}
+
+#separator--container{
+  background-image: url(../Images/detailHeaderNaviBack.jpg);
+  height: 55px;
+}
+
+.detail--single{
+  opacity: 0;
+}
+
+.detail--type {
+    margin: 0px auto;
+    padding: 0px auto;
+    width: 110px;
+    float: right;
+    background-color: #ffe600;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    h3 {
+      font-size: 10px;
+      color: #6b6b6b;
+      font-family: $montserrat;
+      font-weight: 300;
+      padding: 10px 10px 10px;
+      letter-spacing: .6px;
+      text-align: center;
+    }
+}
+
+
+.detail--view--details{
+    position: relative;
+    padding: 0px 0px 0px !important;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    pointer-events: auto;
+    -webkit-transition: all 2s ease-out;
+    -moz-transition: all 2s ease-out;
+    -o-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+}
+
+
+.header--boarder {
+    margin: 0px auto;
+    text-align: center;
+    padding: 0 auto;
+    width: 100%;
+    height: 4px;
+    background-image: url(../Images/portBoarder.png);
+}
+
+.proj--link {
+    width: 120px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 16px 0px 0px;
+    text-align: center;
+    background-color: none;
+    background-image: url(../Images/linkBg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  a{
+    color: #fff;
+    text-decoration: none;
+    font-family: $verdana;
+    font-weight: 600;
+    font-size: 1em;
+    letter-spacing: .01em;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+  }
+}
+
+#detail--top{
+  background-color: transparent;
+  padding: 150px;
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  @media only screen and (max-width: 1200px) {
+    width: 90%; 
+    padding: 150px 0 150px 0px;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 90%; 
+    padding: 50px 0 50px 0px;
+  }
+  @media only screen and (max-width: 568px) {
+    width: 90%; 
+    padding: 50px 0 50px 0px;
+  }
+  @media only screen and (max-width: 320px) {
+    width: 90%; 
+    padding: 50px 0 50px 0px;
+  }
+  
+}
+
+.detail--img{
+    background: none;
+    margin: 10px auto;
+    padding: 0 auto;
+    width: 100%;
+    overflow: hidden;
+    img{
+      width: 100%;
+    }
+  }
+
+  #detail--video{
+    z-index: 0;
+    position: relative;
+    width: 100%;
+    padding: 0 auto;
+    margin: 0 auto;
+    overflow: hidden;
+
+    background: #300;
+    background: -moz-linear-gradient(top, #330000 0%, #ff0000 63%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #330000), color-stop(63%, #ff0000));
+    background: -webkit-linear-gradient(top, #330000 0%, #ff0000 63%);
+    background: -o-linear-gradient(top, #330000 0%, #ff0000 63%);
+    background: -ms-linear-gradient(top, #330000 0%, #ff0000 63%);
+    background: linear-gradient(to bottom, #330000 0%, #ff0000 63%);
+  
+  }
+
+  #projects--detail--video {
+    z-index: -1;
+}
+
+  .video--container iframe, .video--container object, .video--container embed {
+    margin: 50px 50px 50px;
+    width: 960px;
+    height: 549px;
+    text-align: center;
+    @media only screen and (max-width: 960px) {
+      width: 100%; 
+      height: 320px;
+      margin: 20px 0px 20px 0px;
+    }
+    @media only screen and (max-width: 768px) {
+      width: 100%; 
+      height: 320px;
+      margin: 20px 0px 20px 0px;
+    }
+    @media only screen and (max-width: 568px) {
+      width: 100%;
+      height: 320px;
+      margin: 20px 0px 20px 0px;
+    }
+    @media only screen and (max-width: 320px) {
+      width: 100%;
+      height: 320px; 
+      margin: 20px 0px 20px 0px;
+    }
+    
+}
+
+.detail--header, .detail--body, .detail--img{
+  opacity: 0;
+
+}
+
+.detail--header{
+  padding: 100px 0px 0px;
+}
+
+.detail--body{
+  padding: 0px 0px 50px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title--header{
+  position: relative;
+  margin: 0 auto;
+  padding: 0 auto;
+  width: 160px;
+  height: 65px;
+  background-image: url(../Images/headerTitleBg.png);
+  -moz-border-radius-bottomright: 4px;
+  border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+
+.work--title{
+    color: #fff;
+    text-decoration: none;
+    font-family: $bree;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: .007em;
+    margin: 0px 0px 0px;
+    padding: 14px 0px 0px;
+}
+
+#next--top, #next--top--bottom{
+    float: right;
+    margin: -51px 20px 20px 0px;
+    padding: 0 auto;
+    width: 70px;
+    height: 30px;
+    background: transparent;
+    background-image: url(../Images/nextBtnBg.png);
+    opacity: 0;
+}
+
+#next--top--bottom{
+  margin: 14px 20px 20px 0px;
+}
+
+#next--link, #next--link--bottom{
+  position: relative;
+  margin: 3px 4px 0px 0px;
+}
+
+
+#prev--top, #prev--top--bottom{
+  float: left;
+  margin: 14px 20px 20px;
+  padding: 0 auto;
+  width: 70px;
+  height: 30px;
+  background: transparent;
+  background-image: url(../Images/preBtnBg.png);
+  opacity: 0;
+}
+
+#prev--link, #prev--link--bottom{
+  position: relative;
+  margin: 3px 0px 0px 6px;
+}
+
+.view--project{
+  color: #fff;
+  text-decoration: none;
+  font-family: $verdana;
+  font-weight: 600;
+  font-size: .8em;
+  letter-spacing: .01em;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+
+a.link--out{
+  color: white;
+  opacity: .7;
+  margin-top: 20px;
+  position: relative;
+  line-height: 40px;
+  -webkit-transition: opacity .3s ease-out;
+  -moz-transition: opacity .3s ease-out;
+  -o-transition: opacity .3s ease-out;
+  transition: opacity .3s ease-out;
+}
+
+a.link--out:visited {
+  color: #fff;
+  -webkit-transition: color 400ms ease-in;
+  -moz-transition: color 400ms ease-in;
+  transition: color 400ms ease-in;
+}
+
+a.link--out:hover{
+  opacity: .55;
+}

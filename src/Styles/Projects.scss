@@ -1,0 +1,206 @@
+@import 'Vars.scss';
+
+#projects{
+  z-index: 998;
+}
+
+.project--container {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    text-align: center;
+    background-position: center center;
+    height: 600px;
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    pointer-events: auto;
+    overflow: hidden;
+    @media only screen and (max-width: 768px) {
+
+    }
+    @media only screen and (max-width: 568px) {
+      
+    }
+    @media only screen and (max-width: 320px) {
+      
+    }
+
+    p {
+      color: #fff;
+      padding: 0 auto;
+      font-size: 16px;
+      line-height: 1.6em;
+      letter-spacing: .05em;
+      font-family: $verdana;
+      opacity: .9;
+      width: 80%;
+      text-align: center;
+      margin: 0px auto;
+      margin-top: 20px;
+      @media only screen and (max-width: 768px) {
+        
+      }
+      @media only screen and (max-width: 568px) {
+        font-size: 14px;
+        width: 100%;
+      }
+      @media only screen and (max-width: 320px) {
+        font-size: 14px;
+        width: 100%;
+      }
+    }
+
+    h1 {
+      font-size: 62px;
+      color: $h1-color;
+      padding-bottom: 10px;
+      margin: 0;
+      font-family: $franklin;
+      font-weight: 900;
+      letter-spacing: -1px;
+      @media only screen and (max-width: 768px) {
+        font-size: 54px;
+      }
+      @media only screen and (max-width: 568px) {
+        font-size: 36px;
+      }
+      @media only screen and (max-width: 320px) {
+        font-size: 24px;
+      }
+    }
+}
+
+.bigger{
+  font-size: 940px;
+  position: absolute;
+  top: -400px;
+  left: 0px;
+  font-family: dita, sans-serif;
+  font-weight: 700;
+  font-style: italic;  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 0.04;
+  color: white;
+  letter-spacing: -70px;
+  overflow: hidden;
+  width: 100%;
+  text-align: left;
+    .bigger--count{
+      position: relative;
+      top: 110px;
+      left: -150px;
+    }
+}
+
+.project--single{
+  opacity: 0;
+  width: 100%;
+}
+
+.project--type {
+    margin: 0px auto;
+    padding: 0px auto;
+    width: 110px;
+    float: right;
+    background-color: #ffe600;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    h3 {
+      font-size: 10px;
+      color: #6b6b6b;
+      font-family: $montserrat;
+      font-weight: 300;
+      padding: 10px 10px 10px;
+      letter-spacing: .6px;
+      text-align: center;
+    }
+}
+
+.project--details{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 100px 100px 100px;
+    width: 70%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    pointer-events: auto;
+    -webkit-transition: all 2s ease-out;
+    -moz-transition: all 2s ease-out;
+    -o-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+
+    @media only screen and (max-width: 768px) {
+      width: 70%;
+      padding: 100px;
+    }
+    @media only screen and (max-width: 568px) {
+      width: 90%;
+      padding: 0px;
+    }
+    @media only screen and (max-width: 320px) {
+      width: 90%;
+    }
+}
+
+
+.header--boarder {
+    margin: 0px auto;
+    text-align: center;
+    padding: 0 auto;
+    width: 100%;
+    height: 4px;
+    background-image: url(../Images/portBoarder.png);
+}
+
+.proj--link {
+    width: 120px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 16px 0px 0px;
+    text-align: center;
+    background-color: none;
+    background-image: url(../Images/linkBg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media only screen and (max-width: 768px) {
+      margin-top: 20px;
+    }
+    @media only screen and (max-width: 568px) {
+      margin-top: 20px;
+    }
+    @media only screen and (max-width: 320px) {
+      margin-top: 20px;
+    }
+  a{
+    color: #fff;
+    text-decoration: none;
+    font-family: $verdana;
+    font-weight: 600;
+    font-size: 1em;
+    letter-spacing: .01em;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+  }
+}
+
+.project--hover--set{
+  width: 0%;
+  height: 0%;
+}

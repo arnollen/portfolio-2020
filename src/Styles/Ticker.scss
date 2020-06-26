@@ -1,0 +1,59 @@
+@import 'Vars.scss';
+@import 'Mixins.scss';
+
+#ticker--container{
+    width: 100%;
+    overflow: hidden;
+
+    #ticker-content-cotainer{
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        animation: moveSlideshow 40s linear infinite;
+        animation-delay: 0;
+        will-change: auto;
+        text-transform: uppercase;
+    }
+
+    .ticker-content{
+        will-change: transform;
+        padding: 15px;
+        margin-left: -0%;
+    }
+
+    h1 {
+        opacity: .8;
+        font-size: 82px;
+        color: white;
+        margin: 0;
+        font-family: $dita;
+        font-weight: 800;
+        font-style: italic;
+        letter-spacing: -1px;
+        white-space: nowrap;
+        @include noselect();
+    }
+
+    p{
+        font-family: $franklin;
+        line-height: 5px;
+        white-space: nowrap;
+        color: white;
+        text-align: center;
+        opacity: .75;
+        @include noselect();
+    }
+    img{
+        height: 100px;
+    }
+}
+
+@keyframes moveSlideshow {
+    0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(calc(-50%), 0);
+      }
+  }

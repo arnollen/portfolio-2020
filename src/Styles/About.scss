@@ -1,0 +1,98 @@
+@import 'Vars.scss';
+
+#about{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    padding: 0px;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding-bottom: 100px;
+    overflow: hidden;
+    h1{
+        padding: 0px;
+        font-size: 180px;
+        color: #08ffff;
+        font-family: $bree;
+        margin: 0px;
+        @media only screen and (max-width: 768px) {
+            font-size: 90px;
+          }
+    }
+    p, .about--roll{
+        font-size: 32px;
+        color: white;
+        border: 0px;
+        line-height: 68px;
+        font-family: $franklin;
+        font-weight: 900;
+        @media only screen and (max-width: 1050px) {
+            font-size: 27px;
+            line-height: 52px;
+          }
+        @media only screen and (max-width: 768px) {
+            font-size: 18px;
+            line-height: 28px;
+          }
+    }
+
+    a{
+        color: white;
+    }
+}
+
+#about--container{
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 60%;
+    z-index: 10;
+    @media only screen and (max-width: 1050px) {
+        width: 80%;
+      }
+    @media only screen and (max-width: 768px) {
+        width: 80%;
+      }
+}
+
+.about--roll{
+    background: red;
+    padding: 10px;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    @media only screen and (max-width: 1050px) {
+        padding: 5px;
+      }
+    @media only screen and (max-width: 768px) {
+        padding: 2px;
+      }
+}
+
+.about--roll:hover{
+    cursor: help;
+}
+
+#about--roll--container{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .4;
+}
+
+#about--gif{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}

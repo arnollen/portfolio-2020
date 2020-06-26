@@ -1,0 +1,193 @@
+@import 'Vars.scss';
+
+#navigation {
+    margin: 0px 0px 0px;
+    padding: 0px 0px 0px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    z-index: 999999999;
+}
+
+#navi--button--container{
+    position: absolute;
+    width: 45px;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+}
+
+#extra--bg{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 45px;
+    height: 45px;
+    background-color: #000;
+    overflow: hidden;
+    z-index: 999;
+}
+
+
+#navi--button{
+    position: absolute;
+    margin: 0px 0px 0px;
+    z-index: 1;
+    width: 45px;
+    height: 45px;
+    background-color: $red-color;
+    overflow: hidden;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    cursor: pointer; 
+    opacity: 1;
+}
+
+#navi--button--image{
+    position: absolute;
+    width: 45px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.side--link{
+    text-align: center;
+    font-size: 4em;
+    font-family: $bree;
+    font-weight: 400;
+    display: block;
+    z-index:2;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 4em;
+    }
+    @media only screen and (max-width: 568px) {
+        font-size: 3em;
+    }
+    @media only screen and (max-width: 320px) {
+        font-size: 3em;
+    }
+
+    a{
+        margin: 0px 0px 0px;
+        color: $red-color;
+        text-decoration: none;
+        -webkit-transition: color 200ms ease-in;
+        -moz-transition: color 200ms ease-in;
+        transition: color 200ms ease-in;
+    }
+    a:hover{
+        margin: 0px 10px 0px;
+        color: $red-color-hover;
+        text-decoration: none;
+    }
+}
+
+.top--link{
+    word-break: break-all;
+    display: block;
+    line-height: 80px;
+}
+
+.bottom--link{
+    font-size: .35em;
+    font-weight: 100;
+    text-decoration: none;
+    color: white !important;
+    font-family: $verdana;
+    opacity: .8;
+    display: block;
+    line-height: 20px;
+}
+
+.bottom--link--container{
+    margin: 0px 0px 0px 0px;
+    display: block;
+    height: 35px;
+}
+
+#secondary--nav--container{
+    margin-top: 40px;
+}
+
+
+#link--container{
+    margin: 36px 45px 0px;
+    @media only screen and (max-width: 768px) {
+        margin: 36px 45px 0px
+    }
+    @media only screen and (max-width: 568px) {
+        margin: 43px 45px 0px
+    }
+    @media only screen and (max-width: 320px) {
+        margin: 43px 45px 0px
+    }
+}
+
+#navi--bar{
+    position: absolute;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px;
+    z-index: 0;
+    text-align: left;
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+    background-color: black;
+}
+
+.navi--bar--show{
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+}
+
+
+#tag--1, #tag--2, #tag--3, #tag--4{
+        position: absolute;
+        top: 250px;
+        left: 200px;
+        scale: 2;
+        display: none;
+        z-index:0;
+        opacity: .2;
+}
+
+#tag--1{
+    top: 250px;
+    left: -600px;
+    -webkit-transform:rotate(70deg);
+    -moz-transform:rotate(70deg);
+    -ms-transform:rotate(70deg);
+    -o-transform:rotate(70deg);
+    transform:rotate(70deg);
+    img{
+        width: 1500px;
+    }
+}
+
+#tag--2{
+    top: 250px;
+    left: calc(20%);
+    img{
+        width: 2000px;
+    }
+}
+
+#tag--3{
+    top: 350px;
+    left: 0px;
+    img{
+        width: 1800px;
+    }
+}
+
+#tag--4{
+    top: 360px;
+    left: calc(80%);
+}
