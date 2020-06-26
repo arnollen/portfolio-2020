@@ -30,7 +30,7 @@ class App extends Component {
 
     thecontext.projects = projectData.projects;
 
-    // this sucks!!!!!!
+    //milk was a bad choice
     setInterval(this.textContext, 500);
 
     this.getProjectAmount();

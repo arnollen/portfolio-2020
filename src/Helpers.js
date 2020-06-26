@@ -10,7 +10,6 @@ export function getData(dataPath) {
 
 export function handleCount(theData, count) {
   const setData = theData;
-  console.log(setData, setData.viewed);
   let theCount = count;
   if (setData.viewed === false) {
     setData.viewed = true;
