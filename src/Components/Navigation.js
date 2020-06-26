@@ -14,7 +14,6 @@ import Tag4 from './svg/tag4.svg';
 
 import NavigationData from '../Data/navigation.json';
 
-
 class Navigation extends Component {
   constructor(props) {
     super(props);

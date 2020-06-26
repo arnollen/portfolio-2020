@@ -234,6 +234,24 @@
          "imageHeaders": ",,,",
          "link": "",
          "viewed": false
+      },
+      {
+         "id": 13,
+         "name": "My Wedding",
+         "route": {
+            "path": "/wedding",
+            "comp": "Wedding"
+          },
+         "type": "VARIOUS",
+         "description": "Wedding",
+         "bgPath": "",
+         "bgColor": "#01062c",
+         "video": "",
+         "images": "DivvyDataContest/DivvyDataContest_1088793235.jpg,DivvyDataContest/DivvyDataContest_1136431953.jpg,DivvyDataContest/DivvyDataContest_2145729303.jpg,DivvyDataContest/DivvyDataContest_2026775220.jpg",
+         "imageCopy": ",,,",
+         "imageHeaders": ",,,",
+         "link": "",
+         "viewed": false
       }
    ]
 }

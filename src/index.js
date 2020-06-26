@@ -10,8 +10,10 @@ import Projects from './Projects';
 import * as serviceWorker from './serviceWorker';
 import { GlobalHistory } from './history';
 import './Styles/index.scss';
+import projectData from './Data/data.json';
 
 const rootElement = document.getElementById('root');
+const buildNavi = projectData.projects;
 
 ReactGA.initialize('UA-151508756-1');
 
@@ -22,20 +24,14 @@ if (rootElement.hasChildNodes()) {
         <GlobalHistory />
         <Route path="/" component={App} />
         <Route path="/projects" component={Projects} />
-        <Route path="/united" render={(props) => <Detail {...props} content={0} />} />
-        <Route path="/marriott" render={(props) => <Detail {...props} content={1} />} />
-        <Route path="/kraft" render={(props) => <Detail {...props} content={2} />} />
-        <Route path="/delve" render={(props) => <Detail {...props} content={3} />} />
-        <Route path="/chicago" render={(props) => <Detail {...props} content={4} />} />
-        <Route path="/samsung" render={(props) => <Detail {...props} content={5} />} />
-        <Route path="/lunchables" render={(props) => <Detail {...props} content={6} />} />
-        <Route path="/forza" render={(props) => <Detail {...props} content={7} />} />
-        <Route path="/blackberry" render={(props) => <Detail {...props} content={8} />} />
-        <Route path="/fuse" render={(props) => <Detail {...props} content={9} />} />
-        <Route path="/boa" render={(props) => <Detail {...props} content={10} />} />
-        <Route path="/roots" render={(props) => <Detail {...props} content={11} />} />
-        <Route path="/divvy" render={(props) => <Detail {...props} content={12} />} />
+        {
+          buildNavi.map((projects, index) => (
+            <Route path={buildNavi[index].route.path} render={(props) => <Detail {...props} content={index} />} />
+          ))
+        }
       </HashRouter>
+      {
+}
     </div>
   ), rootElement);
 } else {
@@ -45,19 +41,11 @@ if (rootElement.hasChildNodes()) {
         <GlobalHistory />
         <Route path="/" component={App} />
         <Route path="/projects" component={Projects} />
-        <Route path="/united" render={(props) => <Detail {...props} content={0} />} />
-        <Route path="/marriott" render={(props) => <Detail {...props} content={1} />} />
-        <Route path="/kraft" render={(props) => <Detail {...props} content={2} />} />
-        <Route path="/delve" render={(props) => <Detail {...props} content={3} />} />
-        <Route path="/chicago" render={(props) => <Detail {...props} content={4} />} />
-        <Route path="/samsung" render={(props) => <Detail {...props} content={5} />} />
-        <Route path="/lunchables" render={(props) => <Detail {...props} content={6} />} />
-        <Route path="/forza" render={(props) => <Detail {...props} content={7} />} />
-        <Route path="/blackberry" render={(props) => <Detail {...props} content={8} />} />
-        <Route path="/fuse" render={(props) => <Detail {...props} content={9} />} />
-        <Route path="/boa" render={(props) => <Detail {...props} content={10} />} />
-        <Route path="/roots" render={(props) => <Detail {...props} content={11} />} />
-        <Route path="/divvy" render={(props) => <Detail {...props} content={12} />} />
+        {
+          buildNavi.map((projects, index) => (
+            <Route path={buildNavi[index].route.path} render={(props) => <Detail {...props} content={index} />} />
+          ))
+        }
       </HashRouter>
     </div>
   ), rootElement);

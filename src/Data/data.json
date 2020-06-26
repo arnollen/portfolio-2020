@@ -234,6 +234,24 @@
          "imageHeaders": ",,,",
          "link": "",
          "viewed": false
+      },
+      {
+         "id": 13,
+         "name": "My Wedding",
+         "route": {
+            "path": "/wedding",
+            "comp": "Wedding"
+          },
+         "type": "VARIOUS",
+         "description": "The data team at Razorfish Chicago got together to make a small data visualization for the Chicago Divvy data contest. I joined in last minute to design and develop an interactive map showing data of Divvy users after dark. With a couple days to get something together we did not win but got honorable mention for most beautiful presentation.",
+         "bgPath": "images/DivvyDataContest/bgImage.jpg",
+         "bgColor": "#01062c",
+         "video": "",
+         "images": "DivvyDataContest/DivvyDataContest_1088793235.jpg,DivvyDataContest/DivvyDataContest_1136431953.jpg,DivvyDataContest/DivvyDataContest_2145729303.jpg,DivvyDataContest/DivvyDataContest_2026775220.jpg",
+         "imageCopy": ",,,",
+         "imageHeaders": ",,,",
+         "link": "",
+         "viewed": false
       }
    ]
 }

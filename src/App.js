@@ -64,7 +64,7 @@ class App extends Component {
     if (!isMobile) {
       MouseFlyAdd = (
         <ProjectCount.Provider value={count}>
-          
+          <ViewCounter valuemax={projectAmount} />
         </ProjectCount.Provider>
       );
       // <MouseFly ref={(c) => { this.hello = c; }} />;
