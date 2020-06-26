@@ -125,9 +125,9 @@ class About extends Component {
             . Shoot me an email anytime at
             {' '}
             <a href="mailto:anthonynollen@gmail.com?subject=Inquiry from anthonynollen.com">anthonynollen@gmail.com</a>
-            . This site is also how I learn and experiment you can check out the repo here
+            . This site is also how I learn and experiment you can check out the
             {' '}
-            <a href="github.com">repo</a>.
+            <a href="https://github.com/arnollen/portfolio-2020">repo</a> here.
 
           </p>
         </div>
