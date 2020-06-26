@@ -25,6 +25,7 @@ class Detail extends Component {
       currentTitle: [],
       currentDesc: [],
       currentVideo: [],
+      currentType: 'DIGITAL',
       // showVideo: true,
       currentImages: [],
       currentCopy: [],
@@ -51,6 +52,7 @@ class Detail extends Component {
       currentImages: this.createImageArray(contextProjects[this.TheProps.content].images),
       currentCopy: this.createCopyArray(contextProjects[this.TheProps.content].imageCopy),
       currentHeaders: this.createHeaderArray(contextProjects[this.TheProps.content].imageHeaders),
+      currentType: contextProjects[this.TheProps.content].type,
     }, () => { this.buildDetails(); });
 
     ReactGA.pageview(contextProjects[this.TheProps.content].name);
@@ -148,6 +150,7 @@ class Detail extends Component {
       project,
       nextLink,
       currentVideo,
+      currentType
     } = this.state;
     return (
       <div id="detail">
@@ -180,7 +183,7 @@ class Detail extends Component {
                               </div>
                             </div>
                             <div className="title--header">
-                              <h2 className="work--title">DIGITAL</h2>
+                              <h2 className="work--title">{currentType}</h2>
                             </div>
                             <div id="next--top">
                               <div id="next--link">
