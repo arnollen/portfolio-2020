@@ -15,3 +15,4 @@ jobs:
         ftp-username: u45367467-arnollen
         ftp-password: ${{ secrets.FTP_PASSWORD }}
         local-dir: /public
+        git-ftp-args: /react/fromGit
