@@ -217,6 +217,17 @@
   z-index: 999;
   width: 100%;
   height: 50px;
+  background-color: black;
+  font-family: $franklin;
+
+  p{
+    color: white;
+  }
+
+  input{
+    color: black;
+    height: 35px;
+  }
 }
 
 .archive--50{

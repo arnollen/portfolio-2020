@@ -47,7 +47,8 @@ class Archive extends Component {
   }
 
   onChangeValueHandler = (val) => {
-    this.setState({ projectType: val.value, archive: setProjects });
+    thecontext.projectType = val.value;
+    this.setState({ projectType: thecontext.projectType, archive: this.filterProjects(thecontext.projectType, contextProjects) });
   }
 
   render() {

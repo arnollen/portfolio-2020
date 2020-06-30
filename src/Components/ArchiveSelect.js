@@ -42,7 +42,7 @@ class ArchiveSelect extends Component {
   }
 
   render() {
-    const { value, onChangeValue } = this.props;
+    const { onChangeValue } = this.props;
     return (
       <div>
         <div id="archive--container">
