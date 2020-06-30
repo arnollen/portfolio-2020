@@ -14,7 +14,6 @@ import Footer from './Components/Footer';
 import { thecontext } from './Components/Context';
 import './Styles/Projects.scss';
 
-
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -24,9 +23,7 @@ class Projects extends Component {
   componentDidMount = () => {
     const contextProjects = thecontext.projects;
     this.setState({ projects: contextProjects });
-    this.transitionIn();
     this.backColorAnimation('#2912D6');
-
     ReactGA.pageview('projects page');
   }
 
@@ -41,13 +38,6 @@ class Projects extends Component {
       ease: Linear.easeOut,
       overwrite: true,
     });
-  }
-
-  transitionIn = () => {
-    gsap.staggerTo('.project--single', 0.3, {
-      opacity: 1,
-      ease: Linear.EaseIn,
-    }, 0.2);
   }
 
   render() {
@@ -96,6 +86,5 @@ class Projects extends Component {
     );
   }
 }
-
 
 export default Projects;

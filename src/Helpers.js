@@ -14,6 +14,9 @@ export function handleCount(theData, count) {
   if (setData.viewed === false) {
     setData.viewed = true;
     theCount += 1;
+    if (theCount === 5) {
+      console.log('hint hint');
+    }
     return theCount;
   }
   return count;
@@ -36,5 +39,6 @@ export function addValueToObject(theObj, prop, value) {
   theObj.map((index) => {
     const newObject = index;
     newObject.prop = value;
+    return null;
   });
 }

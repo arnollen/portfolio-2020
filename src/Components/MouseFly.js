@@ -99,7 +99,6 @@ class MouseFly extends Component {
       onComplete: MouseFly.rotateIT,
     });
 
-
     this.mouseTween = new TimelineMax({ delay: 0 });
     this.mouseTween.add(gsap.to('#fly--mouse--container', 0.25, {
       top: this.setY,

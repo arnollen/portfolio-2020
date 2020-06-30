@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import Navigation from './Components/Navigation';
-/* import MouseFly from './Components/MouseFly'; */
 import ViewCounter from './Components/ViewCounter';
 import getHistory from './history';
 import './Styles/App.scss';
@@ -26,11 +26,10 @@ class App extends Component {
     if (pathname === '/') {
       setTimeout(this.changeUrl, 500);
     }
-    window.removeEventListener('resize', this.handleWindowSizeChange);
+    window.addEventListener('resize', this.handleWindowSizeChange);
 
     thecontext.projects = projectData.projects;
 
-    //milk was a bad choice
     setInterval(this.textContext, 500);
 
     this.getProjectAmount();
@@ -60,20 +59,19 @@ class App extends Component {
   render = () => {
     const { widthWin, projectAmount, count } = this.state;
     const isMobile = widthWin <= 768;
-    let MouseFlyAdd = '';
+    let MobileContent = '';
     if (!isMobile) {
-      MouseFlyAdd = (
+      MobileContent = (
         <ProjectCount.Provider value={count}>
           <ViewCounter valuemax={projectAmount} />
         </ProjectCount.Provider>
       );
-      // <MouseFly ref={(c) => { this.hello = c; }} />;
     } else {
-      MouseFlyAdd = '';
+      MobileContent = '';
     }
     return (
       <div>
-        {MouseFlyAdd}
+        {MobileContent}
         <Navigation />
         <div className="App" />
       </div>
@@ -82,8 +80,8 @@ class App extends Component {
 }
 
 App.propTypes = {
-  location: PropTypes.shape.isRequired,
-  pathname: PropTypes.shape.isRequired,
+  location: PropTypes.object,
+  pathname: PropTypes.string,
 };
 
 export default App;

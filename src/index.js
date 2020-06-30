@@ -43,7 +43,7 @@ if (rootElement.hasChildNodes()) {
         <Route path="/projects" component={Projects} />
         {
           buildNavi.map((projects, index) => (
-            <Route path={buildNavi[index].route.path} render={(props) => <Detail {...props} content={index} />} />
+            <Route key={projects.id} path={buildNavi[index].route.path} render={(props) => <Detail {...props} content={index} />} />
           ))
         }
       </HashRouter>

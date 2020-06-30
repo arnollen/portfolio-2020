@@ -4,29 +4,39 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import gsap, { Linear } from 'gsap';
+import { ProjectCount, thecontext } from './Context';
+import ArchiveSelect from './ArchiveSelect';
 import '../Styles/Archive.scss';
+
+let contextProjects = [];
+let setProjects = [];
 
 class Archive extends Component {
   constructor(props) {
     super(props);
-    this.state = { archive: [] };
+    contextProjects = thecontext.projects;
+    this.state = { archive: this.filterProjects(thecontext.projectType, contextProjects), projectType: thecontext.projectType };
   }
 
   componentDidMount = () => {
-    fetch('./Data/data.json', {
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ archive: data.projects });
-        this.transitionIn();
-      }).catch((err) => {
-        // eslint-disable-next-line no-console
-        console.log(`Error Reading data ${err}`);
-      });
+    contextProjects = thecontext.projects;
+    setProjects = this.filterProjects(thecontext.projectType, contextProjects);
+    this.setState({ archive: setProjects });
+  }
+
+  componentDidUpdate = () => {
+  }
+
+  filterProjects = (type, projects) => {
+    const filteredProjects = [];
+    for (let i = 0; i < projects.length; i += 1) {
+      if (projects[i].type !== thecontext.projectType) {
+        filteredProjects.push(projects[i]);
+      } else if (projects[i].type !== thecontext.projectType) {
+        filteredProjects.push(projects[i]);
+      }
+    }
+    return filteredProjects;
   }
 
   transitionIn = () => {
@@ -36,10 +46,15 @@ class Archive extends Component {
     }, 0.2);
   }
 
+  onChangeValueHandler = (val) => {
+    this.setState({ projectType: val.value, archive: setProjects });
+  }
+
   render() {
     const { archive } = this.state;
     return (
       <div>
+        <ArchiveSelect value={thecontext.projectType} onChangeValue={this.onChangeValueHandler} />
         <div id="archive--single--pin" />
         <div id="archive--hide">
           {
@@ -49,7 +64,6 @@ class Archive extends Component {
                   <div key={clients.id} className="archive--single">
                     <div>
                       <div className="archive--container">
-                      {/* <div className="header--boarder" /> */}
                         <div className="archive--details">
                           <div className="count--container">
                             <div className="archive--count"><p>{clients.id + 1}</p></div>
@@ -76,5 +90,6 @@ class Archive extends Component {
   }
 }
 
+Archive.contextType = ProjectCount;
 
 export default Archive;
