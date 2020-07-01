@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { hydrate, render } from 'react-dom';
-import { Route, HashRouter, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import App from './App';
 import Detail from './Detail';
