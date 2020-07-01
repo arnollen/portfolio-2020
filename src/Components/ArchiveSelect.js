@@ -6,7 +6,7 @@ import { thecontext } from './Context';
 import '../Styles/Archive.scss';
 
 const options = [
-
+  { value: 'ALL', label: 'VIEW ALL' },
 ];
 
 const optionsTest = [
@@ -63,6 +63,7 @@ class ArchiveSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loaded: false,
     };
   }
 
@@ -79,15 +80,15 @@ class ArchiveSelect extends Component {
   }
 
   setSelectOptions = () => {
-    options.push({ value: 'ALL', label: 'VIEW ALL' });
-    for (const [key] of Object.entries(thecontext.projects)) {
-      const getType = thecontext.projects[key].type;
+    thecontext.projects.map((project) => {
+      const getType = project.type;
       const testType = optionsTest.includes(getType);
       if (!testType) {
         optionsTest.push(getType);
         options.push({ value: getType, label: `VIEW ${getType}` });
       }
-    }
+      return null;
+    });
   }
 
   render() {
@@ -96,7 +97,7 @@ class ArchiveSelect extends Component {
       <div>
         <div id="archive--container">
           <div className="archive--100">
-            <Select isSearchable={ false } className="react-select-container" classNamePrefix="react-select" defaultValue={{ label: 'All', value: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
+            <Select isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ label: 'All', value: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
           </div>
         </div>
       </div>
@@ -105,7 +106,7 @@ class ArchiveSelect extends Component {
 }
 
 ArchiveSelect.propTypes = {
-  onChangeValue: PropTypes.string.isRequired,
+  onChangeValue: PropTypes.func.isRequired,
 };
 
 export default ArchiveSelect;
