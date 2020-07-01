@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { hydrate, render } from 'react-dom';
-import { Route, HashRouter } from 'react-router-dom';
+import { Route, HashRouter, BrowserRouter } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import App from './App';
 import Detail from './Detail';
@@ -20,7 +20,7 @@ ReactGA.initialize('UA-151508756-1');
 if (rootElement.hasChildNodes()) {
   hydrate((
     <div>
-      <HashRouter>
+      <BrowserRouter>
         <GlobalHistory />
         <Route path="/" component={App} />
         <Route path="/projects" component={Projects} />
@@ -29,7 +29,7 @@ if (rootElement.hasChildNodes()) {
             <Route path={buildNavi[index].route.path} render={(props) => <Detail {...props} content={index} />} />
           ))
         }
-      </HashRouter>
+      </BrowserRouter>
       {
 }
     </div>
@@ -37,7 +37,7 @@ if (rootElement.hasChildNodes()) {
 } else {
   render((
     <div>
-      <HashRouter>
+      <BrowserRouter>
         <GlobalHistory />
         <Route path="/" component={App} />
         <Route path="/projects" component={Projects} />
@@ -46,9 +46,9 @@ if (rootElement.hasChildNodes()) {
             <Route key={projects.id} path={buildNavi[index].route.path} render={(props) => <Detail {...props} content={index} />} />
           ))
         }
-      </HashRouter>
+      </BrowserRouter>
     </div>
   ), rootElement);
 }
 
-serviceWorker.unregister();
+serviceWorker.register();

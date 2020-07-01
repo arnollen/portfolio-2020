@@ -63,7 +63,6 @@ class ArchiveSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loaded: false,
     };
   }
 
@@ -97,7 +96,7 @@ class ArchiveSelect extends Component {
       <div>
         <div id="archive--container">
           <div className="archive--100">
-            <Select isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ label: 'All', value: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
+            <Select isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ label: 'VIEW All', value: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
           </div>
         </div>
       </div>
