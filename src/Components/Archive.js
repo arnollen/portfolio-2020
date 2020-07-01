@@ -15,7 +15,7 @@ class Archive extends Component {
   constructor(props) {
     super(props);
     contextProjects = thecontext.projects;
-    this.state = { archive: this.filterProjects(thecontext.projectType, contextProjects), projectType: thecontext.projectType };
+    this.state = { archive: thecontext.projects };
   }
 
   componentDidMount = () => {
@@ -28,13 +28,13 @@ class Archive extends Component {
   }
 
   filterProjects = (type, projects) => {
-    const filteredProjects = [];
-    for (let i = 0; i < projects.length; i += 1) {
-      if (projects[i].type !== thecontext.projectType) {
-        filteredProjects.push(projects[i]);
-      } else if (projects[i].type !== thecontext.projectType) {
-        filteredProjects.push(projects[i]);
-      }
+    let filteredProjects = [];
+    if (type !== 'ALL') {
+      filteredProjects = projects.filter((project) => project.type === type);
+      this.setState({ archive: filteredProjects });
+    } else {
+      filteredProjects = projects.slice(5, projects.length);
+      this.setState({ archive: filteredProjects });
     }
     return filteredProjects;
   }
@@ -48,7 +48,7 @@ class Archive extends Component {
 
   onChangeValueHandler = (val) => {
     thecontext.projectType = val.value;
-    this.setState({ projectType: thecontext.projectType, archive: this.filterProjects(thecontext.projectType, contextProjects) });
+    this.filterProjects(thecontext.projectType, contextProjects);
   }
 
   render() {
@@ -61,7 +61,7 @@ class Archive extends Component {
           {
             archive.length === 0
               ? ''
-              : archive.slice(5, archive.length).map((clients) => (
+              : archive.map((clients) => (
                   <div key={clients.id} className="archive--single">
                     <div>
                       <div className="archive--container">
