@@ -15,32 +15,47 @@ const optionsTest = [
 const customStyles = ({
   menu: (provided, state) => ({
     ...provided,
-    borderBottom: '0px dotted pink',
-    color: 'black',
-    padding: 0,
-    backgroundColor: 'blue',
+    paddingTop: 0,
+    paddingBottom: 0,
+    backgroundColor: 'red',
     borderRadius: 0,
     marginTop: 0,
   }),
   option: (provided, state) => ({
     ...provided,
     borderBottom: '0px',
-    color: state.isSelected ? '#2912D6' : 'white',
-    backgroundColor: state.isSelected ? '#08ffff' : 'blue',
+    color: state.isSelected ? 'white' : 'white',
+    backgroundColor: state.isSelected ? 'rgb(202, 2, 2)' : 'red',
     borderRadius: 0,
-    padding: 20,
+    paddingTop: 15,
+    paddingBottom: 15,
+    fontWeight: '600',
+    fontSize: '18px',
+    '&:hover': { backgroundColor: 'rgb(202, 2, 2)' }, // border style on hover
   }),
   control: (provided) => ({
     ...provided,
     borderRadius: 0,
-    backgroundColor: 'blue',
+    backgroundColor: 'red',
     color: 'white',
-    border: '0px'
+    border: '0px',
   }),
   singleValue: (provided) => ({
     ...provided,
     color: 'white',
-    backgroundColor: 'blue',
+    backgroundColor: 'red',
+    fontWeight: '600',
+    fontSize: '21px',
+    paddingLeft: '0px',
+  }),
+  indicatorSeparator: (provided) => ({
+    ...provided,
+    backgroundColor: 'white',
+  }),
+  dropdownIndicator: (provided) => ({
+    ...provided,
+    color: 'white',
+    '&:hover': { color: 'white' }, // border style on hover
   }),
 });
 
@@ -64,13 +79,13 @@ class ArchiveSelect extends Component {
   }
 
   setSelectOptions = () => {
-    options.push({ value: 'ALL', label: 'ALL' });
+    options.push({ value: 'ALL', label: 'VIEW ALL' });
     for (const [key] of Object.entries(thecontext.projects)) {
       const getType = thecontext.projects[key].type;
       const testType = optionsTest.includes(getType);
       if (!testType) {
         optionsTest.push(getType);
-        options.push({ value: getType, label: getType });
+        options.push({ value: getType, label: `VIEW ${getType}` });
       }
     }
   }

@@ -214,19 +214,15 @@
 
 #archive--container{
   position: relative;
+  text-align: center;
+  margin: 0px auto;
   z-index: 999;
   width: 100%;
-  height: 50px;
-  background-color: black;
-  font-family: $franklin;
-
-  p{
-    color: white;
-  }
+  height: 70px;
+  background-color: $base-color;
 
   input{
-    color: black;
-    height: 35px;
+    height: 58px;
   }
 }
 

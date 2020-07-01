@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import gsap, { Linear } from 'gsap';
+import ReactGA from 'react-ga';
 import { ProjectCount, thecontext } from './Context';
 import ArchiveSelect from './ArchiveSelect';
 import '../Styles/Archive.scss';
@@ -49,6 +50,7 @@ class Archive extends Component {
   onChangeValueHandler = (val) => {
     thecontext.projectType = val.value;
     this.filterProjects(thecontext.projectType, contextProjects);
+    ReactGA.pageview(`Archive filtered ${val.value}`);
   }
 
   render() {
