@@ -13,7 +13,7 @@ const optionsTest = [
 ];
 
 const customStyles = ({
-  menu: (provided, state) => ({
+  menu: (provided) => ({
     ...provided,
     paddingTop: 0,
     paddingBottom: 0,
@@ -27,8 +27,8 @@ const customStyles = ({
     color: state.isSelected ? 'white' : 'white',
     backgroundColor: state.isSelected ? 'rgb(202, 2, 2)' : 'red',
     borderRadius: 0,
-    paddingTop: 15,
-    paddingBottom: 15,
+    paddingTop: 10,
+    paddingBottom: 10,
     fontWeight: '600',
     fontSize: '18px',
     '&:hover': { backgroundColor: 'rgb(202, 2, 2)' }, // border style on hover
@@ -96,7 +96,7 @@ class ArchiveSelect extends Component {
       <div>
         <div id="archive--container">
           <div className="archive--100">
-            <Select className="react-select-container" classNamePrefix="react-select" defaultValue={{ label: 'All', value: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
+            <Select isSearchable={ false } className="react-select-container" classNamePrefix="react-select" defaultValue={{ label: 'All', value: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
           </div>
         </div>
       </div>
