@@ -12,7 +12,7 @@
          "bgPath": "images/Samsung/bgImage.jpg",
          "bgColor": "#031936",
          "video": "//player.vimeo.com/video/352075107",
-         "images": "UnitedOOH/United_1.jpg,UnitedOOH/United_2.jpg,UnitedOOh/kiosk_gif_street.gif",
+         "images": "UnitedOOH/united_1.jpg,UnitedOOH/united_2.jpg,UnitedOOh/kiosk_gif_street.gif",
          "imageCopy": "Utilizing the Nj Transit API to get real time train station departure and arrival times. We created an airport style departure board using HTML5 Technologies. The billboards job was to communicate that you could travel from Penn Station to Newark airport in under 25 minutes on the NJ transit., We created multiple messages to communicate different promotions and travel times. Using map data and time data which allowed us to show time differences and count down timers to communicate promotions and travel information in real time., Working closely with the United creative team to create the feel and direction of the campaigns animation. These were not only displayed all over the sidewalks of New York City but where also used as animation direction for vendors and production partners. Using various online maps data to calculate the time differences from driving to either JFK or EWR from their current location.,",
          "imageHeaders": "New Jersey Transit, Multiple Messages, Wi-Fi Kiosks,",
          "link": "",

@@ -101,7 +101,7 @@ class Detail extends Component {
   }
 
   createImageArray = (theImages) => {
-    const imgPath = '/Images/clients/';
+    const imgPath = '/images/clients/';
     const imageSplit = theImages.split(',');
     const imageSet = imageSplit.map((x) => imgPath + x);
     return imageSet;
@@ -187,6 +187,7 @@ class Detail extends Component {
                             </div>
                             <div id="next--top">
                               <div id="next--link">
+                                <Link to={String(nextLink)} data={projects} className="view--project--next">next</Link>
                               </div>
                             </div>
                           </div>
@@ -201,7 +202,7 @@ class Detail extends Component {
                               <EmbedHeader theHeader={currentHeaders} theIndex={indexChild} />
                               <EmbedBody theBody={currentCopy} theIndex={indexChild} />
                               <div className="detail--img">
-                                <img src={process.env.PUBLIC_URL + currentImages[indexChild]} alt="" title="" />
+                                <img src={"http://anthonynollen.com" + currentImages[indexChild]} alt="" title="" />
                               </div>
                             </div>
                           ))
