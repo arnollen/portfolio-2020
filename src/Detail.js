@@ -187,7 +187,6 @@ class Detail extends Component {
                             </div>
                             <div id="next--top">
                               <div id="next--link">
-                                <Link to={String(nextLink)} data={projects} className="view--project--next">next</Link>
                               </div>
                             </div>
                           </div>
