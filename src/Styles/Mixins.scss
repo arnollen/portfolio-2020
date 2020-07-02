@@ -4,3 +4,15 @@
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */  
 }
+
+@mixin allTrans() {
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+}
+
+@mixin allScale($amount){
+        -webkit-transform: scale($amount);  
+        -ms-transform: scale($amount); 
+        transform: scale($amount);
+}

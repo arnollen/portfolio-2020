@@ -40,16 +40,23 @@ class Archive extends Component {
     return filteredProjects;
   }
 
-  transitionIn = () => {
-    gsap.staggerTo('.project--single', 0.3, {
+  transitionIn = (theClass) => {
+    gsap.set(theClass, {
+      opacity: 0,
+      ease: Linear.EaseIn,
+      overwrite: false,
+    });
+    gsap.staggerTo(theClass, 0.3, {
       opacity: 1,
       ease: Linear.EaseIn,
+      overwrite: true,
     }, 0.2);
   }
 
   onChangeValueHandler = (val) => {
     thecontext.projectType = val.value;
     this.filterProjects(thecontext.projectType, contextProjects);
+    setTimeout(() =>{this.transitionIn('.archive--single');}, 100);
     ReactGA.pageview(`Archive filtered ${val.value}`);
   }
 

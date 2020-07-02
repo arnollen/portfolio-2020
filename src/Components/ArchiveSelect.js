@@ -1,9 +1,12 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 import PropTypes from 'prop-types';
 import { thecontext } from './Context';
 import '../Styles/Archive.scss';
+
+const animatedComponents = makeAnimated();
 
 const options = [
   { value: 'ALL', label: 'VIEW ALL' },
@@ -96,7 +99,7 @@ class ArchiveSelect extends Component {
       <div>
         <div id="archive--container">
           <div className="archive--100">
-            <Select isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ label: 'VIEW All', value: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
+            <Select components={animatedComponents} isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ label: 'VIEW All', value: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
           </div>
         </div>
       </div>

@@ -179,7 +179,7 @@ class Detail extends Component {
                           <div id="separator--container">
                             <div id="prev--top">
                               <div id="prev--link">
-                                <Link to={String(prevLink)} data={projects} className="view--project">prev</Link>
+                                <Link to={String(prevLink)} data={projects} className="view--project--prev">prev</Link>
                               </div>
                             </div>
                             <div className="title--header">
@@ -187,7 +187,7 @@ class Detail extends Component {
                             </div>
                             <div id="next--top">
                               <div id="next--link">
-                                <Link to={String(nextLink)} data={projects} className="view--project">next</Link>
+                                <Link to={String(nextLink)} data={projects} className="view--project--next">next</Link>
                               </div>
                             </div>
                           </div>

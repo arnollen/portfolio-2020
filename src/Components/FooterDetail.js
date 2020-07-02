@@ -26,7 +26,7 @@ class FooterDetail extends Component {
           <div id="separator--container--bottom">
             <div id="prev--top--bottom">
               <div id="prev--link--bottom">
-                <Link to={prev} data={thedata} className="view--project">prev</Link>
+                <Link to={prev} data={thedata} className="view--project--prev">prev</Link>
               </div>
             </div>
 
@@ -36,7 +36,7 @@ class FooterDetail extends Component {
 
             <div id="next--top--bottom">
               <div id="next--link--bottom">
-                <Link to={next} data={thedata} className="view--project">next</Link>
+                <Link to={next} data={thedata} className="view--project--next">next</Link>
               </div>
             </div>
           </div>

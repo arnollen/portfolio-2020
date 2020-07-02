@@ -1,4 +1,5 @@
 @import 'Vars.scss';
+@import 'Mixins.scss';
 
 #about{
     position: relative;
@@ -59,20 +60,19 @@
 .about--roll{
     background: red;
     padding: 10px;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+    @include noselect();
+    @include allTrans();
     @media only screen and (max-width: 1050px) {
         padding: 5px;
       }
     @media only screen and (max-width: 768px) {
         padding: 2px;
       }
-}
 
-.about--roll:hover{
-    cursor: help;
+    &:hover{
+        cursor: help;
+        background-color: $red-color-hover;
+    }
 }
 
 #about--roll--container{

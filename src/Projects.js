@@ -65,7 +65,7 @@ class Projects extends Component {
                         <div><h1>{parse(clients.name)}</h1></div>
                         <div className="header--boarder" />
                         <div><p>{parse(clients.description)}</p></div>
-                        <div className="proj--link">
+                        <div className="proj--link--list">
                           <Link to={clients.route.path} data={clients}>VIEW</Link>
                         </div>
                         </div>

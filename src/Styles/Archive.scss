@@ -1,4 +1,5 @@
 @import 'Vars.scss';
+@import 'Mixins.scss';
 
 #archive{
   z-index: 998;
@@ -189,16 +190,10 @@
 }
 
 .archive--link {
-    width: 120px;
-    height: 40px;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 16px 0px 0px;
-    text-align: center;
-    background-color: none;
-    background-image: url(../Images/linkBg.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  @include allScale(1);
+
   a{
     color: #fff;
     text-decoration: none;
@@ -206,10 +201,22 @@
     font-weight: 600;
     font-size: 1em;
     letter-spacing: .01em;
-    -webkit-transition: all 200ms ease-in;
-    -moz-transition: all 200ms ease-in;
-    transition: all 200ms ease-in;
+    background-color: none;
+    background-image: url(../Images/linkBg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 15px 34px 15px 35px;
+    
+    @include allTrans();
+    &:hover{
+      opacity: .8;
+    }
   }
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    @include allScale(0.7);
+  } 
 }
 
 #archive--container{
