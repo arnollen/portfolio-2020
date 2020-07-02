@@ -1,14 +1,12 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-import Navigation from './Components/Navigation';
-import ViewCounter from './Components/ViewCounter';
-import getHistory from './history';
-import './Styles/App.scss';
-
 import projectData from './Data/data.json';
 import { ProjectCount, thecontext } from './Components/Context';
+import Projects from './Projects';
+import Navigation from './Components/Navigation';
+import ViewCounter from './Components/ViewCounter';
+import './Styles/App.scss';
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +16,7 @@ class App extends Component {
       projectAmount: 0,
       count: thecontext.count,
     };
+    thecontext.projects = projectData.projects;
   }
 
   componentDidMount = () => {
@@ -27,8 +26,6 @@ class App extends Component {
       setTimeout(this.changeUrl, 500);
     }
     window.addEventListener('resize', this.handleWindowSizeChange);
-
-    thecontext.projects = projectData.projects;
 
     setInterval(this.textContext, 500);
 
@@ -48,7 +45,7 @@ class App extends Component {
   };
 
   changeUrl = () => {
-    getHistory().push('/projects');
+    // getHistory().push('/projects');
   }
 
   getProjectAmount = () => {
@@ -73,6 +70,7 @@ class App extends Component {
       <div>
         {MobileContent}
         <Navigation />
+        <Projects />
         <div className="App" />
       </div>
     );

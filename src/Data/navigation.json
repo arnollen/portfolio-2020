@@ -3,19 +3,19 @@
        {
           "id": 1,
           "copy": "Projects",
-          "link": "/projects",
+          "link": "/",
           "target": ""
        },
        {
          "id": 2,
          "copy": "About",
-         "link": "/projects",
+         "link": "/",
          "target": ""
       },
       {
          "id": 3,
          "copy": "Archive",
-         "link": "/archive",
+         "link": "/",
          "target": ""
       },
        {

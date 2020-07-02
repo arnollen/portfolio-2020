@@ -6,15 +6,18 @@ import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import { Element } from 'react-scroll';
 import ReactGA from 'react-ga';
-import { thecontext } from './Components/Context';
+import projectData from './Data/data.json';
+import { ProjectCount, thecontext } from './Components/Context';
 import { handleCount, hexToRgbA } from './Helpers';
 import EmbedVideo from './Components/EmbedVideo';
 import EmbedBody from './Components/EmbedBody';
 import EmbedHeader from './Components/EmbedHeader';
 import FooterDetails from './Components/FooterDetail';
+import Navigation from './Components/Navigation';
+import ViewCounter from './Components/ViewCounter';
 import './Styles/Detail.scss';
 
-let contextProjects = thecontext.projects;
+let contextProjects = projectData.projects;
 
 class Detail extends Component {
   constructor(props) {
@@ -34,14 +37,17 @@ class Detail extends Component {
       currentColor: '#000000',
       nextLink: [],
       prevLink: [],
+      widthWin: window.innerWidth,
+      projectAmount: thecontext.projects.length,
+      count: thecontext.count,
     };
+    thecontext.projects = projectData.projects;
     this.TheProps = this.props;
     this.TheState = this.state;
   }
 
   componentDidMount = () => {
-    contextProjects = thecontext.projects;
-
+    contextProjects = projectData.projects;
     this.setState({
       project: contextProjects,
       currentTitle: contextProjects[this.TheProps.content].name,
@@ -53,11 +59,18 @@ class Detail extends Component {
       currentCopy: this.createCopyArray(contextProjects[this.TheProps.content].imageCopy),
       currentHeaders: this.createHeaderArray(contextProjects[this.TheProps.content].imageHeaders),
       currentType: contextProjects[this.TheProps.content].type,
+      count: thecontext.count,
     }, () => { this.buildDetails(); });
+
+    setInterval(this.textContext, 500);
 
     ReactGA.pageview(contextProjects[this.TheProps.content].name);
 
     window.scrollTo(0, 0);
+  }
+
+  textContext = () => {
+    this.setState({ count: thecontext.count });
   }
 
   buildDetails = () => {
@@ -151,9 +164,27 @@ class Detail extends Component {
       nextLink,
       currentVideo,
       currentType,
+      projectAmount,
+      count,
+      widthWin
     } = this.state;
+
+    const isMobile = widthWin <= 768;
+    let MobileContent = '';
+    if (!isMobile) {
+      MobileContent = (
+        <ProjectCount.Provider value={count}>
+          <ViewCounter valuemax={projectAmount} />
+        </ProjectCount.Provider>
+      );
+    } else {
+      MobileContent = '';
+    }
+
     return (
       <div id="detail">
+        <Navigation />
+        { MobileContent }
         <Element name="top-scroll-to" id="top-scroll-to" />
         <div className="detail--container">
           <div className="detail--view--details">
@@ -202,7 +233,7 @@ class Detail extends Component {
                               <EmbedHeader theHeader={currentHeaders} theIndex={indexChild} />
                               <EmbedBody theBody={currentCopy} theIndex={indexChild} />
                               <div className="detail--img">
-                                <img src={"http://anthonynollen.com" + currentImages[indexChild]} alt="" title="" />
+                                <img src={`http://anthonynollen.com${currentImages[indexChild]}`} alt="" title="" />
                               </div>
                             </div>
                           ))
