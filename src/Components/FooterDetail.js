@@ -19,7 +19,6 @@ class FooterDetail extends Component {
       thedata,
     } = this.props;
 
-
     return (
       <div id="footer-detail">
         <div id="detail--separator-navigation--bottom">
@@ -49,7 +48,7 @@ class FooterDetail extends Component {
 FooterDetail.propTypes = {
   prev: PropTypes.string.isRequired,
   next: PropTypes.string.isRequired,
-  thedata: PropTypes.shape.isRequired,
+  thedata: PropTypes.func.isRequired,
 };
 
 export default FooterDetail;

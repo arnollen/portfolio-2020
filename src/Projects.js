@@ -23,11 +23,26 @@ class Projects extends Component {
   componentDidMount = () => {
     const contextProjects = thecontext.projects;
     this.setState({ projects: contextProjects });
+    this.scrollToSection();
     this.backColorAnimation('#2912D6');
     ReactGA.pageview('projects page');
   }
 
   componentWillUnmount = () => {
+  }
+
+  componentDidUpdate = () => {
+
+  }
+
+  scrollToSection = () => {
+    const getScroll = thecontext.scrollSection;
+    const elem = document.getElementById(getScroll);
+    const top = elem.offsetTop;
+    setTimeout(() => {
+      window.scrollTo({ top, left: 0, behavior: 'smooth' });
+    }, 500);
+    ReactGA.modalview(`go to ${getScroll}`);
   }
 
   backColorAnimation = (theColor) => {

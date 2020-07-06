@@ -29,7 +29,6 @@ class Detail extends Component {
       currentDesc: [],
       currentVideo: [],
       currentType: 'DIGITAL',
-      // showVideo: true,
       currentImages: [],
       currentCopy: [],
       currentHeaders: [],
@@ -60,9 +59,10 @@ class Detail extends Component {
       currentHeaders: this.createHeaderArray(contextProjects[this.TheProps.content].imageHeaders),
       currentType: contextProjects[this.TheProps.content].type,
       count: thecontext.count,
+      projectAmount: thecontext.projects.length,
     }, () => { this.buildDetails(); });
 
-    setInterval(this.textContext, 500);
+    setInterval(this.textContext, 100);
 
     ReactGA.pageview(contextProjects[this.TheProps.content].name);
 
@@ -166,7 +166,7 @@ class Detail extends Component {
       currentType,
       projectAmount,
       count,
-      widthWin
+      widthWin,
     } = this.state;
 
     const isMobile = widthWin <= 768;

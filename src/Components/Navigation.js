@@ -7,6 +7,7 @@ import gsap, {
 import ReactGA from 'react-ga';
 import '../Styles/Navigation.scss';
 import NavigationButton from '../Images/infoClose.png';
+import { thecontext } from './Context';
 import Tag1 from './svg/tag1.svg';
 import Tag2 from './svg/tag2.svg';
 import Tag3 from './svg/tag3.svg';
@@ -22,7 +23,6 @@ class Navigation extends Component {
       isToggleOn: false,
       widthWin: window.innerWidth,
       heightWin: window.innerHeight,
-      divScroll: '',
     };
   }
 
@@ -35,13 +35,24 @@ class Navigation extends Component {
     window.removeEventListener('resize', this.handleWindowSizeChange);
   }
 
+  scrollToSection = () => {
+    if (window.location.pathname === '/') {
+      const getScroll = thecontext.scrollSection;
+      const elem = document.getElementById(getScroll);
+      const top = elem.offsetTop;
+      setTimeout(() => {
+        window.scrollTo({ top, left: 0, behavior: 'smooth' });
+      }, 500);
+      ReactGA.modalview(`go to ${getScroll}`);
+    }
+  }
+
   handleClick = (divTo) => {
     const { isToggleOn } = this.state;
-    const scrollDiv = divTo;
+    thecontext.scrollSection = divTo;
 
     this.setState((state) => ({
       isToggleOn: !state.isToggleOn,
-      divScroll: scrollDiv,
     }));
 
     if (!isToggleOn) {
@@ -91,23 +102,12 @@ class Navigation extends Component {
         rotationZ: 0.01,
         transformOrigin: '0px 0px',
         force3D: true,
-        onComplete: this.goToSection,
+        onComplete: this.scrollToSection,
       });
       gsap.set('#navi--bar', {
         width: '0%',
         delay: 0.5,
       });
-    }
-  }
-
-  goToSection = () => {
-    const { divScroll } = this.state;
-    if (divScroll !== 'none') {
-      const elem = document.getElementById(divScroll);
-      const top = elem.offsetTop;
-      window.scrollTo({ top, left: 0, behavior: 'smooth' });
-
-      ReactGA.modalview(`go to ${divScroll}`);
     }
   }
 

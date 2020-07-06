@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import projectData from './Data/data.json';
 import { ProjectCount, thecontext } from './Components/Context';
 import Projects from './Projects';
@@ -20,11 +19,6 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    const { location } = this.props;
-    const { pathname } = location;
-    if (pathname === '/') {
-      setTimeout(this.changeUrl, 500);
-    }
     window.addEventListener('resize', this.handleWindowSizeChange);
 
     setInterval(this.textContext, 500);
@@ -78,8 +72,6 @@ class App extends Component {
 }
 
 App.propTypes = {
-  location: PropTypes.object,
-  pathname: PropTypes.string,
 };
 
 export default App;
