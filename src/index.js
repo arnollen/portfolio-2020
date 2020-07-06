@@ -3,6 +3,7 @@
 import React from 'react';
 import { hydrate, render } from 'react-dom';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ReactGA from 'react-ga';
 import App from './App';
 import Detail from './Detail';

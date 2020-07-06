@@ -18,7 +18,6 @@ import ViewCounter from './Components/ViewCounter';
 import './Styles/Detail.scss';
 
 let contextProjects = projectData.projects;
-
 let projCount = '';
 
 class Detail extends Component {
@@ -70,7 +69,7 @@ class Detail extends Component {
   }
 
   componentDidUpdate = () => {
-    projCount = setTimeout(this.textContext, 1000);
+    projCount = setTimeout(this.textContext, 500);
   }
 
   componentWillUnmount = () => {

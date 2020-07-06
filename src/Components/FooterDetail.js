@@ -12,6 +12,10 @@ class FooterDetail extends Component {
     this.state = {};
   }
 
+  componentDidMount = () => {
+    console.log(this.props);
+  }
+
   render() {
     const {
       prev,
@@ -28,11 +32,9 @@ class FooterDetail extends Component {
                 <Link to={prev} data={thedata} className="view--project--prev">prev</Link>
               </div>
             </div>
-
             <ScrollLink className="scroll-to-link" activeClass="active" to="top-scroll-to" spy smooth="easeInOutCubic" duration={1000}>
               ^
             </ScrollLink>
-
             <div id="next--top--bottom">
               <div id="next--link--bottom">
                 <Link to={next} data={thedata} className="view--project--next">next</Link>
@@ -46,9 +48,9 @@ class FooterDetail extends Component {
 }
 
 FooterDetail.propTypes = {
-  prev: PropTypes.string.isRequired,
-  next: PropTypes.string.isRequired,
-  thedata: PropTypes.func.isRequired,
+  prev: PropTypes.string,
+  next: PropTypes.string,
+  thedata: PropTypes.func,
 };
 
 export default FooterDetail;

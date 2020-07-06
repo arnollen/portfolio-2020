@@ -3,7 +3,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ReactGA from 'react-ga';
+import { diffHours, numberWithCommas } from '../Helpers';
 import '../Styles/About.scss';
+
+const newDate = new Date()
+const date = newDate.getDate();
+const month = newDate.getMonth() + 1;
+const year = newDate.getFullYear();
+const dt1 = new Date(1977, 3, 31);
+const dt2 = new Date(year, month, date);
+
+const getHours = numberWithCommas(diffHours(dt2, dt1));
 
 class About extends Component {
   constructor(props) {
@@ -98,7 +108,7 @@ class About extends Component {
             , and
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('cat')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('cat')} onTouchCancel={this.handleOut}>Cat</span>
-            . I went to School in Minneapolis at the now defunct Art Institute of Minnesota
+            . I have spent approximately { getHours } hours on the planet earth. I went to School in Minneapolis at the now defunct Art Institute of Minnesota
             for graphic design. Born and raised in
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('cedar rapids')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('cedar rapids')} onTouchCancel={this.handleOut}>Cedar Rapids, IA</span>

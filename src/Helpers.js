@@ -42,3 +42,13 @@ export function addValueToObject(theObj, prop, value) {
     return null;
   });
 }
+
+export function diffHours(dt2, dt1) {
+  let diff = (dt2.getTime() - dt1.getTime()) / 1000;
+  diff /= (60 * 60);
+  return Math.abs(Math.round(diff));
+}
+
+export function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
