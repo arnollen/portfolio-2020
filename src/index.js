@@ -6,6 +6,7 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import App from './App';
 import Detail from './Detail';
+import fourzerofour from './Components/404';
 import * as serviceWorker from './serviceWorker';
 import { GlobalHistory } from './history';
 import './Styles/index.scss';
@@ -15,8 +16,6 @@ const rootElement = document.getElementById('root');
 const buildNavi = projectData.projects;
 
 ReactGA.initialize('UA-151508756-1');
-
-const NotFound = () => <h1>404- Page NotFound</h1>;
 
 if (rootElement.hasChildNodes()) {
   hydrate((
@@ -30,7 +29,7 @@ if (rootElement.hasChildNodes()) {
               <Route key={projects.id} path={buildNavi[index].route.path} render={(props) => <Detail {...props} content={index} />} />
             ))
           }
-          <Route path="*" component={NotFound} />
+          <Route path="*" component={fourzerofour} />
         </Switch>
       </BrowserRouter>
       {
@@ -49,7 +48,7 @@ if (rootElement.hasChildNodes()) {
               <Route key={projects.id} path={buildNavi[index].route.path} render={(props) => <Detail {...props} content={index} />} />
             ))
           }
-          <Route path="*" component={NotFound} />
+          <Route path="*" component={fourzerofour} />
         </Switch>
       </BrowserRouter>
     </div>

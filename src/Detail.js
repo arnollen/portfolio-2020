@@ -19,6 +19,8 @@ import './Styles/Detail.scss';
 
 let contextProjects = projectData.projects;
 
+let projCount = '';
+
 class Detail extends Component {
   constructor(props) {
     super(props);
@@ -62,12 +64,19 @@ class Detail extends Component {
       projectAmount: thecontext.projects.length,
     }, () => { this.buildDetails(); });
 
-    setInterval(this.textContext, 100);
-
     ReactGA.pageview(contextProjects[this.TheProps.content].name);
 
     window.scrollTo(0, 0);
   }
+
+  componentDidUpdate = () => {
+    projCount = setTimeout(this.textContext, 1000);
+  }
+
+  componentWillUnmount = () => {
+    clearTimeout(projCount);
+  }
+
 
   textContext = () => {
     this.setState({ count: thecontext.count });

@@ -15,6 +15,8 @@ import Tag4 from './svg/tag4.svg';
 
 import NavigationData from '../Data/navigation.json';
 
+let scrollTimer = '';
+
 class Navigation extends Component {
   constructor(props) {
     super(props);
@@ -33,17 +35,21 @@ class Navigation extends Component {
 
   componentWillUnmount = () => {
     window.removeEventListener('resize', this.handleWindowSizeChange);
+    clearInterval(scrollTimer);
   }
 
   scrollToSection = () => {
+    clearInterval(scrollTimer);
     if (window.location.pathname === '/') {
       const getScroll = thecontext.scrollSection;
-      const elem = document.getElementById(getScroll);
-      const top = elem.offsetTop;
-      setTimeout(() => {
-        window.scrollTo({ top, left: 0, behavior: 'smooth' });
-      }, 500);
-      ReactGA.modalview(`go to ${getScroll}`);
+      if (getScroll !== 'none') {
+        const elem = document.getElementById(getScroll);
+        const top = elem.offsetTop;
+        scrollTimer = setTimeout(() => {
+          window.scrollTo({ top, left: 0, behavior: 'smooth' });
+        }, 500);
+        ReactGA.modalview(`go to ${getScroll}`);
+      }
     }
   }
 
@@ -102,11 +108,11 @@ class Navigation extends Component {
         rotationZ: 0.01,
         transformOrigin: '0px 0px',
         force3D: true,
-        onComplete: this.scrollToSection,
       });
       gsap.set('#navi--bar', {
         width: '0%',
         delay: 0.5,
+        onComplete: this.scrollToSection,
       });
     }
   }
@@ -180,7 +186,15 @@ class Navigation extends Component {
                          <div className="bottom--link--container" key={navigation.id}>
                            <div className="side--link navi--bar--show">
                              {/* eslint-disable-next-line max-len */}
-                             <a className="bottom--link" href={navigation.link} target={navigation.target}>{navigation.copy}</a>
+                             <ReactGA.OutboundLink
+                               className="bottom--link"
+                               eventLabel="outbound link"
+                               to={navigation.link}
+                               target="_blank"
+                             >
+                               {navigation.copy}
+                             </ReactGA.OutboundLink>
+
                            </div>
                          </div>
                        );
