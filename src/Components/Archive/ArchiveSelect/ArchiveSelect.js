@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import PropTypes from 'prop-types';
-import { thecontext } from './Context';
-import '../Styles/Archive.scss';
+import { thecontext } from '../../Context/Context';
+import '../Archive.scss';
 
 const animatedComponents = makeAnimated();
 

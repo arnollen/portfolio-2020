@@ -5,15 +5,15 @@ import gsap, {
   SteppedEase, Linear, Expo, Back,
 } from 'gsap';
 import ReactGA from 'react-ga';
-import '../Styles/Navigation.scss';
-import NavigationButton from '../Images/infoClose.png';
-import { thecontext } from './Context';
-import Tag1 from './svg/tag1.svg';
-import Tag2 from './svg/tag2.svg';
-import Tag3 from './svg/tag3.svg';
-import Tag4 from './svg/tag4.svg';
+import './Navigation.scss';
+import NavigationButton from '../../Images/infoClose.png';
+import { thecontext } from '../Context/Context';
+import Tag1 from '../svg/tag1.svg';
+import Tag2 from '../svg/tag2.svg';
+import Tag3 from '../svg/tag3.svg';
+import Tag4 from '../svg/tag4.svg';
 
-import NavigationData from '../Data/navigation.json';
+import NavigationData from '../../Data/navigation.json';
 
 let scrollTimer = '';
 

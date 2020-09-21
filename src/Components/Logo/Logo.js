@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import gsap, { Linear } from 'gsap';
-import '../Styles/App.scss';
-import logo from './svg/logo.svg';
+import '../../App.scss';
+import logo from '../svg/logo.svg';
 
 class Logo extends Component {
   currentColor = 0;

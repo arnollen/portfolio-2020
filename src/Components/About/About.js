@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ReactGA from 'react-ga';
-import { diffHours, numberWithCommas } from '../Helpers';
-import '../Styles/About.scss';
+import { diffHours, numberWithCommas } from '../../Helpers/Helpers';
+import './About.scss';
 
 const newDate = new Date()
 const date = newDate.getDate();

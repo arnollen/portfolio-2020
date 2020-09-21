@@ -1,16 +1,17 @@
+/* eslint-disable max-len */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { hydrate, render } from 'react-dom';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+// import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ReactGA from 'react-ga';
 import App from './App';
-import Detail from './Detail';
-import fourzerofour from './Components/404';
+import Detail from './Components/Detail/Detail';
+import fourzerofour from './Components/404/404';
 import * as serviceWorker from './serviceWorker';
 import { GlobalHistory } from './history';
-import './Styles/index.scss';
+import './index.scss';
 import projectData from './Data/data.json';
 
 const rootElement = document.getElementById('root');

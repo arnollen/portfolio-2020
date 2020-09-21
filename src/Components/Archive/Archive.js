@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import gsap, { Linear } from 'gsap';
 import ReactGA from 'react-ga';
-import { ProjectCount, thecontext } from './Context';
-import ArchiveSelect from './ArchiveSelect';
-import '../Styles/Archive.scss';
+import { ProjectCount, thecontext } from '../Context/Context';
+import ArchiveSelect from './ArchiveSelect/ArchiveSelect';
+import './Archive.scss';
 
 let contextProjects = [];
 let setProjects = [];

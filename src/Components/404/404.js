@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
-import '../Styles/App.scss';
+import '../../App.scss';
 
 class fourzerofour extends Component {
   constructor(props) {

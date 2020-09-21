@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../Styles/ViewCounter.scss';
-import { ProjectCount } from './Context';
-import burst from './svg/burst.svg';
+import './ViewCounter.scss';
+import { ProjectCount } from '../Context/Context';
+import burst from '../svg/burst.svg';
 
 class ViewCounter extends Component {
   constructor(props) {

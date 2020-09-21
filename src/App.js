@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import projectData from './Data/data.json';
-import { ProjectCount, thecontext } from './Components/Context';
-import Projects from './Projects';
-import Navigation from './Components/Navigation';
-import ViewCounter from './Components/ViewCounter';
-import './Styles/App.scss';
+import { ProjectCount, thecontext } from './Components/Context/Context';
+import Projects from './Components/Projects/Projects';
+import Navigation from './Components/Navigation/Navigation';
+import ViewCounter from './Components/ViewCounter/ViewCounter';
+import './App.scss';
 
 class App extends Component {
   constructor(props) {

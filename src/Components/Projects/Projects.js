@@ -6,13 +6,13 @@ import gsap, { Linear } from 'gsap';
 import parse from 'html-react-parser';
 import { Element } from 'react-scroll';
 import ReactGA from 'react-ga';
-import Logo from './Components/Logo';
-import Ticker from './Components/Ticker';
-import Archive from './Components/Archive';
-import About from './Components/About';
-import Footer from './Components/Footer';
-import { thecontext } from './Components/Context';
-import './Styles/Projects.scss';
+import Logo from '../Logo/Logo';
+import Ticker from '../Ticker/Ticker';
+import Archive from '../Archive/Archive';
+import About from '../About/About';
+import Footer from '../Footer/Footer';
+import { thecontext } from '../Context/Context';
+import './Projects.scss';
 
 class Projects extends Component {
   constructor(props) {

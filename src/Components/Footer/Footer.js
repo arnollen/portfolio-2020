@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
-import '../Styles/Footer.scss';
+import './Footer.scss';
 
 class Footer extends Component {
   constructor(props) {

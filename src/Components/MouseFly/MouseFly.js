@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import gsap, { Linear, SteppedEase, TimelineMax } from 'gsap';
-import '../Styles/MouseFly.scss';
+import './MouseFly.scss';
 import FlyImage from '../Images/gifs/mouseFlySprite.png';
 
 class MouseFly extends Component {

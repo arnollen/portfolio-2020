@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../Styles/Ticker.scss';
+import './Ticker.scss';
 
 class Ticker extends Component {
   constructor(props) {

@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import { Element } from 'react-scroll';
 import ReactGA from 'react-ga';
-import projectData from './Data/data.json';
-import { ProjectCount, thecontext } from './Components/Context';
-import { handleCount, hexToRgbA } from './Helpers';
-import EmbedVideo from './Components/EmbedVideo';
-import EmbedBody from './Components/EmbedBody';
-import EmbedHeader from './Components/EmbedHeader';
-import FooterDetails from './Components/FooterDetail';
-import Navigation from './Components/Navigation';
-import ViewCounter from './Components/ViewCounter';
-import './Styles/Detail.scss';
+import projectData from '../../Data/data.json';
+import { ProjectCount, thecontext } from '../Context/Context';
+import { handleCount, hexToRgbA } from '../../Helpers/Helpers';
+import EmbedVideo from './Embed/EmbedVideo';
+import EmbedBody from './Embed/EmbedBody';
+import EmbedHeader from './Embed/EmbedHeader';
+import FooterDetails from '../FooterDetail/FooterDetail';
+import Navigation from '../Navigation/Navigation';
+import ViewCounter from '../ViewCounter/ViewCounter';
+import './Detail.scss';
 
 let contextProjects = projectData.projects;
 let projCount = '';
@@ -76,7 +76,6 @@ class Detail extends Component {
     clearTimeout(projCount);
   }
 
-
   textContext = () => {
     this.setState({ count: thecontext.count });
   }
@@ -99,6 +98,7 @@ class Detail extends Component {
     const getColor = hexToRgbA(theColor);
     const { currentVideo } = this.state;
     gsap.to('.detail--view--details', 0.01, {
+      // eslint-disable-next-line max-len
       backgroundColor: getColor, opacity: 1, ease: Linear.easeOut, overwrite: true, force3D: true, rotationZ: 0.01,
     });
 

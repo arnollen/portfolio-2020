@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import '../Styles/Footer.scss';
-import '../Styles/Detail.scss';
+import '../Footer/Footer.scss';
+import '../Detail/Detail.scss';
 
 class FooterDetail extends Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class FooterDetail extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.props);
   }
 
   render() {
@@ -48,9 +47,9 @@ class FooterDetail extends Component {
 }
 
 FooterDetail.propTypes = {
-  prev: PropTypes.string,
-  next: PropTypes.string,
-  thedata: PropTypes.func,
+  prev: PropTypes.string.isRequired,
+  next: PropTypes.string.isRequired,
+  thedata: PropTypes.func.isRequired,
 };
 
 export default FooterDetail;
