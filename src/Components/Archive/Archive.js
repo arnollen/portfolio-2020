@@ -56,7 +56,7 @@ class Archive extends Component {
   onChangeValueHandler = (val) => {
     thecontext.projectType = val.value;
     this.filterProjects(thecontext.projectType, contextProjects);
-    setTimeout(() =>{this.transitionIn('.archive--single');}, 100);
+    setTimeout(() => { this.transitionIn('.archive--single'); }, 100);
     ReactGA.pageview(`Archive filtered ${val.value}`);
   }
 
