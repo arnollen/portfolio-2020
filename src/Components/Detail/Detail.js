@@ -47,7 +47,7 @@ class Detail extends Component {
   }
 
   componentDidMount = () => {
-    contextProjects = projectData.projects;
+    let contextProjects = projectData.projects;
     this.setState({
       project: contextProjects,
       currentTitle: contextProjects[this.TheProps.content].name,

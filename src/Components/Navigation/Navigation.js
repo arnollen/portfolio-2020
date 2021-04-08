@@ -5,6 +5,7 @@ import gsap, {
   SteppedEase, Linear, Expo, Back,
 } from 'gsap';
 import ReactGA from 'react-ga';
+import { playSound} from '../SoundManager/SoundManager'
 import './Navigation.scss';
 import NavigationButton from '../../Images/infoClose.png';
 import { thecontext } from '../Context/Context';
@@ -120,6 +121,7 @@ class Navigation extends Component {
   handleOver = (theTag) => {
     const { widthWin } = this.state;
     const isMobile = widthWin <= 768;
+    playSound(0);
     if (!isMobile) {
       gsap.set(theTag, {
         display: 'block',
