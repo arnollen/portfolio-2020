@@ -18,20 +18,26 @@
          "link": "/",
          "target": ""
       },
+      {
+         "id": 4,
+         "copy": "Music",
+         "link": "/",
+         "target": ""
+      },
        {
-          "id": 4,
+          "id": 5,
           "copy": "Linkedin",
           "link": "https://www.linkedin.com/in/anthonynollen",
           "target": "_blank"
        },
        {
-          "id": 5,
+          "id": 6,
           "copy": "Resume PDF",
           "link": "/pdf/AnthonyNollen_Resume.pdf",
           "target": "_blank"
        },
        {
-          "id": 6,
+          "id": 7,
           "copy": "Contact",
           "link": "mailto:anthonynollen@gmail.com?subject=Inquiry from anthonynollen.com",
           "target": ""

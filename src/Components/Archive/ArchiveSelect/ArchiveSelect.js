@@ -4,6 +4,7 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import PropTypes from 'prop-types';
 import { thecontext } from '../../Context/Context';
+import { playSound} from '../../SoundManager/SoundManager';
 import '../Archive.scss';
 
 const animatedComponents = makeAnimated();
@@ -93,12 +94,16 @@ class ArchiveSelect extends Component {
     });
   }
 
+  handleClick = () => {
+    playSound(0);
+  }
+
   render() {
     const { onChangeValue } = this.props;
     return (
       <div>
         <div id="archive--container">
-          <div className="archive--100">
+          <div className="archive--100" onClick={() => this.handleClick()}>
             <Select components={animatedComponents} isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ label: 'VIEW All', value: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
           </div>
         </div>

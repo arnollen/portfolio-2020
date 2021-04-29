@@ -37,7 +37,7 @@ class About extends Component {
   handleOver = (topic) => {
     this.showImageRoll(topic);
     ReactGA.modalview(`${topic}  about rollover`);
-    playSound(0, .5);
+    //playSound(0);
   }
 
   handleOut = () => {
@@ -72,7 +72,7 @@ class About extends Component {
         currentRoll = 'https://media.giphy.com/media/31PYLYpkdnaMBhZ1Wk/giphy.gif';
         break;
       case 'travel':
-        currentRoll = 'https://media.giphy.com/media/3o6nUYKzUwcW3mDgqI/giphy.gif';
+        currentRoll = 'https://media.giphy.com/media/rUlu713yOz2wM/source.gif';
         break;
       case 'smells':
         currentRoll = 'https://media.giphy.com/media/b5xDLakZRxJ6M/giphy.gif';
@@ -99,10 +99,10 @@ class About extends Component {
       <div id="about">
         <div id="about--container">
           <h1>Hello!</h1>
-          <p>
+          <p id="about--copy">
             My Name is Anthony Nollen and currently reside in
             {' '}
-            <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('chicago')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('chicago')} onTouchCancel={this.handleOut}>Chicago, Illinois</span>
+            <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('chicago')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('chicago')} onTouchCancel={this.handleOut}>Chicago,&nbsp;Illinois</span>
             {' '}
             with my wife,
             {' '}
@@ -117,7 +117,7 @@ class About extends Component {
             hours on the planet earth. I went to School in Minneapolis at the now defunct Art Institute of Minnesota
             for graphic design. Born and raised in
             {' '}
-            <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('cedar rapids')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('cedar rapids')} onTouchCancel={this.handleOut}>Cedar Rapids, IA</span>
+            <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('cedar rapids')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('cedar rapids')} onTouchCancel={this.handleOut}>Cedar&nbsp;Rapids,&nbsp;IA</span>
             {' '}
             the city of five seasons/
             <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('smells')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('smells')} onTouchCancel={this.handleOut}>smells</span>

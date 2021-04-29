@@ -8,7 +8,6 @@
 .archive--container {
     position: relative;
     text-align: left;
-    height: 200px;
     width: 100%;
     pointer-events: auto;
     overflow: hidden;
@@ -22,7 +21,7 @@
 
     @media only screen and (max-width: 1050px) {
       flex-direction: column;
-      height: auto;
+      padding: 20px 0px 20px 0px;  
     }
 
     p {
@@ -83,16 +82,19 @@
 }
 
 .copy--container{
-  padding: 15px;
+  padding: 0px;
   z-index: 1;
+  @media only screen and (max-width: 1050px) {
+    width: calc(100% - 40px);
+    
+  }
 }
 
 .link--container{
   padding: 85px;
   z-index: 1;
   @media only screen and (max-width: 1050px) {
-    padding: 0px;
-    padding-bottom: 20px;
+    padding: 20px 0px 20px 0px;
   }
 }
 

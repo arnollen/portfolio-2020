@@ -6,10 +6,13 @@ import gsap, { Linear } from 'gsap';
 import parse from 'html-react-parser';
 import { Element } from 'react-scroll';
 import ReactGA from 'react-ga';
+import { playSound} from '../SoundManager/SoundManager';
 import Logo from '../Logo/Logo';
 import Ticker from '../Ticker/Ticker';
 import Archive from '../Archive/Archive';
 import About from '../About/About';
+import Spotify from '../Spotify/Spotify';
+
 import Footer from '../Footer/Footer';
 import { thecontext } from '../Context/Context';
 import './Projects.scss';
@@ -55,6 +58,10 @@ class Projects extends Component {
     });
   }
 
+  handleClick = () => {
+    playSound(0);
+  }
+
   render() {
     const { projects } = this.state;
     return (
@@ -81,7 +88,7 @@ class Projects extends Component {
                         <div className="header--boarder" />
                         <div><p>{parse(clients.description)}</p></div>
                         <div className="proj--link--list">
-                          <Link to={clients.route.path} data={clients}>VIEW</Link>
+                          <Link to={clients.route.path} data={clients} onClick={() => this.handleClick()}>VIEW</Link>
                         </div>
                         </div>
                       </div>
@@ -95,6 +102,9 @@ class Projects extends Component {
             <Element name="archive-scroll-to" id="archive-scroll-to" />
             <Ticker header="ARCHIVE" body="An archive of past portfolio work" body2="some of my favorite projects through out my career" gif="https://media.giphy.com/media/xkmQfH1TB0dLW/giphy.gif" />
             <Archive />
+            <Element name="music-scroll-to" id="music-scroll-to" />
+            <Ticker header="MUSIC" body="The best way to know some one is by there music choices" body2="My last 25 songs played on Spotify, It may be on random don't judge :)" gif="https://media.giphy.com/media/pHZbB5h1K8OaSkFquN/giphy.gif" />
+            <Spotify />
             <Footer />
         </div>
       </div>

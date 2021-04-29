@@ -6,14 +6,14 @@ import topAudio from '../../Sound/top.mp3';
 const btn = new Howl({
   src: [btnAudio],
   loop: false,
-  volume: 1,
+  volume: .01,
   autoplay: false,
 });
 
 const top = new Howl({
   src: [topAudio],
   loop: false,
-  volume: 1,
+  volume: 0,
   autoplay: false,
   delay: .5
 });

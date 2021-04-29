@@ -52,3 +52,11 @@ export function diffHours(dt2, dt1) {
 export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
+export function inArray(search, array) {
+  const { length } = array;
+  for (let i = 0; i < length; i += 1) {
+    if (array[i][0] === search) return true;
+  }
+  return false;
+}

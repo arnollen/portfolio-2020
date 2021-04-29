@@ -15,6 +15,7 @@ import EmbedHeader from './Embed/EmbedHeader';
 import FooterDetails from '../FooterDetail/FooterDetail';
 import Navigation from '../Navigation/Navigation';
 import ViewCounter from '../ViewCounter/ViewCounter';
+import { playSound} from '../SoundManager/SoundManager';
 import './Detail.scss';
 
 let contextProjects = projectData.projects;
@@ -157,6 +158,10 @@ class Detail extends Component {
     this.setState({ nextLink: setNext, prevLink: setPrev });
   }
 
+  handleClick = () => {
+    playSound(0);
+  }
+
   render = () => {
     const {
       currentProject,
@@ -188,6 +193,7 @@ class Detail extends Component {
     } else {
       MobileContent = '';
     }
+  
 
     return (
       <div id="detail">
@@ -218,7 +224,7 @@ class Detail extends Component {
                           <div id="separator--container">
                             <div id="prev--top">
                               <div id="prev--link">
-                                <Link to={String(prevLink)} data={projects} className="view--project--prev">prev</Link>
+                                <Link to={String(prevLink)} data={projects} className="view--project--prev" onClick={() => this.handleClick()}>prev</Link>
                               </div>
                             </div>
                             <div className="title--header">
@@ -226,7 +232,7 @@ class Detail extends Component {
                             </div>
                             <div id="next--top">
                               <div id="next--link">
-                                <Link to={String(nextLink)} data={projects} className="view--project--next">next</Link>
+                                <Link to={String(nextLink)} data={projects} className="view--project--next" onClick={() => this.handleClick()}>next</Link>
                               </div>
                             </div>
                           </div>

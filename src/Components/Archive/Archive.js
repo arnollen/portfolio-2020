@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
+import { playSound} from '../SoundManager/SoundManager';
 import gsap, { Linear } from 'gsap';
 import ReactGA from 'react-ga';
 import { ProjectCount, thecontext } from '../Context/Context';
@@ -53,6 +54,10 @@ class Archive extends Component {
     }, 0.2);
   }
 
+  handleClick = () => {
+    playSound(0);
+  }
+
   onChangeValueHandler = (val) => {
     thecontext.projectType = val.value;
     this.filterProjects(thecontext.projectType, contextProjects);
@@ -85,7 +90,7 @@ class Archive extends Component {
                           </div>
                           <div className="link--container">
                             <div className="archive--link">
-                              <Link to={clients.route.path} data={clients}>VIEW</Link>
+                              <Link to={clients.route.path} data={clients} onClick={() => this.handleClick()}>VIEW</Link>
                             </div>
                           </div>
                         </div>
