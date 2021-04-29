@@ -9,7 +9,7 @@ import ReactGA from 'react-ga';
 const apiKey = '98a2ee7691589ee264ffe41e2b21d4ca';
 const user = 'arnollen';
 const amount = '24';
-let urlRecent = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${user}&api_key=${apiKey}&format=json&limit=${amount}&period=overall`;
+let urlRecent = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${user}&api_key=${apiKey}&format=json&limit=${amount}&period=overall`;
 
 let songCards = document.getElementsByClassName('card');
 let firstLoad = false;
@@ -39,9 +39,7 @@ class Lastfm extends React.Component {
 
   handleClick = (e) => {
     playSound(0);
-    ReactGA.pageview(`song viewed ${e}`);
-    const { param } = e.target.dataset;
-    console.log(param);
+    ReactGA.pageview(`song viewed`);
   }
 
 eqCards = () => {
@@ -63,7 +61,7 @@ fetchRecent = (url) => {
       this.setData(data);
     })
     .catch((err) => {
-      console.log(err);
+      //console.log(err);
     });
 }
 
@@ -71,9 +69,9 @@ setData = (data) =>{
   // const newData = data.recenttracks.track[0].album["#text"];
    const oldData = this.state.recent[0];
 
-   console.log(data.recenttracks.track[0].album);
+   //console.log(data.recenttracks.track[0].album);
 
-   console.log(this.state.recent[0]);
+   //console.log(this.state.recent[0]);
 
 
   this.eqCards();
