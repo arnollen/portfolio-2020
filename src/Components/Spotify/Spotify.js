@@ -3,7 +3,6 @@ import { get } from 'mongoose';
 import React from 'react';
 import './Spotify.scss';
 import { playSound } from '../SoundManager/SoundManager';
-import gsap, { Linear } from 'gsap';
 import ReactGA from 'react-ga';
 
 const apiKey = '98a2ee7691589ee264ffe41e2b21d4ca';
@@ -43,7 +42,7 @@ class Lastfm extends React.Component {
   }
 
 eqCards = () => {
-  const getRandom = String(-(Math.random()*20)-(20)) + 'px';
+  const getRandom = String(-(Math.random()*20)-(25)) + 'px';
   return getRandom
 }
   
@@ -67,16 +66,9 @@ fetchRecent = (url) => {
 
 setData = (data) =>{
   // const newData = data.recenttracks.track[0].album["#text"];
-   const oldData = this.state.recent[0];
-
-   //console.log(data.recenttracks.track[0].album);
-
-   //console.log(this.state.recent[0]);
-
+  const oldData = this.state.recent[0];
 
   this.eqCards();
-
-  // console.log( newData + "    " + oldData);
 
   this.setState({
     recent: data.recenttracks.track
@@ -106,8 +98,10 @@ render() {
                     <div key={i} className="card">
                         <div className="eq" id={'eq-' + i} style={{top: this.eqCards()}}></div>
                         <div className="artist-count">
-                              <div className="artist-count-copy">
-                               <p>{i+1}</p>
+                              <div className="artist-count-copy-cotainer">
+                                <div className="artist-count-copy">
+                                  <p>{i+1}</p>
+                                </div>
                               </div>
                           </div>
                         <div className="artist-image">

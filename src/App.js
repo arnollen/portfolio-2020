@@ -5,6 +5,8 @@ import { ProjectCount, thecontext } from './Components/Context/Context';
 import Projects from './Components/Projects/Projects';
 import Navigation from './Components/Navigation/Navigation';
 import ViewCounter from './Components/ViewCounter/ViewCounter';
+import MouseFly from './Components/MouseFly/MouseFly';
+
 import './App.scss';
 
 class App extends Component {
@@ -54,6 +56,7 @@ class App extends Component {
       MobileContent = (
         <ProjectCount.Provider value={count}>
           <ViewCounter valuemax={projectAmount} />
+          <MouseFly></MouseFly>
         </ProjectCount.Provider>
       );
     } else {
