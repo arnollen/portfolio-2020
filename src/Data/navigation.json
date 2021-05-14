@@ -20,7 +20,7 @@
       },
       {
          "id": 4,
-         "copy": "Music",
+         "copy": "My Playlist",
          "link": "/",
          "target": ""
       },
@@ -28,12 +28,6 @@
           "id": 5,
           "copy": "Linkedin",
           "link": "https://www.linkedin.com/in/anthonynollen",
-          "target": "_blank"
-       },
-       {
-          "id": 6,
-          "copy": "Resume PDF",
-          "link": "/pdf/AnthonyNollen_Resume.pdf",
           "target": "_blank"
        },
        {

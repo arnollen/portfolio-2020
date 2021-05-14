@@ -103,7 +103,7 @@ class Projects extends Component {
             <Ticker header="ARCHIVE" body="An archive of past portfolio work" body2="some of my favorite projects through out my career" gif="https://media.giphy.com/media/xkmQfH1TB0dLW/giphy.gif" />
             <Archive />
             <Element name="music-scroll-to" id="music-scroll-to" />
-            <Ticker header="MUSIC" body="The best way to know some one is by there music choices" body2="My last 25 songs played on Spotify, It may be on random don't judge :)" gif="https://media.giphy.com/media/pHZbB5h1K8OaSkFquN/giphy.gif" />
+            <Ticker header="MY PLAYLIST" body="The best way to know some one is by there music choices" body2="My last 25 songs played on Spotify, It may be on random don't judge :)" gif="https://media.giphy.com/media/pHZbB5h1K8OaSkFquN/giphy.gif" />
             <Spotify />
             <Footer />
         </div>
