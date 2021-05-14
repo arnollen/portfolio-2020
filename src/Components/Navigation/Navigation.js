@@ -56,7 +56,10 @@ class Navigation extends Component {
 
   handleClick = (divTo) => {
     const { isToggleOn } = this.state;
-    thecontext.scrollSection = divTo;
+
+    if(divTo){
+      thecontext.scrollSection = divTo;
+    }
 
     this.setState((state) => ({
       isToggleOn: !state.isToggleOn,
@@ -160,6 +163,18 @@ class Navigation extends Component {
     }
   };
 
+  killTheFly = () =>{
+    if(thecontext.fly){
+      thecontext.fly = false;
+    }
+    else{
+      thecontext.fly = true;
+    }
+
+    this.handleClick();
+    console.log(thecontext.fly);
+  }
+
   render() {
     const { navigationWin } = this.state;
     return (
@@ -186,7 +201,7 @@ class Navigation extends Component {
                    ? ''
                    : navigationWin.map((navigation, index) => {
                      //  const listID = `#tag--${navigation.id}`;
-                     if (index >= 4) {
+                     if (index >= 4 && index <= 5) {
                        return (
                          <div className="bottom--link--container" key={navigation.id}>
                            <div className="side--link navi--bar--show">
@@ -204,6 +219,20 @@ class Navigation extends Component {
                          </div>
                        );
                      }
+
+                     if (index === 6) {
+                      return (
+                        <div className="bottom--link--container" key={navigation.id}>
+                          <div className="side--link navi--bar--show">
+                            {/* eslint-disable-next-line max-len */}
+                            <Link to="/" className="bottom--link" onClick={() => this.killTheFly()}>
+                              {navigation.copy}
+                              </Link>
+
+                          </div>
+                        </div>
+                      );
+                    }
                      return null;
                    })
                 }

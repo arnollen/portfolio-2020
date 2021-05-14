@@ -16,6 +16,7 @@ class App extends Component {
       widthWin: window.innerWidth,
       projectAmount: 0,
       count: thecontext.count,
+      stayFly: thecontext.fly
     };
     thecontext.projects = projectData.projects;
   }
@@ -29,7 +30,7 @@ class App extends Component {
   }
 
   textContext = () => {
-    this.setState({ count: thecontext.count });
+    this.setState({ count: thecontext.count, stayFly: thecontext.fly });
   }
 
   componentWillUnmount = () => {
@@ -49,14 +50,24 @@ class App extends Component {
   }
 
   render = () => {
-    const { widthWin, projectAmount, count } = this.state;
+    const { widthWin, projectAmount, count, stayFly } = this.state;
     const isMobile = widthWin <= 768;
     let MobileContent = '';
+    let flyState = '';
+    if (stayFly) {
+      flyState = (
+        <MouseFly></MouseFly>
+      );
+    }
+    else{
+      flyState = '';
+    }
     if (!isMobile) {
       MobileContent = (
         <ProjectCount.Provider value={count}>
           <ViewCounter valuemax={projectAmount} />
-          <MouseFly></MouseFly>
+          {flyState}
+          <div id="fly"></div>
         </ProjectCount.Provider>
       );
     } else {

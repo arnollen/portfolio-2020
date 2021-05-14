@@ -46,9 +46,10 @@ class MouseFly extends Component {
       ease: Linear.easeOut,
       repeat: -1,
       transformOrigin: this.setOffsetRotation,
+      force3D: true,
     }));
 
-    gsap.to('#fly--mouse--img', 0.05, {
+    gsap.to('#fly--mouse--img', 0.1, {
       repeat: -1,
       left: '-950px',
       ease: SteppedEase.config(19),
