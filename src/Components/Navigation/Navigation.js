@@ -118,8 +118,15 @@ class Navigation extends Component {
       gsap.set('#navi--bar', {
         width: '0%',
         delay: 0.5,
-        onComplete: this.scrollToSection,
+        onComplete: this.goScroll,
       });
+    }
+  }
+
+  goScroll = () => {
+    console.log(thecontext.scrollSection)
+    if(thecontext.scrollSection !== 'none'){
+      this.scrollToSection();
     }
   }
 
@@ -225,7 +232,7 @@ class Navigation extends Component {
                         <div className="bottom--link--container" key={navigation.id}>
                           <div className="side--link navi--bar--show">
                             {/* eslint-disable-next-line max-len */}
-                            <Link to="/" className="bottom--link" onClick={() => this.killTheFly()}>
+                            <Link to="#" className="bottom--link" onClick={() => this.killTheFly()}>
                               {navigation.copy}
                               </Link>
 

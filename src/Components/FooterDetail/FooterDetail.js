@@ -53,9 +53,9 @@ class FooterDetail extends Component {
 }
 
 FooterDetail.propTypes = {
-  prev: PropTypes.string.isRequired,
-  next: PropTypes.string.isRequired,
-  thedata: PropTypes.func.isRequired,
+  prev: PropTypes.string,
+  next: PropTypes.string,
+  thedata: PropTypes.func,
 };
 
 export default FooterDetail;

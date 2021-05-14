@@ -65,9 +65,8 @@ class App extends Component {
     if (!isMobile) {
       MobileContent = (
         <ProjectCount.Provider value={count}>
-          <ViewCounter valuemax={projectAmount} />
           {flyState}
-          <div id="fly"></div>
+          <ViewCounter valuemax={projectAmount} />
         </ProjectCount.Provider>
       );
     } else {
