@@ -1,7 +1,10 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import gsap, { Linear, SteppedEase, TimelineMax } from 'gsap';
+import { thecontext } from '../Context/Context';
+
 import './MouseFly.scss';
+
 import FlyImage from '../../Images/gifs/mouseFlySprite.png';
 
 class MouseFly extends Component {
@@ -21,7 +24,7 @@ class MouseFly extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = { speed: thecontext.flySpeed
     };
   }
 
@@ -40,22 +43,7 @@ class MouseFly extends Component {
       this.moveFly(e, this);
     });
 
-    this.circleTween = new TimelineMax({ delay: 0, repeat: -1, repeatDelay: 0 });
-    this.circleTween.add(gsap.to('#fly--mouse', 1, {
-      rotation: '-360',
-      ease: Linear.easeOut,
-      repeat: -1,
-      transformOrigin: this.setOffsetRotation,
-      force3D: true,
-    }));
-
-    gsap.to('#fly--mouse--img', 0.1, {
-      repeat: -1,
-      left: '-950px',
-      ease: SteppedEase.config(19),
-      rotationZ: 0.01,
-      force3D: true,
-    });
+    this.flyAnimation();
   }
 
   componentWillUnmount = () => {
@@ -71,6 +59,25 @@ class MouseFly extends Component {
     document.body.removeEventListener('mouseup', (e) => {
       this.moveFlyChangeUp(e, this);
       this.moveFly(e, this);
+    });
+  }
+
+  flyAnimation = () => {
+    this.circleTween = new TimelineMax({ delay: 0, repeat: -1, repeatDelay: 0 });
+    this.circleTween.add(gsap.to('#fly--mouse', this.state.speed, {
+      rotation: '-360',
+      ease: Linear.easeOut,
+      repeat: -1,
+      transformOrigin: this.setOffsetRotation,
+      force3D: true,
+    }));
+
+    gsap.to('#fly--mouse--img', 0.1, {
+      repeat: -1,
+      left: '-950px',
+      ease: SteppedEase.config(19),
+      rotationZ: 0.01,
+      force3D: true,
     });
   }
 

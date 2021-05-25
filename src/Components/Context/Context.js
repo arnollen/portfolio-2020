@@ -6,7 +6,8 @@ export const thecontext = {
   projectType: 'ALL',
   scrollSection: 'root',
   favorites: [],
-  fly: true
+  fly: true,
+  flySpeed: 1
 };
 
 export const ProjectCount = React.createContext(
