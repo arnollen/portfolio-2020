@@ -43,6 +43,8 @@ class MouseFly extends Component {
       this.moveFly(e, this);
     });
 
+    console.log("help")
+
     this.flyAnimation();
   }
 

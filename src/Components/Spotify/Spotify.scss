@@ -7,6 +7,11 @@
   display: block;
   text-align:center;
   width: 100%;
+  cursor: grab;
+  overflow: auto;
+  &:active {
+    cursor: grabbing;
+  }
   h1{
     margin: 0px;
     padding: 40px 0px 0px;
@@ -31,7 +36,7 @@
 
 #card-container{
   width: 100%;
-  padding: 50px 0 30px 0px;
+  padding: 40px 0 30px 0px;
   -webkit-transition: all 0.25s ease-out;
   -moz-transition: all 0.25s ease-out;
   -o-transition: all 0.25s ease-out;
@@ -145,6 +150,7 @@
     p{
       font-family: Verdana, Geneva, sans-serif;
       font-size: 14px;
+      line-height: 18px;
     }
   }
   .artist-song{
@@ -155,6 +161,7 @@
     p{
       font-family: Verdana, Geneva, sans-serif;
       font-size: 14px;
+      line-height: 18px;
     }
   }
   .artist-link{

@@ -1,0 +1,64 @@
+@import '../../Styles/Vars.scss';
+@import '../../Styles/Mixins.scss';
+
+#random{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    padding: 0px;
+    background-color: rgb(10, 5, 54);
+    overflow: hidden;
+    h1{
+        padding: 0px;
+        font-size: 180px;
+        color: #08ffff;
+        font-family: $bree;
+        margin: 0px;
+        @media only screen and (max-width: 768px) {
+            font-size: 90px;
+          }
+    }
+}
+
+#random--container{
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 80%;
+    z-index: 10;
+    @media only screen and (max-width: 1050px) {
+        width: 80%;
+      }
+    @media only screen and (max-width: 768px) {
+        width: 80%;
+      }
+
+      #image--container{
+        padding: 50px 0px 50px;
+        #image{
+          width: 450px;
+          height: 600px;
+          background-color: white;
+          margin: 0 auto;
+          text-align: center;
+          padding: 0px;
+        }
+
+        #info--container{
+          position: absolute;
+          top: 5%;
+          left: 20%;
+          #info{
+            width: 200px;
+            height: 50px;
+            background-color: white;
+            padding: 5px 10px;
+          }
+        }
+
+
+      }
+    
+}

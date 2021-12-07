@@ -13,18 +13,22 @@ let urlRecent = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&
 let songCards = document.getElementsByClassName('card');
 let firstLoad = false;
 
+const ele = document.getElementById('card-container');
+
 class Lastfm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       recent: "",
+      pos: {left: 0, x: 0 },
     };
   }
 
   componentDidMount = () => {
     this.getRecent();
 
-    // set to 3 min in 30 sec average song length 210000)
+    this.ele = document.getElementById('card-container');
+
     setInterval(this.getRecent, 60000);
   }
 
@@ -40,6 +44,35 @@ class Lastfm extends React.Component {
     playSound(0);
     ReactGA.pageview(`song viewed`);
   }
+
+  handleEvent = (e) => {
+    if (e.type === "mousedown") {
+           console.log("down");
+           this.mouseDownHandler(e)
+       }
+    if (e.type === "mouseup") {
+        console.log("up");
+        document.removeEventListener('mousemove', this.mouseMoveHandler);
+
+      } 
+       else {
+
+       }
+   }
+   
+
+mouseDownHandler = (e) => {
+    this.state.pos = {
+        left: this.ele.scrollLeft,
+        x: e.clientX,
+    };
+    document.addEventListener('mousemove', this.mouseMoveHandler);
+};
+
+mouseMoveHandler = (e) => {
+  const dx = e.clientX - this.state.pos.x;
+  this.ele.scrollLeft = this.state.pos.left - dx;
+};
 
 eqCards = () => {
   const getRandom = String(-(Math.random()*20)-(25)) + 'px';
@@ -85,7 +118,7 @@ render() {
     recent
   } = this.state;
   return (
-    <div id="spotify">
+    <div id="spotify" onMouseDown={ this.handleEvent } onMouseUp={ this.handleEvent }>
       {/* <div id="header">
         <h1>Spotify</h1>
         <p>this is the where I say how cool this is</p>
@@ -100,24 +133,24 @@ render() {
                         <div className="artist-count">
                               <div className="artist-count-copy-cotainer">
                                 <div className="artist-count-copy">
-                                  <p>{i+1}</p>
+                                  <p className="unselectable">{i+1}</p>
                                 </div>
                               </div>
                           </div>
-                        <div className="artist-image">
+                        <div className="artist-image unselectable">
                           <div className="artist-image-bg" style={{backgroundImage:`url("${data.image[2]["#text"]}")`}}></div>
                         </div>
-                        <div className="artist-name">
+                        <div className="artist-name unselectable">
                           <p>{data.artist["#text"]}</p> 
                         </div>
-                        <div className="artist-album">
+                        <div className="artist-album unselectable">
                           <p>{data.album["#text"]}</p>
                         </div>
-                        <div className="artist-song">
+                        <div className="artist-song unselectable">
                           <p>{data.name}</p>
                         </div>
                         <div className="artist-link">
-                          <a href={data.url} data-param={JSON.stringify({name: data.artist["#text"], song: data.name})} rel="noopener noreferrer" target="_blank" onClick={this.handleClick}>Play Song</a>
+                          <a href={data.url} data-param={JSON.stringify({name: data.artist["#text"], song: data.name})} rel="noopener noreferrer" target="_blank" onClick={this.handleClick} className="unselectable">Play Song</a>
                         </div>
                       </div>
                   ))
