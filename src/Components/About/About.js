@@ -104,12 +104,12 @@ class About extends Component {
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('chicago')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('chicago')} onTouchCancel={this.handleOut}>Chicago,&nbsp;Illinois</span>
             {' '}
-            with my wife,
+            with my wife and
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('dog')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('dog')} onTouchCancel={this.handleOut}>Dog</span>
-            , and
+            {/* , and
             {' '}
-            <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('cat')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('cat')} onTouchCancel={this.handleOut}>Cat</span>
+            <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('cat')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('cat')} onTouchCancel={this.handleOut}>Cat</span> */}
             . I have spent approximately
             {' '}
             { getHours }

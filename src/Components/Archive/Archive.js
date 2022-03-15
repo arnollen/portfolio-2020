@@ -35,7 +35,7 @@ class Archive extends Component {
       filteredProjects = projects.filter((project) => project.type === type);
       this.setState({ archive: filteredProjects });
     } else {
-      filteredProjects = projects.slice(5, projects.length);
+      filteredProjects = projects.slice(3, projects.length);
       this.setState({ archive: filteredProjects });
     }
     return filteredProjects;

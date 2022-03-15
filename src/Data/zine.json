@@ -1,0 +1,34 @@
+{
+   "zine": [
+      {
+         "id": 0,
+         "name": "page title",
+         "image": "path to image"
+      },
+      {
+         "id": 1,
+         "name": "page title",
+         "image": "path to image"
+      },
+      {
+         "id": 2,
+         "name": "page title",
+         "image": "path to image"
+      },
+      {
+         "id": 3,
+         "name": "page title",
+         "image": "path to image"
+      },
+      {
+         "id": 4,
+         "name": "page title",
+         "image": "path to image"
+      },
+      {
+         "id": 5,
+         "name": "page title",
+         "image": "path to image"
+      }
+   ]
+}

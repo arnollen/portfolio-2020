@@ -83,7 +83,7 @@ class Projects extends Component {
           {
             projects.length === 0
               ? ''
-              : projects.slice(0, 5).map((clients) => (
+              : projects.slice(0, 3).map((clients) => (
                   <div key={clients.id} className="project--single">
                     <div>
                       <div className="project--type"><h3>{clients.type}</h3></div>
@@ -106,16 +106,25 @@ class Projects extends Component {
               ))
             }
             <Element name="about-scroll-to" id="about-scroll-to" />
+
             <Ticker header="ABOUT" body="A little history about myself and my career" body2="You could also check out my linkedin" gif="https://media.giphy.com/media/xYbNcQcQq3V4s/giphy.gif" />
             <About />
+
             <Element name="archive-scroll-to" id="archive-scroll-to" />
+
             <Ticker header="ARCHIVE" body="An archive of past portfolio work" body2="some of my favorite projects through out my career" gif="https://media.giphy.com/media/xkmQfH1TB0dLW/giphy.gif" />
             <Archive />
+            
             <Element name="music-scroll-to" id="music-scroll-to" />
+
             <Ticker header="MY PLAYLIST" body="The best way to know some one is by there music choices" body2="My last 25 songs played on Spotify, It may be on random don't judge :)" gif="https://media.giphy.com/media/pHZbB5h1K8OaSkFquN/giphy.gif" />
+
             <Spotify />
-            {/* <Ticker header="The pencil" body="The pencil is one of mans simplest tools" body2="Nothing like making a little something from nothing." gif="https://media.giphy.com/media/Pv3cmW2HAmvsc/giphy.gif" /> */}
-            {/* <RandomContent /> */}
+
+            {/* <Ticker header="Random Zine" body="The pencil is one of mans simplest tools" body2="Nothing like making a little something from nothing." gif="https://media.giphy.com/media/Pv3cmW2HAmvsc/giphy.gif" />
+
+            <RandomContent /> */}
+
             <Footer />
         </div>
       </div>
