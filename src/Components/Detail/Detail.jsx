@@ -16,13 +16,49 @@ import FooterDetails from '../FooterDetail/FooterDetail';
 import Navigation from '../Navigation/Navigation';
 import ViewCounter from '../ViewCounter/ViewCounter';
 import MouseFly from '../MouseFly/MouseFly';
-import { playSound} from '../SoundManager/SoundManager';
+import { playSound } from '../SoundManager/SoundManager';
 import './Detail.scss';
 
 let contextProjects = projectData.projects;
 let projCount = '';
 
 class Detail extends Component {
+  static createImageArray = (theImages) => {
+    const imgPath = '/images/clients/';
+    const imageSplit = theImages.split(',');
+    const imageSet = imageSplit.map((x) => imgPath + x);
+    return imageSet;
+  };
+
+  static createCopyArray = (theCopy) => {
+    let copySplit = theCopy.split(',');
+    // eslint-disable-next-line no-unused-vars
+    copySplit = copySplit.map((item, key) => item.split('|').pop().replace(/_/g, ','));
+    return copySplit;
+  };
+
+  static createHeaderArray = (theHeaders) => {
+    const headerSplit = theHeaders.split('|');
+    const headerSet = String(headerSplit).split(',');
+    return headerSet;
+  };
+
+  static nextPrev = (theData, current) => {
+    let setPrev;
+    let setNext;
+    if (current === 0) {
+      setPrev = theData[theData.length - 1].route.path;
+    } else {
+      setPrev = theData[current - 1].route.path;
+    }
+    if (current === theData.length - 1) {
+      setNext = theData[0].route.path;
+    } else {
+      setNext = theData[current + 1].route.path;
+    }
+    this.setState({ nextLink: setNext, prevLink: setPrev });
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -42,15 +78,15 @@ class Detail extends Component {
       widthWin: window.innerWidth,
       projectAmount: thecontext.projects.length,
       count: thecontext.count,
-      stayFly: thecontext.fly
+      stayFly: thecontext.fly,
     };
     thecontext.projects = projectData.projects;
     this.TheProps = this.props;
-    this.TheState = this.state;
+    // this.TheState = this.state;
   }
 
-  componentDidMount = () => {
-    let contextProjects = projectData.projects;
+  componentDidMount() {
+    contextProjects = projectData.projects;
     this.setState({
       project: contextProjects,
       currentTitle: contextProjects[this.TheProps.content].name,
@@ -71,17 +107,21 @@ class Detail extends Component {
     window.scrollTo(0, 0);
   }
 
-  componentDidUpdate = () => {
+  componentDidUpdate() {
     projCount = setTimeout(this.textContext, 500);
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     clearTimeout(projCount);
   }
 
+  static handleClick = () => {
+    playSound(0);
+  };
+
   textContext = () => {
     this.setState({ count: thecontext.count, stayFly: thecontext.fly });
-  }
+  };
 
   buildDetails = () => {
     const { currentColor } = this.state;
@@ -95,7 +135,7 @@ class Detail extends Component {
 
     const finalCount = handleCount(contextProjects[this.TheProps.content], thecontext.count);
     thecontext.count = finalCount;
-  }
+  };
 
   backColorAnimation = (theColor) => {
     const getColor = hexToRgbA(theColor);
@@ -122,49 +162,9 @@ class Detail extends Component {
     gsap.to(['#prev--top', '#prev--top--bottom', '#next--top', '#next--top--bottom'], 0.5, {
       opacity: 1, ease: Linear.easeOut, rotationZ: 0.01, force3D: true, overwrite: true,
     });
-  }
+  };
 
-  createImageArray = (theImages) => {
-    const imgPath = '/images/clients/';
-    const imageSplit = theImages.split(',');
-    const imageSet = imageSplit.map((x) => imgPath + x);
-    return imageSet;
-  }
-
-  createCopyArray = (theCopy) => {
-    let copySplit = theCopy.split(',');
-    // eslint-disable-next-line no-unused-vars
-    copySplit = copySplit.map((item, key) => item.split('|').pop().replace(/_/g, ','));
-    return copySplit;
-  }
-
-  createHeaderArray = (theHeaders) => {
-    const headerSplit = theHeaders.split('|');
-    const headerSet = String(headerSplit).split(',');
-    return headerSet;
-  }
-
-  nextPrev = (theData, current) => {
-    let setPrev;
-    let setNext;
-    if (current === 0) {
-      setPrev = theData[theData.length - 1].route.path;
-    } else {
-      setPrev = theData[current - 1].route.path;
-    }
-    if (current === theData.length - 1) {
-      setNext = theData[0].route.path;
-    } else {
-      setNext = theData[current + 1].route.path;
-    }
-    this.setState({ nextLink: setNext, prevLink: setPrev });
-  }
-
-  handleClick = () => {
-    playSound(0);
-  }
-
-  render = () => {
+  render() {
     const {
       currentProject,
       currentTitle,
@@ -182,7 +182,7 @@ class Detail extends Component {
       projectAmount,
       count,
       widthWin,
-      stayFly
+      stayFly,
     } = this.state;
 
     const isMobile = widthWin <= 768;
@@ -190,10 +190,9 @@ class Detail extends Component {
     let flyState = '';
     if (stayFly) {
       flyState = (
-        <MouseFly></MouseFly>
+        <MouseFly />
       );
-    }
-    else{
+    } else {
       flyState = '';
     }
     if (!isMobile) {
@@ -206,7 +205,6 @@ class Detail extends Component {
     } else {
       MobileContent = '';
     }
-  
 
     return (
       <div id="detail">

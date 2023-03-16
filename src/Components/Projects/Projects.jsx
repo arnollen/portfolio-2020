@@ -1,19 +1,18 @@
 /* eslint-disable react/jsx-indent */
 /* eslint-disable react/jsx-filename-extension */
+/* eslint-disable max-len */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import gsap, { Linear } from 'gsap';
 import parse from 'html-react-parser';
 import { Element } from 'react-scroll';
 import ReactGA from 'react-ga';
-import { playSound} from '../SoundManager/SoundManager';
+import { playSound } from '../SoundManager/SoundManager';
 import Logo from '../Logo/Logo';
 import Ticker from '../Ticker/Ticker';
 import Archive from '../Archive/Archive';
 import About from '../About/About';
 import Spotify from '../Spotify/Spotify';
-import RandomContent from '../RandomContent/RandomContent';
-
 import Footer from '../Footer/Footer';
 import { thecontext } from '../Context/Context';
 import './Projects.scss';
@@ -22,9 +21,12 @@ class Projects extends Component {
   constructor(props) {
     super(props);
     this.state = { projects: thecontext.projects };
+    this.getColor = '';
+    this.getcontext = thecontext;
+    this.setSound = playSound;
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     const contextProjects = thecontext.projects;
     this.setState({ projects: contextProjects });
     this.scrollToSection();
@@ -32,44 +34,32 @@ class Projects extends Component {
     ReactGA.pageview('projects page');
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
   }
 
-  componentDidUpdate = () => {
-
+  handleClick() {
+    this.setSound(0);
   }
 
   scrollToSection = () => {
-    const getScroll = thecontext.scrollSection;
+    const getScroll = this.getcontext.scrollSection;
     const elem = document.getElementById(getScroll);
     const top = elem.offsetTop;
     setTimeout(() => {
       window.scrollTo({ top, left: 0, behavior: 'smooth' });
     }, 500);
     ReactGA.modalview(`go to ${getScroll}`);
-  }
+  };
 
   backColorAnimation = (theColor) => {
-    const getColor = String(theColor);
+    this.getColor = String(theColor);
     gsap.to('body', 1, {
-      backgroundColor: getColor,
+      backgroundColor: this.getColor,
       opacity: 1,
       ease: Linear.easeOut,
       overwrite: true,
     });
-  }
-
-  handleClick = () => {
-    playSound(0);
-  }
-
-  handleOver = () =>{
-    // thecontext.flySpeed = 1;
-  }
-
-  handleOut = () =>{
-    // thecontext.flySpeed = 0.5;
-  }
+  };
 
   render() {
     const { projects } = this.state;
@@ -91,13 +81,13 @@ class Projects extends Component {
                     <div style={{ backgroundColor: clients.bgColor }}>
                       <div className="project--container">
                         <div className="bigger"><span className="bigger--count">{clients.id + 1}</span></div>
-                        <div className="project--hover--set" id={`project--hover--${clients.id}`} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={this.handleOver} onMouseOut={this.handleOut} />
+                        <div className="project--hover--set" id={`project--hover--${clients.id}`} />
                         <div className="project--details">
                         <div><h1>{parse(clients.name)}</h1></div>
                         <div className="header--boarder" />
                         <div><p>{parse(clients.description)}</p></div>
                         <div className="proj--link--list">
-                          <Link to={clients.route.path} data={clients} onClick={() => this.handleClick()} onMouseOver={this.handleOver} onMouseOut={this.handleOut}>VIEW</Link>
+                          <Link to={clients.route.path} data={clients} onClick={() => this.handleClick()}>VIEW</Link>
                         </div>
                         </div>
                       </div>
@@ -108,13 +98,14 @@ class Projects extends Component {
             <Element name="about-scroll-to" id="about-scroll-to" />
 
             <Ticker header="ABOUT" body="A little history about myself and my career" body2="You could also check out my linkedin" gif="https://media.giphy.com/media/xYbNcQcQq3V4s/giphy.gif" />
+
             <About />
 
             <Element name="archive-scroll-to" id="archive-scroll-to" />
 
             <Ticker header="ARCHIVE" body="An archive of past portfolio work" body2="some of my favorite projects through out my career" gif="https://media.giphy.com/media/xkmQfH1TB0dLW/giphy.gif" />
             <Archive />
-            
+
             <Element name="music-scroll-to" id="music-scroll-to" />
 
             <Ticker header="MY PLAYLIST" body="The best way to know some one is by there music choices" body2="My last 25 songs played on Spotify, It may be on random don't judge :)" gif="https://media.giphy.com/media/pHZbB5h1K8OaSkFquN/giphy.gif" />

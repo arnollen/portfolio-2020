@@ -10,7 +10,7 @@ class Favorites extends React.Component {
   }
 
   // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps() {
+  componentDidUpdate() {
     this.setState({ favorites: thecontext.favorites });
   }
 

@@ -11,7 +11,7 @@ class Logo extends Component {
 
   colorCycles = ['#ffe600', '#ff0000', '#2912D6', '#45FF00'];
 
-  colorTime = 15;
+  // colorTime = 15;
 
   colorTrans = 2;
 
@@ -22,12 +22,12 @@ class Logo extends Component {
     this.state = { hidden: 'block' };
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.cycleIt = true;
     this.goComplete();
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     this.cycleIt = false;
   }
 
@@ -35,10 +35,9 @@ class Logo extends Component {
     this.maxColor = this.colorCycles.length - 1;
     const getColor = this.colorCycles[this.currentColor];
 
-    gsap.to('body', this.colorTrans,
-      {
-        backgroundColor: getColor, opacity: 1, ease: Linear.easeOut, delay: 3, overwrite: false,
-      });
+    gsap.to('body', this.colorTrans, {
+      backgroundColor: getColor, opacity: 1, ease: Linear.easeOut, delay: 3, overwrite: false,
+    });
 
     if (this.currentColor !== this.maxColor) {
       this.currentColor += 1;
@@ -46,13 +45,13 @@ class Logo extends Component {
       this.currentColor = 0;
     }
     // gsap.delayedCall(this.colorTime, this.goComplete, []);
-  }
+  };
 
   goComplete = () => {
     if (this.cycleIt === true) {
       this.appColorAnimation();
     }
-  }
+  };
 
   render() {
     const { hidden } = this.state;

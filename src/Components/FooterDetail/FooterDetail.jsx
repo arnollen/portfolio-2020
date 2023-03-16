@@ -1,24 +1,24 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import { playSound} from '../SoundManager/SoundManager';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { playSound } from '../SoundManager/SoundManager';
 
 import '../Footer/Footer.scss';
 import '../Detail/Detail.scss';
 
 class FooterDetail extends Component {
+  static handleClick = () => {
+    playSound(0);
+  };
+
   constructor(props) {
     super(props);
     this.state = {};
   }
 
-  componentDidMount = () => {
-  }
-
-  handleClick = () => {
-    playSound(0);
+  componentDidMount() {
   }
 
   render() {
@@ -53,9 +53,9 @@ class FooterDetail extends Component {
 }
 
 FooterDetail.propTypes = {
-  prev: PropTypes.string,
-  next: PropTypes.string,
-  thedata: PropTypes.func,
+  prev: PropTypes.string.isRequired,
+  next: PropTypes.string.isRequired,
+  thedata: PropTypes.func.isRequired,
 };
 
 export default FooterDetail;

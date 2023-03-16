@@ -5,7 +5,7 @@ import gsap, {
   SteppedEase, Linear, Expo, Back,
 } from 'gsap';
 import ReactGA from 'react-ga';
-import { playSound} from '../SoundManager/SoundManager'
+import { playSound } from '../SoundManager/SoundManager';
 import './Navigation.scss';
 import NavigationButton from '../../Images/infoClose.png';
 import { thecontext } from '../Context/Context';
@@ -19,6 +19,10 @@ import NavigationData from '../../Data/navigation.json';
 let scrollTimer = '';
 
 class Navigation extends Component {
+  static handleOut = (theTag) => {
+    gsap.set(theTag, { display: 'none' });
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -27,37 +31,23 @@ class Navigation extends Component {
       widthWin: window.innerWidth,
       heightWin: window.innerHeight,
     };
+    this.getcontext = thecontext;
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.setState({ navigationWin: NavigationData.navigation });
     window.addEventListener('resize', this.handleWindowSizeChange);
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.handleWindowSizeChange);
     clearInterval(scrollTimer);
-  }
-
-  scrollToSection = () => {
-    clearInterval(scrollTimer);
-    if (window.location.pathname === '/') {
-      const getScroll = thecontext.scrollSection;
-      if (getScroll !== 'none') {
-        const elem = document.getElementById(getScroll);
-        const top = elem.offsetTop;
-        scrollTimer = setTimeout(() => {
-          window.scrollTo({ top, left: 0, behavior: 'smooth' });
-        }, 500);
-        ReactGA.modalview(`go to ${getScroll}`);
-      }
-    }
   }
 
   handleClick = (divTo) => {
     const { isToggleOn } = this.state;
 
-    if(divTo){
+    if (divTo) {
       thecontext.scrollSection = divTo;
     }
 
@@ -121,14 +111,13 @@ class Navigation extends Component {
         onComplete: this.goScroll,
       });
     }
-  }
+  };
 
   goScroll = () => {
-    console.log(thecontext.scrollSection)
-    if(thecontext.scrollSection !== 'none'){
+    if (thecontext.scrollSection !== 'none') {
       this.scrollToSection();
     }
-  }
+  };
 
   handleOver = (theTag) => {
     const { widthWin } = this.state;
@@ -146,11 +135,22 @@ class Navigation extends Component {
         force3D: true,
       });
     }
-  }
+  };
 
-  handleOut = (theTag) => {
-    gsap.set(theTag, { display: 'none' });
-  }
+  scrollToSection = () => {
+    clearInterval(scrollTimer);
+    if (window.location.pathname === '/') {
+      const getScroll = this.getcontext.scrollSection;
+      if (getScroll !== 'none') {
+        const elem = document.getElementById(getScroll);
+        const top = elem.offsetTop;
+        scrollTimer = setTimeout(() => {
+          window.scrollTo({ top, left: 0, behavior: 'smooth' });
+        }, 500);
+        ReactGA.modalview(`go to ${getScroll}`);
+      }
+    }
+  };
 
   handleWindowSizeChange = () => {
     const {
@@ -170,17 +170,16 @@ class Navigation extends Component {
     }
   };
 
-  killTheFly = () =>{
-    if(thecontext.fly){
+  killTheFly = () => {
+    if (thecontext.fly) {
       thecontext.fly = false;
-    }
-    else{
+    } else {
       thecontext.fly = true;
     }
 
     this.handleClick();
     console.log(thecontext.fly);
-  }
+  };
 
   render() {
     const { navigationWin } = this.state;
@@ -228,18 +227,18 @@ class Navigation extends Component {
                      }
 
                      if (index === 6) {
-                      return (
-                        <div className="bottom--link--container" key={navigation.id}>
-                          <div className="side--link navi--bar--show">
-                            {/* eslint-disable-next-line max-len */}
-                            <Link to="#" className="bottom--link" onClick={() => this.killTheFly()}>
-                              {navigation.copy}
-                              </Link>
+                       return (
+                         <div className="bottom--link--container" key={navigation.id}>
+                           <div className="side--link navi--bar--show">
+                             {/* eslint-disable-next-line max-len */}
+                             <Link to="#top" className="bottom--link" onClick={() => this.killTheFly()}>
+                               {navigation.copy}
+                             </Link>
 
-                          </div>
-                        </div>
-                      );
-                    }
+                           </div>
+                         </div>
+                       );
+                     }
                      return null;
                    })
                 }

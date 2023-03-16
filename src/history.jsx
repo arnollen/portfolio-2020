@@ -11,11 +11,11 @@ class Spy extends React.Component {
     globalHistory = props.history;
   }
 
-  componentDidUpdate = () => {
+  componentDidUpdate() {
     globalHistory = this.props.history;
   }
 
-  render = () => null
+  render() { return null; }
 }
 
 export const GlobalHistory = withRouter(Spy);

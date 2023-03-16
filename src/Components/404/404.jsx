@@ -8,11 +8,11 @@ class fourzerofour extends Component {
     this.state = {};
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     setTimeout(() => { window.location.href = '/'; }, 10);
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
   }
 
   render() {

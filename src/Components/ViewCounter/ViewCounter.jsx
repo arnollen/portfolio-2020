@@ -12,11 +12,7 @@ class ViewCounter extends Component {
     };
   }
 
-  componentDidMount = () => {
-  }
-
-  componentWillUnmount = () => {
-
+  componentDidMount() {
   }
 
   render() {

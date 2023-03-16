@@ -14,7 +14,7 @@ class Ticker extends Component {
     };
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     const myProps = this.props;
 
     this.setState({
@@ -24,13 +24,6 @@ class Ticker extends Component {
       scrollGif: myProps.gif,
     });
   }
-
-  componentWillUnmount = () => {
-  }
-
-  componentDidUpdate = () => {
-  }
-
 
   render() {
     const {

@@ -9,7 +9,7 @@ class EmbedBody extends Component {
     this.state = { };
   }
 
-  render = () => {
+  render() {
     const { theBody, theIndex } = this.props;
     if (theBody[theIndex] === '') {
       return null;
@@ -22,11 +22,9 @@ class EmbedBody extends Component {
   }
 }
 
-
 EmbedBody.propTypes = {
   theBody: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])).isRequired,
   theIndex: PropTypes.number.isRequired,
 };
-
 
 export default EmbedBody;

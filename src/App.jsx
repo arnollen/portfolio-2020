@@ -16,12 +16,12 @@ class App extends Component {
       widthWin: window.innerWidth,
       projectAmount: 0,
       count: thecontext.count,
-      stayFly: thecontext.fly
+      stayFly: thecontext.fly,
     };
     thecontext.projects = projectData.projects;
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
 
     setInterval(this.textContext, 500);
@@ -29,37 +29,41 @@ class App extends Component {
     this.getProjectAmount();
   }
 
-  textContext = () => {
-    this.setState({ count: thecontext.count, stayFly: thecontext.fly });
-  }
-
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.handleWindowSizeChange);
   }
+
+  textContext = () => {
+    this.setState({ count: thecontext.count, stayFly: thecontext.fly });
+  };
 
   handleWindowSizeChange = () => {
     this.setState({ widthWin: window.innerWidth });
   };
 
-  changeUrl = () => {
-  }
+  // changeUrl = () => {
+  // };
 
   getProjectAmount = () => {
     const theProjects = thecontext.projects.length;
     this.setState({ projectAmount: theProjects });
-  }
+  };
 
-  render = () => {
-    const { widthWin, projectAmount, count, stayFly } = this.state;
+  render() {
+    const {
+      widthWin,
+      projectAmount,
+      count,
+      stayFly,
+    } = this.state;
     const isMobile = widthWin <= 768;
     let MobileContent = '';
     let flyState = '';
     if (stayFly) {
       flyState = (
-        <MouseFly></MouseFly>
+        <MouseFly />
       );
-    }
-    else{
+    } else {
       flyState = '';
     }
     if (!isMobile) {
@@ -75,8 +79,10 @@ class App extends Component {
     return (
       <div>
         {MobileContent}
-        <Navigation />
-        <Projects />
+        <React.StrictMode>
+          <Navigation />
+          <Projects />
+        </React.StrictMode>
         <div className="App" />
       </div>
     );

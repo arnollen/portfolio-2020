@@ -1,33 +1,51 @@
 /* eslint-disable react/jsx-indent */
 /* eslint-disable react/jsx-filename-extension */
+/* eslint-disable max-len */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
-import { playSound} from '../SoundManager/SoundManager';
 import gsap, { Linear } from 'gsap';
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
+import { playSound } from '../SoundManager/SoundManager';
 import { ProjectCount, thecontext } from '../Context/Context';
-import ArchiveSelect from './ArchiveSelect/ArchiveSelect';
+// import ArchiveSelect from './ArchiveSelect/ArchiveSelect';
 import './Archive.scss';
 
 let contextProjects = [];
 let setProjects = [];
 
 class Archive extends Component {
+  static transitionIn = (theClass) => {
+    gsap.set(theClass, {
+      opacity: 0,
+      ease: Linear.EaseIn,
+      overwrite: false,
+    });
+    gsap.staggerTo(theClass, 0.3, {
+      opacity: 1,
+      ease: Linear.EaseIn,
+      overwrite: true,
+    }, 0.2);
+  };
+
   constructor(props) {
     super(props);
     contextProjects = thecontext.projects;
     this.state = { archive: thecontext.projects };
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     contextProjects = thecontext.projects;
     setProjects = this.filterProjects(thecontext.projectType, contextProjects);
     this.setState({ archive: setProjects });
   }
 
-  componentDidUpdate = () => {
+  componentDidUpdate() {
   }
+
+  static handleClick = () => {
+    playSound(0);
+  };
 
   filterProjects = (type, projects) => {
     let filteredProjects = [];
@@ -39,37 +57,20 @@ class Archive extends Component {
       this.setState({ archive: filteredProjects });
     }
     return filteredProjects;
-  }
+  };
 
-  transitionIn = (theClass) => {
-    gsap.set(theClass, {
-      opacity: 0,
-      ease: Linear.EaseIn,
-      overwrite: false,
-    });
-    gsap.staggerTo(theClass, 0.3, {
-      opacity: 1,
-      ease: Linear.EaseIn,
-      overwrite: true,
-    }, 0.2);
-  }
-
-  handleClick = () => {
-    playSound(0);
-  }
-
-  onChangeValueHandler = (val) => {
-    thecontext.projectType = val.value;
-    this.filterProjects(thecontext.projectType, contextProjects);
-    setTimeout(() => { this.transitionIn('.archive--single'); }, 100);
-    ReactGA.pageview(`Archive filtered ${val.value}`);
-  }
+  // onChangeValueHandler = (val) => {
+  //   thecontext.projectType = val.value;
+  //   this.filterProjects(thecontext.projectType, contextProjects);
+  //   setTimeout(() => { this.transitionIn('.archive--single'); }, 100);
+  //   ReactGA.pageview(`Archive filtered ${val.value}`);
+  // };
 
   render() {
     const { archive } = this.state;
     return (
       <div>
-        <ArchiveSelect value={thecontext.projectType} onChangeValue={this.onChangeValueHandler} />
+        {/* <ArchiveSelect value={thecontext.projectType} onChangeValue={this.onChangeValueHandler} /> */}
         <div id="archive--single--pin" />
         <div id="archive--hide">
           {

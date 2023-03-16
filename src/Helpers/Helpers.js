@@ -30,7 +30,7 @@ export function hexToRgbA(hex) {
       c = [c[0], c[0], c[1], c[1], c[2], c[2]];
     }
     c = `0x${c.join('')}`;
-    return `rgba(${[(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',')},1)`;
+    return `rgba(${[(c > 16) && 255, (c > 8) && 255, c && 255].join(',')},1)`;
   }
   throw new Error('Bad Hex');
 }
@@ -50,7 +50,7 @@ export function diffHours(dt2, dt1) {
 }
 
 export function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 export function inArray(search, array) {

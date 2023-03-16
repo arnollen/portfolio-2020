@@ -4,7 +4,7 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import PropTypes from 'prop-types';
 import { thecontext } from '../../Context/Context';
-import { playSound} from '../../SoundManager/SoundManager';
+import { playSound } from '../../SoundManager/SoundManager';
 import '../Archive.scss';
 
 const animatedComponents = makeAnimated();
@@ -64,46 +64,46 @@ const customStyles = ({
 });
 
 class ArchiveSelect extends Component {
+  static change = (event) => {
+    thecontext.projectType = event.value;
+  };
+
+  static handleClick = () => {
+    playSound(0);
+  };
+
   constructor(props) {
     super(props);
     this.state = {
     };
   }
 
-  componentDidMount = () => {
-    this.setSelectOptions();
+  componentDidMount() {
+    
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
 
   }
 
-  change = (event) => {
-    thecontext.projectType = event.value;
-  }
-
-  setSelectOptions = () => {
-    thecontext.projects.map((project) => {
-      const getType = project.type;
-      const testType = optionsTest.includes(getType);
-      if (!testType) {
-        optionsTest.push(getType);
-        options.push({ value: getType, label: `VIEW ${getType}` });
-      }
-      return null;
-    });
-  }
-
-  handleClick = () => {
-    playSound(0);
-  }
+  // setSelectOptions = () => {
+  //   thecontext.projects.map((project) => {
+  //     const getType = project.type;
+  //     const testType = optionsTest.includes(getType);
+  //     if (!testType) {
+  //       optionsTest.push(getType);
+  //       options.push({ value: getType, label: `VIEW ${getType}` });
+  //     }
+  //     return null;
+  //   });
+  // };
 
   render() {
     const { onChangeValue } = this.props;
     return (
       <div>
         <div id="archive--container">
-          <div className="archive--100" onClick={() => this.handleClick()}>
+          <div className="archive--100" onClick={() => {}} onKeyUp={this.handleClick} role="button" tabIndex="0">
             <Select components={animatedComponents} isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ label: 'VIEW All', value: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
           </div>
         </div>

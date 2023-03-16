@@ -10,7 +10,7 @@ class Bio extends React.Component {
   }
 
   // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps(newProps) {
+  componentDidUpdate() {
     const removeAnchors = newProps.bio.replace(/<\/?a[^>]*>/g, '');
     this.setState({ data: removeAnchors, artist: newProps.name, url: newProps.page });
   }

@@ -1,12 +1,12 @@
-import { Howl, Howler } from 'howler';
-
+import { Howl } from 'howler';
+// , Howler
 import btnAudio from '../../Sound/btn_test.mp3';
 import topAudio from '../../Sound/top.mp3';
 
 const btn = new Howl({
   src: [btnAudio],
   loop: false,
-  volume: .01,
+  volume: 0.01,
   autoplay: false,
 });
 
@@ -15,7 +15,7 @@ const top = new Howl({
   loop: false,
   volume: 0,
   autoplay: false,
-  delay: .5
+  delay: 0.5,
 });
 
 const mySounds = [

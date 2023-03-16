@@ -8,6 +8,17 @@ import './MouseFly.scss';
 import FlyImage from '../../Images/gifs/mouseFlySprite.png';
 
 class MouseFly extends Component {
+  static rotateOnMouse = (mX, mY, elt) => {
+    const offset = elt.offset();
+    const centerX = (offset.left) + (elt.width() / 2);
+    const centerY = (offset.top) + (elt.height() / 2);
+    const mouseX = mX;
+    const mouseY = mY;
+    const radians = Math.atan2(mouseX - centerX, mouseY - centerY);
+    const degree = (radians * (180 / Math.PI) * -1) + 90;
+    return degree;
+  };
+
   setY;
 
   setX;
@@ -24,11 +35,11 @@ class MouseFly extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { speed: thecontext.flySpeed
-    };
+    this.state = { speed: thecontext.flySpeed };
+    this.mouseTween = new TimelineMax({ delay: 0 });
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     document.body.addEventListener('mousemove', (e) => {
       this.moveFly(e, this);
     });
@@ -43,12 +54,10 @@ class MouseFly extends Component {
       this.moveFly(e, this);
     });
 
-    console.log("help")
-
     this.flyAnimation();
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     document.body.removeEventListener('mousemove', (e) => {
       this.moveFly(e, this);
     });
@@ -81,19 +90,19 @@ class MouseFly extends Component {
       rotationZ: 0.01,
       force3D: true,
     });
-  }
+  };
 
   moveFlyChangeDown = () => {
     this.setOffsetX = Math.floor(((Math.random() * 600) - 300) + 100);
     this.setOffsetY = Math.floor(((Math.random() * 600) - 300) + 100);
     this.setOffsetRotation = '-150px -75px';
-  }
+  };
 
   moveFlyChangeUp = () => {
     this.setOffsetX = 50;
     this.setOffsetY = 50;
     this.setOffsetRotation = '-50px -25px';
-  }
+  };
 
   moveFly = (e) => {
     this.setY = e.pageY + this.setOffsetY;
@@ -109,7 +118,6 @@ class MouseFly extends Component {
       onComplete: MouseFly.rotateIT,
     });
 
-    this.mouseTween = new TimelineMax({ delay: 0 });
     this.mouseTween.add(gsap.to('#fly--mouse--container', 0.25, {
       top: this.setY,
       left: this.setX,
@@ -118,21 +126,7 @@ class MouseFly extends Component {
       force3D: true,
       overwrite: true,
     }));
-  }
-
-  rotateIt = () => {
-  }
-
-  rotateOnMouse = (mX, mY, elt) => {
-    const offset = elt.offset();
-    const centerX = (offset.left) + (elt.width() / 2);
-    const centerY = (offset.top) + (elt.height() / 2);
-    const mouseX = mX;
-    const mouseY = mY;
-    const radians = Math.atan2(mouseX - centerX, mouseY - centerY);
-    const degree = (radians * (180 / Math.PI) * -1) + 90;
-    return degree;
-  }
+  };
 
   render() {
     return (
