@@ -9,7 +9,7 @@ import { Element } from 'react-scroll';
 import ReactGA from 'react-ga';
 import projectData from '../../Data/data.json';
 import { ProjectCount, thecontext } from '../Context/Context';
-import { handleCount, hexToRgbA } from '../../Helpers/Helpers';
+import { handleCount } from '../../Helpers/Helpers';
 import EmbedVideo from './Embed/EmbedVideo';
 import EmbedBody from './Embed/EmbedBody';
 import EmbedHeader from './Embed/EmbedHeader';
@@ -48,6 +48,7 @@ class Detail extends Component {
     thecontext.projects = projectData.projects;
     this.TheProps = this.props;
     // this.TheState = this.state;
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -97,13 +98,13 @@ class Detail extends Component {
     if (contextProjects[this.TheProps.content].link !== '') {
       this.setState({ currentLink: contextProjects[this.TheProps.content].link });
     }
-
     const finalCount = handleCount(contextProjects[this.TheProps.content], thecontext.count);
     thecontext.count = finalCount;
   };
 
   backColorAnimation = (theColor) => {
-    const getColor = hexToRgbA(theColor);
+    const getColor = theColor;
+    console.log(theColor);
     const { currentVideo } = this.state;
     gsap.to('.detail--view--details', 0.01, {
       // eslint-disable-next-line max-len

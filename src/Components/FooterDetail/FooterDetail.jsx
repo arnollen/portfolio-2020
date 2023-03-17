@@ -9,17 +9,18 @@ import '../Footer/Footer.scss';
 import '../Detail/Detail.scss';
 
 class FooterDetail extends Component {
-  static handleClick = () => {
-    playSound(0);
-  };
-
   constructor(props) {
     super(props);
     this.state = {};
+    this.getSound = playSound;
   }
 
   componentDidMount() {
   }
+
+  handleClick = () => {
+    this.getSound(0);
+  };
 
   render() {
     const {

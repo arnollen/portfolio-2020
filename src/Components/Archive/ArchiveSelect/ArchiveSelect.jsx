@@ -64,18 +64,14 @@ const customStyles = ({
 });
 
 class ArchiveSelect extends Component {
-  static change = (event) => {
-    thecontext.projectType = event.value;
-  };
-
-  static handleClick = () => {
-    playSound(0);
-  };
-
   constructor(props) {
     super(props);
     this.state = {
     };
+
+    this.change = this.change(this);
+    this.handleClick = this.handleClick(this);
+    this.getSound = playSound;
   }
 
   componentDidMount() {
@@ -85,6 +81,14 @@ class ArchiveSelect extends Component {
   componentWillUnmount() {
 
   }
+
+  change = (event) => {
+    thecontext.projectType = event.value;
+  };
+
+  handleClick = () => {
+    this.getSound(0);
+  };
 
   // setSelectOptions = () => {
   //   thecontext.projects.map((project) => {

@@ -32,6 +32,9 @@ class Archive extends Component {
     super(props);
     contextProjects = thecontext.projects;
     this.state = { archive: thecontext.projects };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.getSound = playSound;
   }
 
   componentDidMount() {
@@ -43,8 +46,8 @@ class Archive extends Component {
   componentDidUpdate() {
   }
 
-  static handleClick = () => {
-    playSound(0);
+  handleClick = () => {
+    this.getSound(0);
   };
 
   filterProjects = (type, projects) => {

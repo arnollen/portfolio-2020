@@ -23,6 +23,7 @@ class Lastfm extends React.Component {
     this.getSound = playSound;
     this.getRandom = '';
     this.dx = '';
+    this.addIdToArray = this.addIdToArray.bind(this);
   }
 
   componentDidMount() {
@@ -89,11 +90,14 @@ class Lastfm extends React.Component {
   };
 
   setData = (data) => {
+    this.addIdToArray(data.recenttracks.track);
+
     this.eqCards();
 
     this.setState({
       recent: data.recenttracks.track,
     });
+
     if (songCards !== undefined) {
       if (firstLoad === true) {
         songCards.style.opacity = 0;
@@ -102,6 +106,13 @@ class Lastfm extends React.Component {
 
     firstLoad = false;
   };
+
+  addIdToArray(data) { // eslint-disable-line class-methods-use-this
+    const theData = data;
+    theData.forEach((item, i) => {
+      item.id = i + 1; // eslint-disable-line no-param-reassign
+    });
+  }
 
   render() {
     const {
@@ -118,7 +129,7 @@ class Lastfm extends React.Component {
                 recent.length === 0
                   ? ''
                   : recent.map((data, i) => (
-                    <div key={recent.id} className="card">
+                    <div key={data.id} className="card">
                       <div className="eq" id={`eq-${i}`} style={{ top: this.eqCards() }} />
                       <div className="artist-count">
                         <div className="artist-count-copy-cotainer">

@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import ReactGA from 'react-ga';
 import { diffHours, numberWithCommas } from '../../Helpers/Helpers';
 // import { playSound } from '../SoundManager/SoundManager';
@@ -25,11 +24,11 @@ class About extends Component {
   }
 
   componentDidMount() {
-    // this.cycleIt = true;
+
   }
 
   componentWillUnmount() {
-    // this.cycleIt = false;
+
   }
 
   handleOver = (topic) => {
@@ -38,22 +37,9 @@ class About extends Component {
     // playSound(0);
   };
 
-  handleOut = () => {
-    this.ReactDOM.unmountComponentAtNode(document.getElementById('about--roll--container'));
+  handleOut = () => { // eslint-disable-line class-methods-use-this
+    document.getElementById('about--gif').style.backgroundImage = 'none';
   };
-
-  // onMouseMove() {
-  //   // this.setState({ x: e.nativeEvent.screenX, y: e.nativeEvent.screenY });
-  // }
-
-  // rollFollow = () => {
-  //   const title = this.state;
-  //   const rollDiv = document.getElementById('about--roll--container');
-  //   const rollHeight = rollDiv.clientHeight;
-  //   const yOffset = 350 + rollHeight;
-  //   rollDiv.style.top = `${title.y - yOffset}px`;
-  //   rollDiv.style.left = `${title.x - 550}px`;
-  // };
 
   showImageRoll = (param) => {
     switch (param) {
@@ -91,8 +77,6 @@ class About extends Component {
         this.currentRoll = param;
     }
 
-    const element = <div id="about--gif" />;
-    ReactDOM.render(element, document.getElementById('about--roll--container'));
     document.getElementById('about--gif').style.backgroundImage = `url('${this.currentRoll}')`;
   };
 
@@ -151,7 +135,9 @@ class About extends Component {
 
           </p>
         </div>
-        <div id="about--roll--container" />
+        <div id="about--roll--container">
+          <div id="about--gif" />
+        </div>
       </div>
     );
   }
