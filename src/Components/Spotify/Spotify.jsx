@@ -13,29 +13,20 @@ const songCards = document.getElementsByClassName('card');
 let firstLoad = false;
 
 class Lastfm extends React.Component {
-  static handleClick = () => {
-    playSound(0);
-    ReactGA.pageview('song viewed');
-  };
-
-  static eqCards = () => {
-    const getRandom = `${String(-(Math.random() * 20) - (25))}px`;
-    return getRandom;
-  };
-
   constructor(props) {
     super(props);
     this.state = {
       recent: '',
       pos: { left: 0, x: 0 },
     };
+    this.ele = document.getElementById('card-container');
+    this.getSound = playSound;
+    this.getRandom = '';
+    this.dx = '';
   }
 
   componentDidMount() {
     this.getRecent();
-
-    this.ele = document.getElementById('card-container');
-
     setInterval(this.getRecent, 60000);
   }
 
@@ -52,19 +43,29 @@ class Lastfm extends React.Component {
     }
   };
 
-  //   DownHandler = (e) => {
-  //   this.setState({
-  //     pos:{
-  //       left: this.ele.scrollLeft,
-  //       x: e.clientX,
-  //     }
-  //   })
-  //   document.addEventListener('mousemove', this.mouseMoveHandler);
-  // };
+  handleClick = () => {
+    this.getSound(0);
+    ReactGA.pageview('song viewed');
+  };
+
+  eqCards = () => {
+    this.getRandom = `${String(-(Math.random() * 20) - (25))}px`;
+    return this.getRandom;
+  };
+
+  mouseDownHandler = (e) => {
+    // const { pos } = this.state;
+    this.state.pos = {
+      left: this.ele.scrollLeft,
+      x: e.clientX,
+    };
+    document.addEventListener('mousemove', this.mouseMoveHandler);
+  };
 
   mouseMoveHandler = (e) => {
-    const dx = e.clientX - this.state.pos.x;
-    this.ele.scrollLeft = this.state.pos.left - dx;
+    const { pos } = this.state;
+    this.dx = e.clientX - pos.x;
+    this.ele.scrollLeft = pos.left - this.dx;
   };
 
   getRecent = () => {
@@ -88,9 +89,6 @@ class Lastfm extends React.Component {
   };
 
   setData = (data) => {
-  // const newData = data.recenttracks.track[0].album["#text"];
-  // const oldData = this.state.recent[0];
-
     this.eqCards();
 
     this.setState({

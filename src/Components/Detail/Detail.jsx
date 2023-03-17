@@ -1,5 +1,6 @@
 /* eslint-disable no-bitwise */
 /* eslint-disable react/jsx-filename-extension */
+/* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import gsap, { Linear } from 'gsap';
 import { Link } from 'react-router-dom';
@@ -23,42 +24,6 @@ let contextProjects = projectData.projects;
 let projCount = '';
 
 class Detail extends Component {
-  static createImageArray = (theImages) => {
-    const imgPath = '/images/clients/';
-    const imageSplit = theImages.split(',');
-    const imageSet = imageSplit.map((x) => imgPath + x);
-    return imageSet;
-  };
-
-  static createCopyArray = (theCopy) => {
-    let copySplit = theCopy.split(',');
-    // eslint-disable-next-line no-unused-vars
-    copySplit = copySplit.map((item, key) => item.split('|').pop().replace(/_/g, ','));
-    return copySplit;
-  };
-
-  static createHeaderArray = (theHeaders) => {
-    const headerSplit = theHeaders.split('|');
-    const headerSet = String(headerSplit).split(',');
-    return headerSet;
-  };
-
-  static nextPrev = (theData, current) => {
-    let setPrev;
-    let setNext;
-    if (current === 0) {
-      setPrev = theData[theData.length - 1].route.path;
-    } else {
-      setPrev = theData[current - 1].route.path;
-    }
-    if (current === theData.length - 1) {
-      setNext = theData[0].route.path;
-    } else {
-      setNext = theData[current + 1].route.path;
-    }
-    this.setState({ nextLink: setNext, prevLink: setPrev });
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -115,7 +80,7 @@ class Detail extends Component {
     clearTimeout(projCount);
   }
 
-  static handleClick = () => {
+  handleClick = () => {
     playSound(0);
   };
 
@@ -145,7 +110,7 @@ class Detail extends Component {
       backgroundColor: getColor, opacity: 1, ease: Linear.easeOut, overwrite: true, force3D: true, rotationZ: 0.01,
     });
 
-    gsap.staggerTo(['.detail--header', '.detail--body', '.detail--img'], 0.3, {
+    gsap.to(['.detail--header', '.detail--body', '.detail--img'], 0.3, {
       opacity: 1, ease: Linear.EaseIn, rotationZ: 0.01, delay: 0.5, force3D: true,
     }, 0.2);
     if (currentVideo === '') {
@@ -163,6 +128,42 @@ class Detail extends Component {
       opacity: 1, ease: Linear.easeOut, rotationZ: 0.01, force3D: true, overwrite: true,
     });
   };
+
+  createCopyArray = (theCopy) => {
+    let copySplit = theCopy.split(',');
+    // eslint-disable-next-line no-unused-vars
+    copySplit = copySplit.map((item, key) => item.split('|').pop().replace(/_/g, ','));
+    return copySplit;
+  };
+
+  createHeaderArray = (theHeaders) => {
+    const headerSplit = theHeaders.split('|');
+    const headerSet = String(headerSplit).split(',');
+    return headerSet;
+  };
+
+  nextPrev = (theData, current) => {
+    let setPrev;
+    let setNext;
+    if (current === 0) {
+      setPrev = theData[theData.length - 1].route.path;
+    } else {
+      setPrev = theData[current - 1].route.path;
+    }
+    if (current === theData.length - 1) {
+      setNext = theData[0].route.path;
+    } else {
+      setNext = theData[current + 1].route.path;
+    }
+    this.setState({ nextLink: setNext, prevLink: setPrev });
+  };
+
+  createImageArray(theImages) {
+    const imgPath = '/images/clients/';
+    const imageSplit = theImages.split(',');
+    const imageSet = imageSplit.map((x) => imgPath + x);
+    return imageSet;
+  }
 
   render() {
     const {
