@@ -19,10 +19,6 @@ import NavigationData from '../../Data/navigation.json';
 let scrollTimer = '';
 
 class Navigation extends Component {
-  static handleOut = (theTag) => {
-    gsap.set(theTag, { display: 'none' });
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -32,6 +28,7 @@ class Navigation extends Component {
       heightWin: window.innerHeight,
     };
     this.getcontext = thecontext;
+    this.handleOut = this.handleOut.bind(this);
   }
 
   componentDidMount() {
@@ -43,6 +40,10 @@ class Navigation extends Component {
     window.removeEventListener('resize', this.handleWindowSizeChange);
     clearInterval(scrollTimer);
   }
+
+  handleOut = (theTag) => { // eslint-disable-line class-methods-use-this
+    gsap.set(theTag, { display: 'none' });
+  };
 
   handleClick = (divTo) => {
     const { isToggleOn } = this.state;
@@ -80,13 +81,14 @@ class Navigation extends Component {
         force3D: true,
       });
       gsap.set('.navi--bar--show', { y: 100, opacity: 0 });
-      gsap.staggerTo('.navi--bar--show', 0.2, {
+      gsap.to('.navi--bar--show', 0.2, {
         y: 0,
         opacity: 1,
         ease: Back.EaseOut,
         rotationZ: 0.01,
         force3D: true,
         delay: 0.5,
+        stagger: 0.1,
       }, 0.1);
     } else {
       ReactGA.modalview('navigation close');
