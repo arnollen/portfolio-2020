@@ -1,10 +1,8 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
-import gsap, { Linear, SteppedEase, TimelineMax } from 'gsap';
+import gsap, { Linear, SteppedEase } from 'gsap';
 import { thecontext } from '../Context/Context';
-
 import './MouseFly.scss';
-
 import FlyImage from '../../Images/gifs/mouseFlySprite.png';
 
 class MouseFly extends Component {
@@ -36,7 +34,7 @@ class MouseFly extends Component {
   constructor(props) {
     super(props);
     this.state = { speed: thecontext.flySpeed };
-    this.mouseTween = new TimelineMax({ delay: 0 });
+    this.mouseTween = gsap.timeline({ delay: 0 });
   }
 
   componentDidMount() {
@@ -74,14 +72,16 @@ class MouseFly extends Component {
   }
 
   flyAnimation = () => {
-    this.circleTween = new TimelineMax({ delay: 0, repeat: -1, repeatDelay: 0 });
-    this.circleTween.add(gsap.to('#fly--mouse', this.state.speed, {
-      rotation: '-360',
+    const { speed } = this.state;
+    this.circleTween = gsap.timeline({ delay: 0, repeat: -1, repeatDelay: 0 });
+    this.circleTween.from('#fly--mouse', {
+      rotation: '360',
       ease: Linear.easeOut,
       repeat: -1,
       transformOrigin: this.setOffsetRotation,
+      duration: speed,
       force3D: true,
-    }));
+    });
 
     gsap.to('#fly--mouse--img', 0.1, {
       repeat: -1,

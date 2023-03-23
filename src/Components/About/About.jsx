@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import ReactGA from 'react-ga';
 import { diffHours, numberWithCommas } from '../../Helpers/Helpers';
-// import { playSound } from '../SoundManager/SoundManager';
+import { playSound } from '../SoundManager/SoundManager';
 import './About.scss';
 
 const newDate = new Date();
@@ -34,7 +34,7 @@ class About extends Component {
   handleOver = (topic) => {
     this.showImageRoll(topic);
     ReactGA.modalview(`${topic}  about rollover`);
-    // playSound(0);
+    playSound(0);
   };
 
   handleOut = () => { // eslint-disable-line class-methods-use-this
