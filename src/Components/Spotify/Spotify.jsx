@@ -9,7 +9,6 @@ const user = 'arnollen';
 const amount = '24';
 const urlRecent = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${user}&api_key=${apiKey}&format=json&limit=${amount}&period=overall`;
 
-const songCards = document.getElementsByClassName('card');
 let firstLoad = false;
 
 class Lastfm extends React.Component {
@@ -19,7 +18,7 @@ class Lastfm extends React.Component {
       recent: '',
       pos: { left: 0, x: 0 },
     };
-    this.ele = document.getElementById('card-container');
+
     this.getSound = playSound;
     this.getRandom = '';
     this.dx = '';
@@ -28,6 +27,8 @@ class Lastfm extends React.Component {
 
   componentDidMount() {
     this.getRecent();
+    this.cardContainer = React.createRef();
+    this.songCards = React.createRef();
     setInterval(this.getRecent, 60000);
   }
 
@@ -55,24 +56,26 @@ class Lastfm extends React.Component {
   };
 
   mouseDownHandler = (e) => {
-    // const { pos } = this.state;
-    this.state.pos = {
-      left: this.ele.scrollLeft,
-      x: e.clientX,
-    };
+    this.setState({
+      pos: {
+        left: this.cardContainer.current.scrollLeft,
+        x: e.clientX,
+      },
+    });
+
     document.addEventListener('mousemove', this.mouseMoveHandler);
   };
 
   mouseMoveHandler = (e) => {
     const { pos } = this.state;
     this.dx = e.clientX - pos.x;
-    this.ele.scrollLeft = pos.left - this.dx;
+    this.cardContainer.current.scrollLeft = pos.left - this.dx;
   };
 
   getRecent = () => {
-    if (songCards !== undefined) {
+    if (this.songCards !== undefined) {
       if (firstLoad === true) {
-        songCards.style.opacity = 0;
+        this.songCards.current.style.opacity = 0;
       }
     }
     this.fetchRecent(urlRecent);
@@ -98,9 +101,9 @@ class Lastfm extends React.Component {
       recent: data.recenttracks.track,
     });
 
-    if (songCards !== undefined) {
+    if (this.songCards !== undefined) {
       if (firstLoad === true) {
-        songCards.style.opacity = 0;
+        this.songCards.current.style.opacity = 0;
       }
     }
 
@@ -124,7 +127,7 @@ class Lastfm extends React.Component {
         <h1>Spotify</h1>
         <p>this is the where I say how cool this is</p>
       </div> */}
-        <div id="card-container">
+        <div id="card-container" ref={this.cardContainer}>
           {
                 recent.length === 0
                   ? ''
