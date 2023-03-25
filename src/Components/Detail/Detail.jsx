@@ -38,8 +38,8 @@ class Detail extends Component {
       currentHeaders: [],
       currentLink: [],
       currentColor: '#000000',
-      nextLink: [],
-      prevLink: [],
+      nextLink: '',
+      prevLink: '',
       widthWin: window.innerWidth,
       projectAmount: thecontext.projects.length,
       count: thecontext.count,
@@ -104,7 +104,7 @@ class Detail extends Component {
 
   backColorAnimation = (theColor) => {
     const getColor = theColor;
-    console.log(theColor);
+
     const { currentVideo } = this.state;
     gsap.to('.detail--view--details', 0.01, {
       // eslint-disable-next-line max-len
@@ -273,7 +273,7 @@ class Detail extends Component {
                 })
 }
           </div>
-          <FooterDetails prev={prevLink} next={nextLink} thedata={projects} />
+          <FooterDetails prev={prevLink} next={nextLink} />
         </div>
       </div>
     );

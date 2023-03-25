@@ -26,16 +26,14 @@ class FooterDetail extends Component {
     const {
       prev,
       next,
-      thedata,
     } = this.props;
-
     return (
       <div id="footer-detail">
         <div id="detail--separator-navigation--bottom">
           <div id="separator--container--bottom">
             <div id="prev--top--bottom">
               <div id="prev--link--bottom">
-                <Link to={prev} data={thedata} className="view--project--prev" onClick={() => this.handleClick()}>prev</Link>
+                <Link to={prev} className="view--project--prev" onClick={() => this.handleClick()}>prev</Link>
               </div>
             </div>
             <ScrollLink className="scroll-to-link" activeClass="active" to="top-scroll-to" spy smooth="easeInOutCubic" duration={1000} onClick={() => this.handleClick()}>
@@ -43,7 +41,7 @@ class FooterDetail extends Component {
             </ScrollLink>
             <div id="next--top--bottom">
               <div id="next--link--bottom">
-                <Link to={next} data={thedata} className="view--project--next" onClick={() => this.handleClick()}>next</Link>
+                <Link to={next} className="view--project--next" onClick={() => this.handleClick()}>next</Link>
               </div>
             </div>
           </div>
@@ -56,7 +54,6 @@ class FooterDetail extends Component {
 FooterDetail.propTypes = {
   prev: PropTypes.string.isRequired,
   next: PropTypes.string.isRequired,
-  thedata: PropTypes.func.isRequired,
 };
 
 export default FooterDetail;
