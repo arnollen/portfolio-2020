@@ -1,11 +1,13 @@
-export function getData(dataPath) {
-  let getJson = [];
-  fetch(dataPath)
-    .then((response) => response.json())
-    .then((data) => {
-      getJson = data;
-      return getJson;
-    });
+/* eslint-disable no-bitwise */
+export async function getData(dataPath) {
+  try {
+    const response = await fetch(dataPath);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null; // or another default value appropriate for your use case
+  }
 }
 
 export function handleCount(theData, count) {
@@ -22,17 +24,18 @@ export function handleCount(theData, count) {
   return count;
 }
 
-export function hexToRgbA(hex) {
-  let c;
-  if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
-    c = hex.substring(1).split('');
-    if (c.length === 3) {
-      c = [c[0], c[0], c[1], c[1], c[2], c[2]];
-    }
-    c = `0x${c.join('')}`;
-    return `rgba(${[(c > 16) && 255, (c > 8) && 255, c && 255].join(',')},1)`;
+export function hexToRgbA(hex, alpha = 1) {
+  const hexInt = parseInt(hex.substring(1), 16);
+
+  if (Number.isNaN(hexInt) || hexInt < 0 || hexInt > 0xFFFFFF) {
+    throw new Error('Invalid Hex');
   }
-  throw new Error('Bad Hex');
+
+  const red = (hexInt >> 16) & 0xFF;
+  const green = (hexInt >> 8) & 0xFF;
+  const blue = hexInt & 0xFF;
+
+  return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
 }
 
 export function addValueToObject(theObj, prop, value) {

@@ -38,6 +38,7 @@
     "redux": "^4.2.1",
     "scrollmagic": "^2.0.8",
     "styled-components": "^5.3.9",
+    "three": "^0.151.3",
     "typescript": "^5.0.2",
     "yargs-parser": "^21.1.1"
   },
