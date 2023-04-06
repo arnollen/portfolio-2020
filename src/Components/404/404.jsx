@@ -1,25 +1,20 @@
-/* eslint-disable react/jsx-filename-extension */
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import '../../App.scss';
 
-class fourzerofour extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+function FourZeroFour() {
+  useEffect(() => {
+    const redirectTimer = setTimeout(() => {
+      window.location.href = '/';
+    }, 10);
 
-  componentDidMount() {
-    setTimeout(() => { window.location.href = '/'; }, 10);
-  }
+    return () => clearTimeout(redirectTimer);
+  }, []);
 
-  componentWillUnmount() {
-  }
-
-  render() {
-    return (
-      <div />
-    );
-  }
+  return (
+    <div>
+      <p>Traffic on the 404</p>
+    </div>
+  );
 }
 
-export default fourzerofour;
+export default FourZeroFour;
