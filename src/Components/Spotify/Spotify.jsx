@@ -20,8 +20,6 @@ class Lastfm extends React.Component {
     };
 
     this.getSound = playSound;
-    this.getRandom = '';
-    this.dx = '';
     this.addIdToArray = this.addIdToArray.bind(this);
   }
 
@@ -29,11 +27,11 @@ class Lastfm extends React.Component {
     this.getRecent();
     this.cardContainer = React.createRef();
     this.songCards = React.createRef();
-    setInterval(this.getRecent, 60000);
+    this.intervalId = setInterval(this.getRecent, 60000);
   }
 
   componentWillUnmount() {
-    clearInterval();
+    clearInterval(this.intervalId);
   }
 
   handleEvent = (e) => {
@@ -123,10 +121,6 @@ class Lastfm extends React.Component {
     } = this.state;
     return (
       <div id="spotify" onMouseDown={this.handleEvent} onMouseUp={this.handleEvent} role="button" tabIndex="0">
-        {/* <div id="header">
-        <h1>Spotify</h1>
-        <p>this is the where I say how cool this is</p>
-      </div> */}
         <div id="card-container" ref={this.cardContainer}>
           {
                 recent.length === 0

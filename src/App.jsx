@@ -41,12 +41,11 @@ class App extends Component {
     this.setState({ widthWin: window.innerWidth });
   };
 
-  // changeUrl = () => {
-  // };
-
   getProjectAmount = () => {
     const theProjects = thecontext.projects.length;
-    this.setState({ projectAmount: theProjects });
+    if (theProjects != null) {
+      this.setState({ projectAmount: theProjects });
+    }
   };
 
   render() {
@@ -57,7 +56,7 @@ class App extends Component {
       stayFly,
     } = this.state;
     const isMobile = widthWin <= 768;
-    let MobileContent = '';
+    let MobileContent = null;
     let flyState = '';
     if (stayFly) {
       flyState = (
@@ -74,7 +73,7 @@ class App extends Component {
         </ProjectCount.Provider>
       );
     } else {
-      MobileContent = '';
+      MobileContent = null;
     }
     return (
       <div>

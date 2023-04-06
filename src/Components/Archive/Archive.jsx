@@ -5,36 +5,25 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import gsap, { Linear } from 'gsap';
-// import ReactGA from 'react-ga';
-import { playSound } from '../SoundManager/SoundManager';
+import ReactGA from 'react-ga';
 import { ProjectCount, thecontext } from '../Context/Context';
-// import ArchiveSelect from './ArchiveSelect/ArchiveSelect';
+import ArchiveSelect from './ArchiveSelect/ArchiveSelect';
 import './Archive.scss';
+import { playSound } from '../SoundManager/SoundManager';
 
 let contextProjects = [];
 let setProjects = [];
 
 class Archive extends Component {
-  static transitionIn = (theClass) => {
-    gsap.set(theClass, {
-      opacity: 0,
-      ease: Linear.EaseIn,
-      overwrite: false,
-    });
-    gsap.staggerTo(theClass, 0.3, {
-      opacity: 1,
-      ease: Linear.EaseIn,
-      overwrite: true,
-    }, 0.2);
-  };
-
   constructor(props) {
     super(props);
     contextProjects = thecontext.projects;
     this.state = { archive: thecontext.projects };
 
     this.handleClick = this.handleClick.bind(this);
+    this.transitionIn = this.transitionIn.bind(this);
     this.getSound = playSound;
+    this.gsap = gsap;
   }
 
   componentDidMount() {
@@ -62,18 +51,33 @@ class Archive extends Component {
     return filteredProjects;
   };
 
-  // onChangeValueHandler = (val) => {
-  //   thecontext.projectType = val.value;
-  //   this.filterProjects(thecontext.projectType, contextProjects);
-  //   setTimeout(() => { this.transitionIn('.archive--single'); }, 100);
-  //   ReactGA.pageview(`Archive filtered ${val.value}`);
-  // };
+  onChangeValueHandler = (val) => {
+    thecontext.projectType = val.value;
+    this.filterProjects(thecontext.projectType, contextProjects);
+    setTimeout(() => { this.transitionIn('.archive--single'); }, 100);
+    ReactGA.pageview(`Archive filtered ${val.value}`);
+  };
+
+  transitionIn = (theClass) => {
+    this.gsap.set(theClass, {
+      opacity: 0,
+      ease: Linear.EaseIn,
+      overwrite: false,
+    });
+    this.gsap.to(theClass, {
+      duration: 0.3,
+      stagger: 0.2,
+      opacity: 1,
+      ease: Linear.EaseIn,
+      overwrite: true,
+    }, '<-1');
+  };
 
   render() {
     const { archive } = this.state;
     return (
       <div>
-        {/* <ArchiveSelect value={thecontext.projectType} onChangeValue={this.onChangeValueHandler} /> */}
+        <ArchiveSelect value={thecontext.projectType} onChangeValue={this.onChangeValueHandler} />
         <div id="archive--single--pin" />
         <div id="archive--hide">
           {

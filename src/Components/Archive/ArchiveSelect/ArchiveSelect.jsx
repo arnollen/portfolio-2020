@@ -10,7 +10,12 @@ import '../Archive.scss';
 const animatedComponents = makeAnimated();
 
 const options = [
-  { value: 'ALL', label: 'VIEW ALL' },
+  { value: 'ALL', label: 'ALL' },
+  { value: 'WEB', label: 'WEB' },
+  { value: 'DIGITAL', label: 'DIGITAL' },
+  { value: 'MEDIA', label: 'MEDIA' },
+  { value: 'INTERACTIVE', label: 'INTERACTIVE' },
+  { value: 'VARIOUS', label: 'VARIOUS' },
 ];
 
 const optionsTest = [
@@ -24,6 +29,7 @@ const customStyles = ({
     backgroundColor: 'red',
     borderRadius: 0,
     marginTop: 0,
+    zIndex: 999999,
   }),
   option: (provided, state) => ({
     ...provided,
@@ -69,38 +75,40 @@ class ArchiveSelect extends Component {
     this.state = {
     };
 
-    this.change = this.change(this);
-    this.handleClick = this.handleClick(this);
-    this.getSound = playSound;
+    this.change = this.change.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.setSelectOptions = this.setSelectOptions.bind(this);
+    this.thecontext = thecontext;
+    this.playSound = playSound;
   }
 
   componentDidMount() {
-    
+    this.setSelectOptions();
   }
 
   componentWillUnmount() {
 
   }
 
-  change = (event) => {
-    thecontext.projectType = event.value;
-  };
-
   handleClick = () => {
-    this.getSound(0);
+    this.playSound(0);
   };
 
-  // setSelectOptions = () => {
-  //   thecontext.projects.map((project) => {
-  //     const getType = project.type;
-  //     const testType = optionsTest.includes(getType);
-  //     if (!testType) {
-  //       optionsTest.push(getType);
-  //       options.push({ value: getType, label: `VIEW ${getType}` });
-  //     }
-  //     return null;
-  //   });
-  // };
+  setSelectOptions() {
+    this.thecontext.projects.map((project) => {
+      const getType = project.type;
+      const testType = optionsTest.includes(getType);
+      if (!testType) {
+        optionsTest.push(getType);
+        options.push({ value: getType, label: `VIEW ${getType}` });
+      }
+      return null;
+    });
+  }
+
+  change(event) {
+    this.thecontext.projectType = event.value;
+  }
 
   render() {
     const { onChangeValue } = this.props;
@@ -108,7 +116,7 @@ class ArchiveSelect extends Component {
       <div>
         <div id="archive--container">
           <div className="archive--100" onClick={() => {}} onKeyUp={this.handleClick} role="button" tabIndex="0">
-            <Select components={animatedComponents} isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ label: 'VIEW All', value: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
+            <Select components={animatedComponents} isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ value: 'All', label: 'VIEW All' }} styles={customStyles} options={options} onChange={onChangeValue} />
           </div>
         </div>
       </div>
