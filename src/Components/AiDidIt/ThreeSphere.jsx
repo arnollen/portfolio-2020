@@ -5,7 +5,6 @@ class Sphere extends Component {
   componentDidMount() {
     // Set up the scene, camera and renderer
     const scene = new THREE.Scene();
-    // eslint-disable-next-line max-len
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setClearColor(0x000000, 0);
@@ -18,7 +17,7 @@ class Sphere extends Component {
     const heightSegments = 6; // number of vertical segments
     const sphereGeometry = new THREE.SphereGeometry(radius, widthSegments, heightSegments);
 
-    const pointLight = new THREE.PointLight(0xffe600, 0.3);
+    const pointLight = new THREE.PointLight(0xffe600, 0.5);
     pointLight.position.set(10, 10, 10);
     scene.add(pointLight);
 

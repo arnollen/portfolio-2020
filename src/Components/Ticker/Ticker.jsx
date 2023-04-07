@@ -12,6 +12,8 @@ class Ticker extends Component {
       scrollText2: 'SOME TEXT GOES HERE AND IT WILL SCROLL ACROSS THE SCREEN',
       scrollGif: 'https://media.giphy.com/media/111ebonMs90YLu/giphy.gif',
     };
+
+    this.myTicker = React.createRef();
   }
 
   componentDidMount() {
@@ -22,16 +24,37 @@ class Ticker extends Component {
       scrollText: myProps.body,
       scrollText2: myProps.body2,
       scrollGif: myProps.gif,
+      setClassname: '',
     });
+
+    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('onload', this.handleScroll);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('onload', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    const myDiv = this.myTicker.current;
+    if (!myDiv) return;
+    const { top, bottom } = myDiv.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    if (top < windowHeight && bottom >= 0) {
+      this.setState({ setClassname: 'ticker-animation' });
+    } else {
+      this.setState({ setClassname: '' });
+    }
+  };
 
   render() {
     const {
-      scrollText, scrollText2, section, scrollGif,
+      scrollText, scrollText2, section, scrollGif, setClassname,
     } = this.state;
     return (
-      <div id="ticker--container">
-        <div id="ticker-content-cotainer">
+      <div id="ticker--container" ref={this.myTicker}>
+        <div id="ticker-content-cotainer" className={setClassname ? 'ticker-animation' : ''}>
           <div className="ticker-content">
             <h1>{ section }</h1>
           </div>

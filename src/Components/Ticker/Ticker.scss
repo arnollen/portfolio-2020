@@ -10,10 +10,13 @@
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
+        text-transform: uppercase;
+    }
+
+    .ticker-animation{
         animation: moveSlideshow 40s linear infinite;
         animation-delay: 0;
         will-change: auto;
-        text-transform: uppercase;
     }
 
     .ticker-content{
