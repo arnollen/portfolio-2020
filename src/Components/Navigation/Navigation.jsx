@@ -182,7 +182,7 @@ class Navigation extends Component {
   };
 
   render() {
-    const { navigationWin } = this.state;
+    const { navigationWin, widthWin } = this.state;
     return (
       <div id="navigation">
         <div id="navi--button" onClick={() => this.handleClick('none')} onKeyDown={() => this.handleClick('none')} role="button" tabIndex={0}>
@@ -226,7 +226,7 @@ class Navigation extends Component {
                        );
                      }
 
-                     if (index === 7) {
+                     if (index === 7 && widthWin >= 768) {
                        return (
                          <div className="bottom--link--container" key={navigation.id}>
                            <div className="side--link navi--bar--show">

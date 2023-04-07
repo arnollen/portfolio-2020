@@ -99,8 +99,8 @@ class ArchiveSelect extends Component {
       const getType = project.type;
       const testType = optionsTest.includes(getType);
       if (!testType) {
-        optionsTest.push(getType);
-        options.push({ value: getType, label: `VIEW ${getType}` });
+        // optionsTest.push(getType);
+        // options.push({ value: getType, label: `VIEW ${getType}` });
       }
       return null;
     });
@@ -116,7 +116,7 @@ class ArchiveSelect extends Component {
       <div>
         <div id="archive--container">
           <div className="archive--100" onClick={() => {}} onKeyUp={this.handleClick} role="button" tabIndex="0">
-            <Select components={animatedComponents} isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ value: 'All', label: 'VIEW All' }} styles={customStyles} options={options} onChange={onChangeValue} />
+            <Select components={animatedComponents} isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ value: 'All', label: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
           </div>
         </div>
       </div>

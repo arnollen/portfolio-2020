@@ -28,12 +28,11 @@ class Ticker extends Component {
     });
 
     window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('onload', this.handleScroll);
+    this.handleScroll();
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('onload', this.handleScroll);
   }
 
   handleScroll = () => {
