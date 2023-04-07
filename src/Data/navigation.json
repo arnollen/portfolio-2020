@@ -31,6 +31,12 @@
           "target": "_blank"
        },
        {
+         "id": 6,
+         "copy": "Resume PDF",
+         "link": "/pdf/AnthonyNollen_web2023.pdf",
+         "target": "_blank"
+      },
+       {
           "id": 7,
           "copy": "Contact",
           "link": "mailto:anthonynollen@gmail.com?subject=Inquiry from anthonynollen.com",

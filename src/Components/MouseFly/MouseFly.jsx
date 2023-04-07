@@ -29,12 +29,9 @@ class MouseFly extends Component {
 
   circleTween = [];
 
-  mouseTween = [];
-
   constructor(props) {
     super(props);
     this.state = { speed: thecontext.flySpeed };
-    this.mouseTween = gsap.timeline({ delay: 0 });
   }
 
   componentDidMount() {
@@ -69,6 +66,8 @@ class MouseFly extends Component {
       this.moveFlyChangeUp(e, this);
       this.moveFly(e, this);
     });
+
+    gsap.killTweensOf('#fly--mouse--container');
   }
 
   flyAnimation = () => {
@@ -107,25 +106,26 @@ class MouseFly extends Component {
   moveFly = (e) => {
     this.setY = e.pageY + this.setOffsetY;
     this.setX = e.pageX + this.setOffsetX;
+    if (thecontext.fly === true) {
+      gsap.to('#fly--mouse--container', 0.25, {
+        top: this.setY,
+        left: this.setX,
+        ease: Linear.easeIn,
+        rotationZ: 0.01,
+        force3D: true,
+        overwrite: true,
+        onComplete: MouseFly.rotateIT,
+      });
+    }
 
-    gsap.to('#fly--mouse--container', 0.25, {
-      top: this.setY,
-      left: this.setX,
-      ease: Linear.easeIn,
-      rotationZ: 0.01,
-      force3D: true,
-      overwrite: true,
-      onComplete: MouseFly.rotateIT,
-    });
-
-    this.mouseTween.add(gsap.to('#fly--mouse--container', 0.25, {
-      top: this.setY,
-      left: this.setX,
-      ease: Linear.easeIn,
-      rotationZ: 0.01,
-      force3D: true,
-      overwrite: true,
-    }));
+    // this.mouseTween.add(gsap.to('#fly--mouse--container', 0.25, {
+    //   top: this.setY,
+    //   left: this.setX,
+    //   ease: Linear.easeIn,
+    //   rotationZ: 0.01,
+    //   force3D: true,
+    //   overwrite: true,
+    // }));
   };
 
   render() {

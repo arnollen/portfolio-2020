@@ -178,9 +178,7 @@ class Navigation extends Component {
     } else {
       thecontext.fly = true;
     }
-
     this.handleClick();
-    console.log(thecontext.fly);
   };
 
   render() {
@@ -209,7 +207,7 @@ class Navigation extends Component {
                    ? ''
                    : navigationWin.map((navigation, index) => {
                      //  const listID = `#tag--${navigation.id}`;
-                     if (index >= 4 && index <= 5) {
+                     if (index >= 4 && index <= 6) {
                        return (
                          <div className="bottom--link--container" key={navigation.id}>
                            <div className="side--link navi--bar--show">
@@ -228,7 +226,7 @@ class Navigation extends Component {
                        );
                      }
 
-                     if (index === 6) {
+                     if (index === 7) {
                        return (
                          <div className="bottom--link--container" key={navigation.id}>
                            <div className="side--link navi--bar--show">
