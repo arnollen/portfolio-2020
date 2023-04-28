@@ -96,11 +96,11 @@ class About extends Component {
             {/* , and
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove.bind(this)} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('cat')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('cat')} onTouchCancel={this.handleOut}>Cat</span> */}
-            . I have spent approximately
+            &nbsp;Deborah. I have spent approximately
             {' '}
             { getHours }
             {' '}
-            hours on the planet earth. I went to School in Minneapolis at the now defunct Art Institute of Minnesota
+            hours on this rock called planet earth. I went to School in Minneapolis at the now defunct Art Institute of Minnesota
             for graphic design. Born and raised in
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('cedar rapids')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('cedar rapids')} onTouchCancel={this.handleOut}>Cedar&nbsp;Rapids,&nbsp;IA</span>
@@ -108,10 +108,10 @@ class About extends Component {
             the city of five seasons/
             <span className="about--roll" onMouseMove={this.onMouseMove} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('smells')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('smells')} onTouchCancel={this.handleOut}>smells</span>
             . Working in many roles over the years including Front-End development / interactive development, art direction,
-            web / UI design, animation, and
+            web / UI design, graphic design, animation,&nbsp;
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('illustration')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('illustration')} onTouchCancel={this.handleOut}>illustration</span>
-            . Just a few odd facts my right thumb is double jointed (its inherited). I do not like
+            , and detassler. Just a few odd facts my right thumb was double jointed (I was in a crazy car accident christmas eve, jammed my thumb and it is no longer double jointed. Very interesting). I do not like
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('coconut')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('coconut')} onTouchCancel={this.handleOut}>coconut</span>
             , never have and do not know why. I try it again ever so often and nope its nasty.
@@ -121,13 +121,13 @@ class About extends Component {
             and experience new things are always a good time. Its good for the soul and the creative
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('juices')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('juices')} onTouchCancel={this.handleOut}>juices</span>
-            . I am always looking to work with great people. If you&#39;re looking to feel a role or just get a project out the
+            . I am always looking to work with nice, talented, and inclusive people. If you&#39;re looking to feel a role or just get a project out the
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('door')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('door')} onTouchCancel={this.handleOut}>door</span>
             . Shoot me an email anytime at
             {' '}
             <a href="mailto:anthonynollen@gmail.com?subject=Inquiry from anthonynollen.com">anthonynollen@gmail.com</a>
-            . This site is also how I learn and experiment you can check out the
+            . This site is also how I learn and experiment from time to time, you can check out the
             {' '}
             <a href="https://github.com/arnollen/portfolio-2020">repo</a>
             {' '}
