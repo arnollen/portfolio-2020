@@ -3,7 +3,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import App from './App';
 import Detail from './Components/Detail/Detail';
 import fourzerofour from './Components/404/404';

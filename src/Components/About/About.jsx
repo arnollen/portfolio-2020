@@ -121,7 +121,7 @@ class About extends Component {
             and experience new things are always a good time. Its good for the soul and the creative
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('juices')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('juices')} onTouchCancel={this.handleOut}>juices</span>
-            . I am always looking to work with nice, talented, and inclusive people. If you&#39;re looking to feel a role or just get a project out the
+            . I am always looking to work with awesome people. If you&#39;re looking to feel a role or just get a project out the
             {' '}
             <span className="about--roll" onMouseMove={this.onMouseMove} onFocus={this.handleOver} onBlur={this.handleOut} onMouseOver={() => this.handleOver('door')} onMouseOut={this.handleOut} onTouchStart={() => this.handleOver('door')} onTouchCancel={this.handleOut}>door</span>
             . Shoot me an email anytime at
