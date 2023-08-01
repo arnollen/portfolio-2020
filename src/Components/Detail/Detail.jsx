@@ -16,7 +16,7 @@ import EmbedHeader from './Embed/EmbedHeader';
 import FooterDetails from '../FooterDetail/FooterDetail';
 import Navigation from '../Navigation/Navigation';
 import ViewCounter from '../ViewCounter/ViewCounter';
-import MouseFly from '../MouseFly/MouseFly';
+// import MouseFly from '../MouseFly/MouseFly';
 import { playSound } from '../SoundManager/SoundManager';
 import './Detail.scss';
 
@@ -43,7 +43,7 @@ class Detail extends Component {
       widthWin: window.innerWidth,
       projectAmount: thecontext.projects.length,
       count: thecontext.count,
-      stayFly: thecontext.fly,
+      // stayFly: thecontext.fly,
     };
     thecontext.projects = projectData.projects;
     this.TheProps = this.props;
@@ -86,8 +86,9 @@ class Detail extends Component {
   };
 
   textContext = () => {
-    this.setState({ count: thecontext.count, stayFly: thecontext.fly });
+    this.setState({ count: thecontext.count });
   };
+  // , stayFly: thecontext.fly
 
   buildDetails = () => {
     const { currentColor } = this.state;
@@ -184,23 +185,23 @@ class Detail extends Component {
       projectAmount,
       count,
       widthWin,
-      stayFly,
+      // stayFly,
     } = this.state;
 
     const isMobile = widthWin <= 768;
     let MobileContent = '';
-    let flyState = '';
-    if (stayFly) {
-      flyState = (
-        <MouseFly />
-      );
-    } else {
-      flyState = '';
-    }
+    // let flyState = '';
+    // if (stayFly) {
+    //   flyState = (
+    //     <MouseFly />
+    //   );
+    // } else {
+    //   flyState = '';
+    // }
     if (!isMobile) {
       MobileContent = (
         <ProjectCount.Provider value={count}>
-          {flyState}
+          {/* {flyState} */}
           <ViewCounter valuemax={projectAmount} />
         </ProjectCount.Provider>
       );

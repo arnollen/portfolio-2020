@@ -5,7 +5,7 @@ import { ProjectCount, thecontext } from './Components/Context/Context';
 import Projects from './Components/Projects/Projects';
 import Navigation from './Components/Navigation/Navigation';
 import ViewCounter from './Components/ViewCounter/ViewCounter';
-import MouseFly from './Components/MouseFly/MouseFly';
+// import MouseFly from './Components/MouseFly/MouseFly';
 
 import './App.scss';
 
@@ -16,7 +16,7 @@ class App extends Component {
       widthWin: window.innerWidth,
       projectAmount: 0,
       count: thecontext.count,
-      stayFly: thecontext.fly,
+      // stayFly: thecontext.fly,
     };
     thecontext.projects = projectData.projects;
   }
@@ -34,7 +34,8 @@ class App extends Component {
   }
 
   textContext = () => {
-    this.setState({ count: thecontext.count, stayFly: thecontext.fly });
+    this.setState({ count: thecontext.count });
+    // stayFly: thecontext.fly
   };
 
   handleWindowSizeChange = () => {
@@ -53,22 +54,22 @@ class App extends Component {
       widthWin,
       projectAmount,
       count,
-      stayFly,
+      // stayFly,
     } = this.state;
     const isMobile = widthWin <= 768;
     let MobileContent = null;
-    let flyState = '';
-    if (stayFly) {
-      flyState = (
-        <MouseFly />
-      );
-    } else {
-      flyState = '';
-    }
+    // let flyState = '';
+    // if (stayFly) {
+    //   flyState = (
+    //     <MouseFly />
+    //   );
+    // } else {
+    //   flyState = '';
+    // }
     if (!isMobile) {
       MobileContent = (
         <ProjectCount.Provider value={count}>
-          {flyState}
+          {/* {flyState} */}
           <ViewCounter valuemax={projectAmount} />
         </ProjectCount.Provider>
       );
