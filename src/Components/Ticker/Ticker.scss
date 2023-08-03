@@ -19,6 +19,36 @@
         will-change: auto;
     }
 
+    .ticker-animation1{
+        animation: moveSlideshow 39s linear infinite;
+        animation-delay: 0;
+        will-change: auto;
+    }
+
+    .ticker-animation2{
+        animation: moveSlideshow 41s linear infinite;
+        animation-delay: 0;
+        will-change: auto;
+    }
+
+    .ticker-animation3{
+        animation: moveSlideshow 37s linear infinite;
+        animation-delay: 0;
+        will-change: auto;
+    }
+
+    .ticker-animation4{
+        animation: moveSlideshow 44s linear infinite;
+        animation-delay: 0;
+        will-change: auto;
+    }
+
+    .ticker-animation5{
+        animation: moveSlideshow 34s linear infinite;
+        animation-delay: 0;
+        will-change: auto;
+    }
+
     .ticker-content{
         will-change: transform;
         padding: 15px;

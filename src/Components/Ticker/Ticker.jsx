@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Ticker.scss';
 
+let setClass;
+let randomClass;
+
 class Ticker extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +30,9 @@ class Ticker extends Component {
       setClassname: '',
     });
 
+    randomClass = Math.round(Math.random() * 5) + 1;
+    setClass = String(`ticker-animation${randomClass}`);
+
     window.addEventListener('scroll', this.handleScroll);
     this.handleScroll();
   }
@@ -41,7 +47,7 @@ class Ticker extends Component {
     const { top, bottom } = myDiv.getBoundingClientRect();
     const windowHeight = window.innerHeight;
     if (top < windowHeight && bottom >= 0) {
-      this.setState({ setClassname: 'ticker-animation' });
+      this.setState({ setClassname: setClass });
     } else {
       this.setState({ setClassname: '' });
     }
@@ -53,7 +59,7 @@ class Ticker extends Component {
     } = this.state;
     return (
       <div id="ticker--container" ref={this.myTicker}>
-        <div id="ticker-content-cotainer" className={setClassname ? 'ticker-animation' : ''}>
+        <div id="ticker-content-cotainer" className={setClassname ? setClass : ''}>
           <div className="ticker-content">
             <h1>{ section }</h1>
           </div>
