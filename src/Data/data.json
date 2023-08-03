@@ -323,24 +323,6 @@
          "imageHeaders": ",",
          "link": "",
          "viewed": false
-      },
-      {
-         "id": 18,
-         "name": "Supernatural",
-         "route": {
-            "path": "/supernatural",
-            "comp": "Supernatural"
-          },
-         "type": "VARIOUS",
-         "description": "Supernatutal",
-         "bgPath": "",
-         "bgColor": "#48314b",
-         "video": "",
-         "images": "Supernatural/1.jpg,Supernatural/2.jpg,Supernatural/3.jpg",
-         "imageCopy": ",,,",
-         "imageHeaders": ",,,",
-         "link": "",
-         "viewed": false
       }
    ]
 }
