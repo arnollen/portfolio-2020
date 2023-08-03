@@ -21,15 +21,15 @@
           }
     }
     p, .about--roll{
-        font-size: 28px;
+        font-size: 23px;
         color: white;
         border: 0px;
-        line-height: 62px;
+        line-height: 42px;
         font-family: $franklin;
-        font-weight: 900;
+        font-weight: 700;
         @media only screen and (max-width: 1050px) {
-            font-size: 27px;
-            line-height: 52px;
+            font-size: 21px;
+            line-height: 36px;
           }
         @media only screen and (max-width: 768px) {
             font-size: 18px;
@@ -59,7 +59,7 @@
 
 .about--roll{
     background: red;
-    padding: 10px;
+    padding: 5px 15px;
     @include noselect();
     @include allTrans();
     @media only screen and (max-width: 1050px) {

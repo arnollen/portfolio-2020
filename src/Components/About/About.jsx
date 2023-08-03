@@ -13,7 +13,7 @@ const year = newDate.getFullYear();
 const dt1 = new Date(1977, 3, 31);
 const dt2 = new Date(year, month, date);
 
-const getHours = numberWithCommas(diffHours(dt2, dt1));
+const getHours = String(` ${numberWithCommas(diffHours(dt2, dt1))} `);
 
 class About extends Component {
   constructor(props) {

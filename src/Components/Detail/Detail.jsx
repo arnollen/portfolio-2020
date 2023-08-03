@@ -261,7 +261,7 @@ class Detail extends Component {
                               <EmbedHeader theHeader={currentHeaders} theIndex={indexChild} />
                               <EmbedBody theBody={currentCopy} theIndex={indexChild} />
                               <div className="detail--img">
-                                <img src={`http://anthonynollen.com${currentImages[indexChild]}`} alt="" title="" />
+                                <img src={`${currentImages[indexChild]}`} alt="" title="" />
                               </div>
                             </div>
                           ))
