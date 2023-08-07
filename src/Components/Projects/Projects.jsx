@@ -14,7 +14,7 @@ import Archive from '../Archive/Archive';
 import About from '../About/About';
 import Spotify from '../Spotify/Spotify';
 import Footer from '../Footer/Footer';
-import RandomContent from '../RandomContent/RandomContent';
+// import RandomContent from '../RandomContent/RandomContent';
 import { thecontext } from '../Context/Context';
 import './Projects.scss';
 
@@ -98,7 +98,7 @@ class Projects extends Component {
             }
             <Element name="about-scroll-to" id="about-scroll-to" />
 
-            <Ticker header="ABOUT" body="A little history about myself and my career" body2="You could also check out my linkedin" gif="https://media.giphy.com/media/xYbNcQcQq3V4s/giphy.gif" />
+            <Ticker header="ABOUT" body="A little history about myself and my career" body2="You could also check out my linkedin" gif="https://media.giphy.com/media/6FE5OzXELzwngAIBHc/giphy.gif" />
 
             <About />
 
@@ -113,9 +113,9 @@ class Projects extends Component {
 
             <Spotify />
 
-             <Ticker header="Art Fart" body="The pencil is one of mans simplest tools" body2="Nothing like making a little something from nothing." gif="https://media.giphy.com/media/Pv3cmW2HAmvsc/giphy.gif" />
+             {/* <Ticker header="Art Fart" body="The pencil is one of mans simplest tools" body2="Nothing like making a little something from nothing." gif="https://media.giphy.com/media/Pv3cmW2HAmvsc/giphy.gif" />
 
-            <RandomContent />
+            <RandomContent /> */}
 
             <Footer />
         </div>

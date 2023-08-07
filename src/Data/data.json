@@ -2,37 +2,37 @@
    "projects": [
       {
          "id": 0,
-         "name": "My Wedding",
-         "route": {
-            "path": "/wedding",
-            "comp": "Wedding"
-          },
-         "type": "VARIOUS",
-         "description": "I got married a while back and being who I am I felt reqeuired to make the invites a step above the knots themes and templates. I created a postcards, magnets, beer glasses, and a single page website to celebrate the big day. While the theme was our home where the wedding took place the real stars where are best companions Deborah&nbsp;and&nbsp;Otis.",
-         "bgPath": "images/Samsung/bgImage.jpg",
-         "bgColor": "#5c4461",
-         "video": "",
-         "images": "Wedding/wedding_5.jpg,Wedding/wedding_4.jpg,Wedding/wedding_3.jpg,Wedding/wedding_1.jpg,",
-         "imageCopy": "Using the same design and illustration elements creat stuff.,,,A small website utilizing illustration.,",
-         "imageHeaders": "The Print,,,The Web,",
-         "link": "",
-         "viewed": false
-      },
-      {
-         "id": 1,
          "name": "Trunk Club",
          "route": {
             "path": "/trunkclub",
             "comp": "Trunkclub"
           },
          "type": "DIGITAL",
-         "description": "I started a contract job on the day covid quarenten began. I worked with the marketing team to build out additional landing pages to there already exsisting website built with Statamic CMS. I never used Statamic but after a short review and past frontend and CMS expereince as well as there great use of module/component based design and development. I hit the ground running working with there inhouse dev team, producers, and marketing team. A victim of covid about a month into the contract Nordstroms released all the contractors and I believe Trunk Club was assorbed shortly there after.",
+         "description": "I started a contract job on the day covid quarantine began. I worked with the marketing team to build out additional landing pages to their already existing website built with Statamic CMS. I never used Statamic but after a short review and past frontend and CMS experience as well as their great use of module/component-based design and development. I hit the ground running working with their in-house developers, producers, and marketing team. As a result of covid about a month into the contract Nordstroms released all the contractors and I believe Trunk Club was shuttered shortly thereafter.",
          "bgPath": "images/Samsung/bgImage.jpg",
          "bgColor": "#000000",
          "video": "",
-         "images": "trunkclub/trunkclub_1.jpg,trunkclub/trunkclub_2.jpg,trunkclub/trunkclub_3.jpg,trunkclub/trunkclub_4.jpg,",
-         "imageCopy": "Mans and womans landing pages,,,,",
-         "imageHeaders": "Test,,,,",
+         "images": "trunkclub/trunkclub_1.jpg,trunkclub/trunkclub_2.jpg,trunkclub/trunkclub_3.jpg,trunkclub/trunkclub_4.jpg,trunkclub/trunkclub_5.jpg",
+         "imageCopy": "Build out of various responsive landing pages and supporting pages within their existing CMS and brand styles.,,,,,",
+         "imageHeaders": "Landing Pages,,,,,",
+         "link": "",
+         "viewed": false
+      },
+      {
+         "id": 1,
+         "name": "My Wedding",
+         "route": {
+            "path": "/wedding",
+            "comp": "Wedding"
+          },
+         "type": "VARIOUS",
+         "description": "I got married a while back and I felt required to make the invites a step above the knots themes and templates. I created postcards, magnets, beer glasses, and a single-page website to celebrate the big day. While the theme was our home where the wedding took place the real stars was are best companions Deborahnbsp;and&nbsp;Otis.",
+         "bgPath": "images/Samsung/bgImage.jpg",
+         "bgColor": "#5c4461",
+         "video": "",
+         "images": "Wedding/wedding_5.jpg,Wedding/wedding_4.jpg,Wedding/wedding_3.jpg,Wedding/wedding_1.jpg,",
+         "imageCopy": "Using the same design and illustration elements for print invitations, fridge magnets, and guest gift bags.,,,A small card-style website for guest information and R.S.V.P.,",
+         "imageHeaders": "The Print,,,The Web,",
          "link": "",
          "viewed": false
       },
@@ -43,37 +43,19 @@
             "path": "/zoryve",
             "comp": "Zoryve"
           },
-         "type": "WEB,",
-         "description": "While working at Abelson Taylor I was the lead Developer on Zoryve.com. A drupal based site running in a Pantheon enviroment. ",
+         "type": "WEB",
+         "description": "While working at Abelson Taylor I worked on various client sites and other digital marketing material. Their clients used everything from WordPress and Drupal to .NET front end and plain old vanilla HTML, CSS, and javascript.",
          "bgPath": "images/Samsung/bgImage.jpg",
          "bgColor": "#2E2823",
          "video": "",
-         "images": "zoryve/zoryve_1.jpg,",
-         "imageCopy": "Utilizing the Nj Transit API to get real time train station departure and arrival times. We created an airport style departure board using HTML5 Technologies. The billboards job was to communicate that you could travel from Penn Station to Newark airport in under 25 minutes on the NJ transit.,",
-         "imageHeaders": "Test,",
+         "images": "zoryve/zoryve_1.jpg,zoryve/zoryve_2.jpg,zoryve/zoryve_3.jpg,zoryve/zoryve_footer.jpg,zoryve/zoryve_mobile.jpg",
+         "imageCopy": "Working within a Drupal and Patheon workflow we created a consumer-facing marketing site to promote Zoryve a new treatment for plaque psoriasis. I worked as the lead developer building and animating the entire site excluding the signup forms. ,,,,,",
+         "imageHeaders": "Zoryve Consumer Site,,,,,",
          "link": "https://www.zoryve.com",
          "viewed": false
       },
       {
          "id": 3,
-         "name": "Display Ads",
-         "route": {
-            "path": "/pn",
-            "comp": "Pn"
-          },
-         "type": "DIGITAL",
-         "description": "Various display ads ",
-         "bgPath": "images/Samsung/bgImage.jpg",
-         "bgColor": "#031936",
-         "video": "",
-         "images": "UnitedOOH/united_1.jpg,",
-         "imageCopy": "Utilizing the Nj Transit API to get real time train station departure and arrival times. We created an airport style departure board using HTML5 Technologies. The billboards job was to communicate that you could travel from Penn Station to Newark airport in under 25 minutes on the NJ transit.,",
-         "imageHeaders": "Test,",
-         "link": "https://www.productivitynet.com/",
-         "viewed": false
-      },
-      {
-         "id": 4,
          "name": "United Airlines",
          "route": {
             "path": "/united",
@@ -91,7 +73,7 @@
          "viewed": false
       },
       {
-         "id": 5,
+         "id": 4,
          "name": "Marriott Hotels",
          "route": {
             "path": "/marriott",
@@ -109,7 +91,7 @@
          "viewed": false
       },
       {
-         "id": 6,
+         "id": 5,
          "name": "Kraft Singles",
          "route": {
             "path": "/kraft",
@@ -127,7 +109,7 @@
          "viewed": false
       },
       {
-         "id": 7,
+         "id": 6,
          "name": "Delve",
          "route": {
             "path": "/delve",
@@ -145,7 +127,7 @@
          "viewed": false
       },
       {
-         "id": 8,
+         "id": 7,
          "name": "Chicago Distilling Co",
          "route": {
             "path": "/chicago",
@@ -163,7 +145,7 @@
          "viewed": false
       },
       {
-         "id": 9,
+         "id": 8,
          "name": "Samsung",
          "route": {
             "path": "/samsung",
@@ -181,7 +163,7 @@
          "viewed": false
       },
       {
-         "id": 10,
+         "id": 9,
          "name": "Lunchables",
          "route": {
             "path": "/lunchables",
@@ -199,7 +181,7 @@
          "viewed": false
       },
       {
-         "id": 11,
+         "id": 10,
          "name": "Forza",
          "route": {
             "path": "/forza",
@@ -217,7 +199,7 @@
          "viewed": false
       },
       {
-         "id": 12,
+         "id": 11,
          "name": "Blackberry Playbook",
          "route": {
             "path": "/blackberry",
@@ -235,7 +217,7 @@
          "viewed": false
       },
       {
-         "id": 13,
+         "id": 12,
          "name": "Fuse",
          "route": {
             "path": "/fuse",
@@ -253,7 +235,7 @@
          "viewed": false
       },
       {
-         "id": 14,
+         "id": 13,
          "name": "Bank Of America",
          "route": {
             "path": "/boa",
@@ -271,7 +253,7 @@
          "viewed": false
       },
       {  
-         "id": 15,
+         "id": 14,
          "name":"Roots Skateboards",
          "route": {
             "path": "/roots",
@@ -289,7 +271,7 @@
          "viewed": false
       },
       {
-         "id": 16,
+         "id": 15,
          "name": "Divvy Data Contest",
          "route": {
             "path": "/divvy",
@@ -307,18 +289,18 @@
          "viewed": false
       },
       {
-         "id": 17,
+         "id": 16,
          "name": "Interactive Reel",
          "route": {
             "path": "/reel",
             "comp": "Reel"
           },
          "type": "MEDIA",
-         "description": "My Old Demo Reel showcasing some of the fun projects I worked on.",
+         "description": "My old demo reel showcasing some of the fun projects I worked on earlier in my career. This was mostly flash days but still fun to watch.",
          "bgPath": "",
-         "bgColor": "#000000",
+         "bgColor": "#17097c",
          "video": "//player.vimeo.com/video/75912194",
-         "images": "Supernatural/1.jpg",
+         "images": "",
          "imageCopy": ",",
          "imageHeaders": ",",
          "link": "",
