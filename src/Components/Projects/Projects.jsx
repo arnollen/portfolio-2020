@@ -14,7 +14,7 @@ import Archive from '../Archive/Archive';
 import About from '../About/About';
 import Spotify from '../Spotify/Spotify';
 import Footer from '../Footer/Footer';
-// import RandomContent from '../RandomContent/RandomContent';
+import RandomContent from '../RandomContent/RandomContent';
 import { thecontext } from '../Context/Context';
 import './Projects.scss';
 
@@ -113,9 +113,9 @@ class Projects extends Component {
 
             <Spotify />
 
-             {/* <Ticker header="Art Fart" body="The pencil is one of mans simplest tools" body2="Nothing like making a little something from nothing." gif="https://media.giphy.com/media/Pv3cmW2HAmvsc/giphy.gif" />
+             <Ticker header="Art Fart" body="The pencil is one of mans simplest tools" body2="Nothing like making a little something from nothing." gif="https://media.giphy.com/media/Pv3cmW2HAmvsc/giphy.gif" />
 
-            <RandomContent /> */}
+            <RandomContent />
 
             <Footer />
         </div>
