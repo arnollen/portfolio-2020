@@ -207,7 +207,7 @@ class Navigation extends Component {
                    ? ''
                    : navigationWin.map((navigation, index) => {
                      //  const listID = `#tag--${navigation.id}`;
-                     if (index >= 4 && index <= 6) {
+                     if (index >= 4 && index <= 5) {
                        return (
                          <div className="bottom--link--container" key={navigation.id}>
                            <div className="side--link navi--bar--show">
