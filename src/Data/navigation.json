@@ -18,12 +18,6 @@
          "link": "/",
          "target": ""
       },
-      {
-         "id": 4,
-         "copy": "My Playlist",
-         "link": "/",
-         "target": ""
-      },
        {
          "id": 5,
          "copy": "Resume PDF",
@@ -35,12 +29,7 @@
           "copy": "Contact",
           "link": "mailto:anthonynollen@gmail.com?subject=Inquiry from anthonynollen.com",
           "target": ""
-       },
-       {
-         "id": 7,
-         "copy": "Linkedin",
-         "link": "https://www.linkedin.com/in/anthonynollen",
-         "target": "_blank"
-      }
+       }
     ]
  }
+ 

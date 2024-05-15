@@ -86,8 +86,9 @@
 }
 
 .copy--container{
-  padding: 0px;
+  padding: 25px 0px;
   z-index: 1;
+  width: 100%;
   @media only screen and (max-width: 1050px) {
     width: calc(100% - 40px);
     
@@ -95,7 +96,7 @@
 }
 
 .link--container{
-  padding: 85px;
+  padding: 0px 85px 0px 0px;
   z-index: 1;
   @media only screen and (max-width: 1050px) {
     padding: 20px 0px 20px 0px;

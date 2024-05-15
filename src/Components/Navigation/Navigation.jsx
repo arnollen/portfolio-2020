@@ -198,7 +198,6 @@ class Navigation extends Component {
               <Link className="top--link navi--bar--show" to="/" onClick={() => this.handleClick('root')} onMouseOver={() => this.handleOver('#tag--1')} onMouseOut={() => this.handleOut('#tag--1')} onFocus={() => this.handleOver('#tag--1')} onBlur={() => this.handleOut('#tag--1')}>- Projects -</Link>
               <Link className="top--link navi--bar--show" to="/" onClick={() => this.handleClick('about-scroll-to')} onMouseOver={() => this.handleOver('#tag--2')} onMouseOut={() => this.handleOut('#tag--2')} onFocus={() => this.handleOver('#tag--2')} onBlur={() => this.handleOut('#tag--2')}>- About -</Link>
               <Link className="top--link navi--bar--show" to="/" onClick={() => this.handleClick('archive-scroll-to')} onMouseOver={() => this.handleOver('#tag--3')} onMouseOut={() => this.handleOut('#tag--3')} onFocus={() => this.handleOver('#tag--3')} onBlur={() => this.handleOut('#tag--3')}>- Archive -</Link>
-              <Link className="top--link navi--bar--show" to="/" onClick={() => this.handleClick('music-scroll-to')} onMouseOver={() => this.handleOver('#tag--4')} onMouseOut={() => this.handleOut('#tag--4')} onFocus={() => this.handleOver('#tag--4')} onBlur={() => this.handleOut('#tag--4')}>- My Playlist -</Link>
 
             </div>
             <div id="secondary--nav--container">

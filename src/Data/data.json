@@ -8,43 +8,25 @@
             "comp": "Trunkclub"
           },
          "type": "DIGITAL",
-         "description": "I started a contract job on the day covid quarantine began. I worked with the marketing team to build out additional landing pages to their already existing website built with Statamic CMS. I never used Statamic but after a short review and past frontend and CMS experience as well as their great use of module/component-based design and development. I hit the ground running working with their in-house developers, producers, and marketing team. As a result of covid about a month into the contract Nordstroms released all the contractors and I believe Trunk Club was shuttered shortly thereafter.",
+         "description": "I began a contract position on the very day that COVID quarantine measures were implemented. Collaborating closely with the marketing team, my primary task was to create custom landing pages for their existing website, which was built using the Statamic CMS platform. Despite having no prior experience with Statamic, I quickly familiarized myself with the system through a brief review process, drawing upon my background in frontend development and CMS utilization. Leveraging the platform's module/component-based design and development approach, I seamlessly integrated into the workflow, collaborating effectively with in-house developers, producers, and the marketing team. Unfortunately, due to COVID-related circumstances, Nordstroms terminated all contractor agreements approximately a month into the project.",
          "bgPath": "images/Samsung/bgImage.jpg",
          "bgColor": "#000000",
          "video": "",
          "images": "trunkclub/trunkclub_1.jpg,trunkclub/trunkclub_2.jpg,trunkclub/trunkclub_3.jpg,trunkclub/trunkclub_4.jpg,trunkclub/trunkclub_5.jpg",
-         "imageCopy": "Build out of various responsive landing pages and supporting pages within their existing CMS and brand styles.,,,,,",
+         "imageCopy": "Build out of various custom responsive landing pages and supporting pages within their existing CMS, Theme, and brand styles.,,,,,",
          "imageHeaders": "Landing Pages,,,,,",
          "link": "",
          "viewed": false
       },
       {
          "id": 1,
-         "name": "My Wedding",
-         "route": {
-            "path": "/wedding",
-            "comp": "Wedding"
-          },
-         "type": "VARIOUS",
-         "description": "I got married a while back and I felt required to make the invites a step above the knots themes and templates. I created postcards, magnets, beer glasses, and a single-page website to celebrate the big day. While the theme was our home where the wedding took place the real stars was are best companions Deborah&nbsp;and&nbsp;Otis.",
-         "bgPath": "images/Samsung/bgImage.jpg",
-         "bgColor": "#5c4461",
-         "video": "",
-         "images": "Wedding/wedding_5.jpg,Wedding/wedding_4.jpg,Wedding/wedding_3.jpg,Wedding/wedding_1.jpg,",
-         "imageCopy": "Using the same design and illustration elements for print invitations&comma; fridge magnets&comma; and guest gift bags.,,,A small card-style website for guest information and R.S.V.P.,",
-         "imageHeaders": "The Print,,,The Web,",
-         "link": "",
-         "viewed": false
-      },
-      {
-         "id": 2,
          "name": "Zoryve",
          "route": {
             "path": "/zoryve",
             "comp": "Zoryve"
           },
          "type": "WEB",
-         "description": "While working at Abelson Taylor I worked on various client sites and other digital marketing material. Their clients used everything from WordPress and Drupal to .NET front end and plain old vanilla HTML, CSS, and javascript.",
+         "description": "During my tenure at Abelson Taylor, I had the opportunity to contribute to a diverse array of client projects and digital marketing materials. This hands-on experience exposed me to a wide range of technologies, spanning from content management systems like WordPress and Drupal to front-end development using .NET. Additionally, I worked on display ads, custom emails, and utilized traditional web technologies such as HTML, CSS, and JavaScript. This exposure enabled me to adapt effectively to various platforms and coding languages, thus enhancing my versatility as a developer.",
          "bgPath": "images/Samsung/bgImage.jpg",
          "bgColor": "#2E2823",
          "video": "",
@@ -55,6 +37,24 @@
          "viewed": false
       },
       {
+         "id": 2,
+         "name": "Marriott Hotels",
+         "route": {
+            "path": "/marriott",
+            "comp": "Marriott"
+          },
+         "type": "WEB",
+         "description": "At McGarryBowen, I had the privilege of collaborating with several Marriott brands, including SpringHill Suites, Residence Inn, Fairfield Inn, Courtyard, and TownePlace Suites. In my capacity as a senior developer, I spearheaded website development and maintenance initiatives, orchestrated rich media executions, and coordinated standard media campaigns across the Marriott portfolio. Additionally, I provided valuable consultation to producers and creatives, ensuring optimal solutions to both creative and technical challenges. This multifaceted role allowed me to blend my technical expertise with strategic insights, contributing to the success of diverse projects within the hospitality sector.",
+         "bgPath": "images/TownePlaceSuites/bgImage.jpg",
+         "bgColor": "#d2252f",
+         "video": "",
+         "images": "TownePlaceSuites/tps_1.jpg,TownePlaceSuites/tps_2.jpg,TownePlaceSuites/tps_3.jpg,TownePlaceSuites/tps_4.jpg,TownePlaceSuites/tps_5.jpg,TownePlaceSuites/tps_6.jpg",
+         "imageCopy": "TownePlace Suites | While many of the brands sites were built and maintained by different developers over the years. I developed TownePlace Suites from the ground up as well as overall site maintenance and content updates. We were also tasked with making everything fully ADA compliant along with the other Marriott brands at McGarryBowen.,Additional Features | We created interactive features to showcase TownPlace Suites offerings.  As well as showcasing unique partnerships that enhance the customers stay at TownPlace Suites such as recipes for grilling on a Weber Grill. And Travel packing tips while utilizing your rooms Container Store closet systems.,,,,Responsive And Adaptive | TownePlace suites is not only built to be responsive across all standard devices but is also adaptive to deliver content in a way that best fits your devices screen size.,",
+         "imageHeaders": "TownePlace Suites, Additional Features,,,,Responsive And Adaptive,",
+         "link": "",
+         "viewed": false
+      },
+      {
          "id": 3,
          "name": "United Airlines",
          "route": {
@@ -62,7 +62,7 @@
             "comp": "United"
           },
          "type": "DIGITAL",
-         "description": "As senior developer at McGarryBowen Chicago we worked with the New York creative and account teams to create multiple digital out of home pieces for United Airlines. My role was development and animation using dynamic API data sources to communicate there message. Built with HTML5 technologies running on a chromeless version of the Google Chrome browser on billboards and other digital&nbsp;displays.",
+         "description": "As a senior developer at McGarryBowen Chicago, I collaborated closely with the creative and account teams in New York to produce multiple digital out-of-home pieces for United Airlines. My primary responsibilities included development and animation, utilizing dynamic API data sources to effectively convey their message. These projects were built using cutting-edge HTML5 technologies and were optimized to run on a chromeless version of the Google Chrome browser, ensuring seamless performance on billboards and other digital displays.",
          "bgPath": "images/Samsung/bgImage.jpg",
          "bgColor": "#031936",
          "video": "//player.vimeo.com/video/352075107",
@@ -74,19 +74,19 @@
       },
       {
          "id": 4,
-         "name": "Marriott Hotels",
+         "name": "My Wedding",
          "route": {
-            "path": "/marriott",
-            "comp": "Marriott"
+            "path": "/wedding",
+            "comp": "Wedding"
           },
-         "type": "WEB",
-         "description": "McGarryBowen works with several Marriott brands including SpringHill Suites, Residences Inn, Fairfield Inn, Courtyard, and TownePlace Suites. As senior developer I worked on website development and maintenance, rich media executions, and standard media campaigns across the Marriott brands. As well as consulting with producers and creatives to deliver the best possible solution to the creative and technical problems at&nbsp;hand.",
-         "bgPath": "images/TownePlaceSuites/bgImage.jpg",
-         "bgColor": "#d2252f",
+         "type": "VARIOUS",
+         "description": "For my wedding, I wanted our invitations to reflect our unique style rather than using standard templates. I went beyond the typical themes and created customized postcards, magnets, beer glasses, and even a single-page website to mark the occasion. While our home served as the theme for the wedding venue, the true stars were our beloved companions, Deborah and Otis.",
+         "bgPath": "images/Samsung/bgImage.jpg",
+         "bgColor": "#5c4461",
          "video": "",
-         "images": "TownePlaceSuites/tps_1.jpg,TownePlaceSuites/tps_2.jpg,TownePlaceSuites/tps_3.jpg,TownePlaceSuites/tps_4.jpg,TownePlaceSuites/tps_5.jpg,TownePlaceSuites/tps_6.jpg",
-         "imageCopy": "TownePlace Suites | While many of the brands sites were built and maintained by different developers over the years. I developed TownePlace Suites from the ground up as well as overall site maintenance and content updates. We were also tasked with making everything fully ADA compliant along with the other Marriott brands at McGarryBowen.,Additional Features | We created interactive features to showcase TownPlace Suites offerings.  As well as showcasing unique partnerships that enhance the customers stay at TownPlace Suites such as recipes for grilling on a Weber Grill. And Travel packing tips while utilizing your rooms Container Store closet systems.,,,,Responsive And Adaptive | TownePlace suites is not only built to be responsive across all standard devices but is also adaptive to deliver content in a way that best fits your devices screen size.,",
-         "imageHeaders": "TownePlace Suites, Additional Features,,,,Responsive And Adaptive,",
+         "images": "Wedding/wedding_5.jpg,Wedding/wedding_4.jpg,Wedding/wedding_3.jpg,Wedding/wedding_1.jpg,",
+         "imageCopy": "Using the same design and illustration elements for print invitations&comma; fridge magnets&comma; and guest gift bags.,,,A small card-style website for guest information and R.S.V.P.,",
+         "imageHeaders": "The Print,,,The Web,",
          "link": "",
          "viewed": false
       },
@@ -98,7 +98,7 @@
             "comp": "Kraft"
           },
          "type": "WEB",
-         "description": "Being one of my first projects at McgarryBowen Chicago I worked closely with creative and design to create a small micro site that educated consumers on the nutritional facts of Kraft&nbsp;Singles.",
+         "description": "As one of my early projects at McGarryBowen Chicago, I closely collaborated with the creative and design teams to develop a compact microsite aimed at educating consumers about the nutritional content of Kraft Singles. In this endeavor, I applied my expertise in traditional HTML, CSS, and JavaScript, along with my proficiency in design thinking, animation, and interactive design.",
          "bgPath": "images/KraftSingles/bgImage.jpg",
          "bgColor": "#011835",
          "video": "",
@@ -116,7 +116,7 @@
             "comp": "Delve"
           },
          "type": "DIGITAL",
-         "description": "We were asked internally to make something for the touch screen that lives in the Chicago Razorfish office. Utilizing html5 technologies powered by Google Chrome we created delve. I was the lead developer, designer, and part of the concept team. This project was featured by Leap Motion and&nbsp;Adobe.",
+         "description": "As the lead developer, designer, and member of the concept team, I spearheaded the creation of Delve, a project tailored for the touch screen in the Chicago Razorfish office. Utilizing a blend of HTML5 technologies, including Three.js for WebGL rendering, and various JavaScript APIs such as social media, weather, and Leap Motion. Delve offered a range of innovative interactive experiences. The project garnered recognition and was featured by Leap Motion and Adobe.",
          "bgPath": "images/Delve/bgImage.jpg",
          "bgColor": "#185651",
          "video": "//player.vimeo.com/video/83541285",
@@ -134,7 +134,7 @@
             "comp": "Chicago"
           },
          "type": "WEB",
-         "description": "Chicago Distilling Co&#039;s previous website made the company feel more like a bar. After meeting with the owners and giving my initial thoughts, I was asked to help them better convey there business&nbsp;online.",
+         "description": "Chicago Distilling Co.'s previous website had a bar-centric feel, which didn't fully capture the essence of their distillery. After meeting with the owners and offering my initial insights, I was tasked with enhancing their online representation. Building upon their existing site, I collaborated closely with the owners to develop a product-focused approach. This involved creating a custom WordPress theme and integrating social APIs and third-party e-commerce features to better showcase their offerings and enhance user experience.",
          "bgPath": "images/ChicagoDistillingCo/bgImage.jpg",
          "bgColor": "#000000",
          "video": "",
