@@ -26,12 +26,12 @@
             "comp": "Zoryve"
           },
          "type": "WEB",
-         "description": "During my tenure at Abelson Taylor, I had the opportunity to contribute to a diverse array of client projects and digital marketing materials. This hands-on experience exposed me to a wide range of technologies, spanning from content management systems like WordPress and Drupal to front-end development using .NET. Additionally, I worked on display ads, custom emails, and utilized traditional web technologies such as HTML, CSS, and JavaScript. This exposure enabled me to adapt effectively to various platforms and coding languages, thus enhancing my versatility as a developer.",
+         "description": "During my tenure at Abelson Taylor, I had the opportunity to contribute to a diverse array of client projects and digital marketing materials. This hands-on experience creating and maintaining custom websites in a wide range of technologies, spanning from content management systems like WordPress and Drupal to front-end development using .NET. Additionally, I worked on display ads, custom email development, and utilized traditional web technologies such as HTML, CSS, and JavaScript.",
          "bgPath": "images/Samsung/bgImage.jpg",
          "bgColor": "#2E2823",
          "video": "",
          "images": "zoryve/zoryve_1.jpg,zoryve/zoryve_2.jpg,zoryve/zoryve_3.jpg,zoryve/zoryve_footer.jpg,zoryve/zoryve_mobile.jpg",
-         "imageCopy": "Working within a Drupal and Patheon workflow we created a consumer-facing marketing site to promote Zoryve a new treatment for plaque psoriasis. I worked as the lead developer building and animating the entire site excluding the signup forms. ,,,,,",
+         "imageCopy": "Working within a Drupal and Patheon workflow we created a custom consumer-facing marketing site to promote Zoryve a new treatment for plaque psoriasis. I worked as the lead developer building and animating the entire site excluding the signup forms. ,,,,,",
          "imageHeaders": "Zoryve Consumer Site,,,,,",
          "link": "https://www.zoryve.com",
          "viewed": false
