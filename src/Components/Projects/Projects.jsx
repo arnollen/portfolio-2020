@@ -28,6 +28,7 @@ class Projects extends Component {
   }
 
   componentDidMount() {
+    ReactGA.initialize('UA-151508756-1');
     const contextProjects = thecontext.projects;
     this.setState({ projects: contextProjects });
     this.scrollToSection();
