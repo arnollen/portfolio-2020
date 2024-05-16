@@ -11,7 +11,6 @@ import './index.scss';
 import projectData from './Data/data.json';
 
 const root = createRoot(document.getElementById('root'));
-
 const buildNavi = projectData.projects;
 
 root.render(

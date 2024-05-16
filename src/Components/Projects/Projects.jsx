@@ -13,6 +13,8 @@ import Ticker from '../Ticker/Ticker';
 import Archive from '../Archive/Archive';
 import About from '../About/About';
 // import Spotify from '../Spotify/Spotify';
+// import Instagram from '../Instagram/Instagram';
+import Artwork from '../Artwork/Artwork';
 import Footer from '../Footer/Footer';
 // import RandomContent from '../RandomContent/RandomContent';
 import { thecontext } from '../Context/Context';
@@ -117,6 +119,10 @@ class Projects extends Component {
              {/* <Ticker header="Art Fart" body="The pencil is one of mans simplest tools" body2="Nothing like making a little something from nothing." gif="https://media.giphy.com/media/Pv3cmW2HAmvsc/giphy.gif" />
 
             <RandomContent /> */}
+
+            {/* <Instagram /> */}
+
+            <Artwork />
 
             <Footer />
         </div>

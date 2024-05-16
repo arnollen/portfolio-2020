@@ -4,9 +4,7 @@ import btnAudio from '../../Sound/btn_test.mp3';
 import topAudio from '../../Sound/top.mp3';
 
 let btn;
-
 let top;
-
 let mySounds;
 
 export function playSound(x, v) {
