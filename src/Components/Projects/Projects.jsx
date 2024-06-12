@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import gsap, { Linear } from 'gsap';
 import parse from 'html-react-parser';
 import { Element } from 'react-scroll';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { playSound } from '../SoundManager/SoundManager';
 import Logo from '../Logo/Logo';
 import Ticker from '../Ticker/Ticker';
@@ -14,7 +14,7 @@ import Archive from '../Archive/Archive';
 import About from '../About/About';
 // import Spotify from '../Spotify/Spotify';
 // import Instagram from '../Instagram/Instagram';
-import Artwork from '../Artwork/Artwork';
+// import Artwork from '../Artwork/Artwork';
 import Footer from '../Footer/Footer';
 // import RandomContent from '../RandomContent/RandomContent';
 import { thecontext } from '../Context/Context';
@@ -35,7 +35,8 @@ class Projects extends Component {
     this.setState({ projects: contextProjects });
     this.scrollToSection();
     this.backColorAnimation('#2912D6');
-    ReactGA.pageview('projects page');
+    // ReactGA.pageview('projects page');
+    ReactGA.send({ hitType: 'pageview', page: 'projects' });
   }
 
   componentWillUnmount() {
@@ -52,7 +53,8 @@ class Projects extends Component {
     setTimeout(() => {
       window.scrollTo({ top, left: 0, behavior: 'smooth' });
     }, 500);
-    ReactGA.modalview(`go to ${getScroll}`);
+    // ReactGA.modalview(`go to ${getScroll}`);
+    ReactGA.send({ hitType: 'pageview', page: `go to ${getScroll}` });
   };
 
   backColorAnimation = (theColor) => {
@@ -122,7 +124,7 @@ class Projects extends Component {
 
             {/* <Instagram /> */}
 
-            <Artwork />
+            {/* <Artwork /> */}
 
             <Footer />
         </div>

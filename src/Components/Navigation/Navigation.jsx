@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import gsap, {
   SteppedEase, Linear, Expo, Back,
 } from 'gsap';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { playSound } from '../SoundManager/SoundManager';
 import './Navigation.scss';
 import NavigationButton from '../../Images/infoClose.png';
@@ -59,7 +59,8 @@ class Navigation extends Component {
     playSound(0);
 
     if (!isToggleOn) {
-      ReactGA.modalview('navigation open');
+      // ReactGA.modalview('navigation open');
+      ReactGA.send({ hitType: 'pageview', page: 'navigation open' });
       const winWidth = `${window.innerWidth}px`;
       const winHeight = `${window.innerHeight}px`;
       gsap.to('#navi--button--image', 0.05, {
@@ -91,7 +92,8 @@ class Navigation extends Component {
         stagger: 0.1,
       }, 0.1);
     } else {
-      ReactGA.modalview('navigation close');
+      // ReactGA.modalview('navigation close');
+      ReactGA.send({ hitType: 'pageview', page: 'navigation close' });
       gsap.to('#navi--button--image', 0.05, {
         repeat: 1,
         left: '0px',
@@ -149,7 +151,8 @@ class Navigation extends Component {
         scrollTimer = setTimeout(() => {
           window.scrollTo({ top, left: 0, behavior: 'smooth' });
         }, 500);
-        ReactGA.modalview(`go to ${getScroll}`);
+        // ReactGA.modalview(`go to ${getScroll}`);
+        ReactGA.send({ hitType: 'pageview', page: `go to ${getScroll}` });
       }
     }
   };
@@ -210,15 +213,14 @@ class Navigation extends Component {
                        return (
                          <div className="bottom--link--container" key={navigation.id}>
                            <div className="side--link navi--bar--show">
-                             {/* eslint-disable-next-line max-len */}
-                             <ReactGA.OutboundLink
+                             <a
                                className="bottom--link"
-                               eventLabel="outbound link"
-                               to={navigation.link}
+                               href={navigation.link}
                                target="_blank"
+                               rel="noreferrer"
                              >
                                {navigation.copy}
-                             </ReactGA.OutboundLink>
+                             </a>
 
                            </div>
                          </div>

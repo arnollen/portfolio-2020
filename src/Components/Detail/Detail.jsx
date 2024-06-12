@@ -6,7 +6,7 @@ import gsap, { Linear } from 'gsap';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import { Element } from 'react-scroll';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import projectData from '../../Data/data.json';
 import { ProjectCount, thecontext } from '../Context/Context';
 import { handleCount } from '../../Helpers/Helpers';
@@ -68,7 +68,8 @@ class Detail extends Component {
       projectAmount: thecontext.projects.length,
     }, () => { this.buildDetails(); });
 
-    ReactGA.pageview(contextProjects[this.TheProps.content].name);
+    // ReactGA.pageview(contextProjects[this.TheProps.content].name);
+    ReactGA.send({ hitType: 'Page View', page: contextProjects[this.TheProps.content].name });
 
     window.scrollTo(0, 0);
   }

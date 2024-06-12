@@ -11,7 +11,7 @@
     position: relative;
     text-align: center;
     background-position: center center;
-    height: 600px;
+    // height: 600px;
     width: 100%;
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
@@ -48,11 +48,11 @@
       }
       @media only screen and (max-width: 568px) {
         font-size: 14px;
-        width: 100%;
+        width: 90%;
       }
       @media only screen and (max-width: 320px) {
         font-size: 14px;
-        width: 100%;
+        width: 95%;
       }
     }
 
@@ -131,12 +131,13 @@
 }
 
 .project--details{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 100px 100px 100px;
-    width: 70%;
+    position: relative;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    padding: 50px 0px 50px;
+    margin: 75px 0px;
+    width: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     pointer-events: auto;
@@ -146,15 +147,12 @@
     transition: all 2s ease-out;
 
     @media only screen and (max-width: 768px) {
-      width: 70%;
-      padding: 100px;
+      padding: 0px;
     }
     @media only screen and (max-width: 568px) {
-      width: 90%;
       padding: 0px;
     }
     @media only screen and (max-width: 320px) {
-      width: 90%;
     }
 }
 

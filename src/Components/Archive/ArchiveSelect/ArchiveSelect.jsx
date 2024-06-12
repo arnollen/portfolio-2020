@@ -115,7 +115,7 @@ class ArchiveSelect extends Component {
     return (
       <div>
         <div id="archive--container">
-          <div className="archive--100" onClick={() => {}} onKeyUp={this.handleClick} role="button" tabIndex="0">
+          <div className="archive--100" onClick={() => {}} onKeyUp={this.handleClick} role="button" aria-label="Learn More" tabIndex="0">
             <Select components={animatedComponents} isSearchable={false} className="react-select-container" classNamePrefix="react-select" defaultValue={{ value: 'All', label: 'All' }} styles={customStyles} options={options} onChange={onChangeValue} />
           </div>
         </div>
