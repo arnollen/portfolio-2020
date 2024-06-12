@@ -53,7 +53,6 @@ class Projects extends Component {
     setTimeout(() => {
       window.scrollTo({ top, left: 0, behavior: 'smooth' });
     }, 500);
-    // ReactGA.modalview(`go to ${getScroll}`);
     ReactGA.send({ hitType: 'pageview', page: `go to ${getScroll}` });
   };
 

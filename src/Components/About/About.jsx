@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { diffHours, numberWithCommas } from '../../Helpers/Helpers';
 import { playSound } from '../SoundManager/SoundManager';
 import './About.scss';
@@ -33,7 +33,7 @@ class About extends Component {
 
   handleOver = (topic) => {
     this.showImageRoll(topic);
-    ReactGA.modalview(`${topic}  about rollover`);
+    ReactGA.send({ hitType: 'pageview', page: `${topic}  about rollover` });
     playSound(0);
   };
 

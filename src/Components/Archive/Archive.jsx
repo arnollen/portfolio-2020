@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import gsap, { Linear } from 'gsap';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { ProjectCount, thecontext } from '../Context/Context';
 import ArchiveSelect from './ArchiveSelect/ArchiveSelect';
 import './Archive.scss';
@@ -55,7 +55,7 @@ class Archive extends Component {
     thecontext.projectType = val.value;
     this.filterProjects(thecontext.projectType, contextProjects);
     setTimeout(() => { this.transitionIn('.archive--single'); }, 100);
-    ReactGA.pageview(`Archive filtered ${val.value}`);
+    ReactGA.send({ hitType: 'pageview', page: `Archive filtered ${val.value}` });
   };
 
   transitionIn = (theClass) => {

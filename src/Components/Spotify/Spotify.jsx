@@ -1,7 +1,7 @@
 // import { get } from 'mongoose';
 import React from 'react';
 import './Spotify.scss';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { playSound } from '../SoundManager/SoundManager';
 
 const apiKey = '98a2ee7691589ee264ffe41e2b21d4ca';
@@ -45,7 +45,7 @@ class Lastfm extends React.Component {
 
   handleClick = () => {
     this.getSound(0);
-    ReactGA.pageview('song viewed');
+    ReactGA.send({ hitType: 'Page View', page: 'song viewed') });
   };
 
   eqCards = () => {
