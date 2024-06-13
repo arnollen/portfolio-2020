@@ -59,8 +59,7 @@ class Navigation extends Component {
     playSound(0);
 
     if (!isToggleOn) {
-      // ReactGA.modalview('navigation open');
-      ReactGA.send({ hitType: 'pageview', page: 'navigation open' });
+      ReactGA.send({ hitType: 'pageview', page: 'navigation open', title: 'navigation open' });
       const winWidth = `${window.innerWidth}px`;
       const winHeight = `${window.innerHeight}px`;
       gsap.to('#navi--button--image', 0.05, {
@@ -93,7 +92,7 @@ class Navigation extends Component {
       }, 0.1);
     } else {
       // ReactGA.modalview('navigation close');
-      ReactGA.send({ hitType: 'pageview', page: 'navigation close' });
+      ReactGA.send({ hitType: 'pageview', page: 'navigation close', title: 'navigation close' });
       gsap.to('#navi--button--image', 0.05, {
         repeat: 1,
         left: '0px',
@@ -151,8 +150,7 @@ class Navigation extends Component {
         scrollTimer = setTimeout(() => {
           window.scrollTo({ top, left: 0, behavior: 'smooth' });
         }, 500);
-        // ReactGA.modalview(`go to ${getScroll}`);
-        ReactGA.send({ hitType: 'pageview', page: `go to ${getScroll}` });
+        ReactGA.send({ hitType: 'pageview', page: `go to ${getScroll}`, title: `go to ${getScroll}` });
       }
     }
   };

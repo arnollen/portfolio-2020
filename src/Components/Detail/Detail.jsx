@@ -68,7 +68,7 @@ class Detail extends Component {
       projectAmount: thecontext.projects.length,
     }, () => { this.buildDetails(); });
 
-    ReactGA.send({ hitType: 'pageview', page: contextProjects[this.TheProps.content].name });
+    ReactGA.send({ hitType: 'pageview', page: contextProjects[this.TheProps.content].name, title: contextProjects[this.TheProps.content].name });
 
     window.scrollTo(0, 0);
   }

@@ -30,13 +30,11 @@ class Projects extends Component {
   }
 
   componentDidMount() {
-    ReactGA.initialize('UA-151508756-1');
     const contextProjects = thecontext.projects;
     this.setState({ projects: contextProjects });
     this.scrollToSection();
     this.backColorAnimation('#2912D6');
-    // ReactGA.pageview('projects page');
-    ReactGA.send({ hitType: 'pageview', page: 'projects' });
+    ReactGA.send({ hitType: 'pageview', page: 'projects', title: 'Projects Page' });
   }
 
   componentWillUnmount() {
@@ -53,7 +51,7 @@ class Projects extends Component {
     setTimeout(() => {
       window.scrollTo({ top, left: 0, behavior: 'smooth' });
     }, 500);
-    ReactGA.send({ hitType: 'pageview', page: `go to ${getScroll}` });
+    ReactGA.send({ hitType: 'pageview', page: `go to ${getScroll}`, title: `go to ${getScroll}` });
   };
 
   backColorAnimation = (theColor) => {

@@ -33,7 +33,7 @@ class About extends Component {
 
   handleOver = (topic) => {
     this.showImageRoll(topic);
-    ReactGA.send({ hitType: 'pageview', page: `${topic}  about rollover` });
+    ReactGA.send({ hitType: 'pageview', page: `${topic}  about rollover`, title: `${topic}  about rollover` });
     playSound(0);
   };
 

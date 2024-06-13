@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
+import ReactGA from 'react-ga4';
 import projectData from './Data/data.json';
 import { ProjectCount, thecontext } from './Components/Context/Context';
 import Projects from './Components/Projects/Projects';
@@ -22,6 +23,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    ReactGA.initialize('G-X8PKM8MKSW');
     window.addEventListener('resize', this.handleWindowSizeChange);
 
     setInterval(this.textContext, 500);

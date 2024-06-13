@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
+import ReactGA from 'react-ga4';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import PropTypes from 'prop-types';
@@ -108,6 +109,7 @@ class ArchiveSelect extends Component {
 
   change(event) {
     this.thecontext.projectType = event.value;
+    ReactGA.send({ hitType: 'pageview', page: 'Archive Filtered', title: `Archive Filtered: ${event.value}` });
   }
 
   render() {
