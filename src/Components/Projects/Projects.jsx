@@ -88,7 +88,12 @@ class Projects extends Component {
                         <div className="project--details">
                         <div><h1>{parse(clients.name)}</h1></div>
                         <div className="header--boarder" />
-                        <div><p>{parse(clients.description)}</p></div>
+                        <div>
+                          <p>
+                            {parse(clients.description).split(' ').slice(0, 60).join(' ')}
+                            ...
+                          </p>
+                        </div>
                         <div className="proj--link--list">
                           <Link to={clients.route.path} data={clients} onClick={() => this.handleClick()}>VIEW</Link>
                         </div>
